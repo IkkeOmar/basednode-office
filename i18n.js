@@ -1057,7 +1057,7 @@ window.BN_I18N = {
   },
   "da": {
    "ab_label": "Om mig",
-   "ab_title": "Det er bare mig. Det er også pointen.",
+   "ab_title": "Det er bare mig. Det er pointen.",
    "ab_lede": "BasedNode er mig, Omar, civilingeniør i fysik og nanoteknologi fra DTU. Jeg bygger software til virksomheder, der har mere af det samme arbejde hver dag, end de har tid til. Jeg har underviset i matematik og programmering siden 2019 og arbejdet med AI på GXU siden 2025. Og så er det mig, der skriver koden — ikke et bureau med folk, du aldrig møder.",
    "ab_meta1": "København · CVR 43750194",
    "ab_meta2": "DTU · Fysik & Nanoteknologi",
