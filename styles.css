@@ -3611,3 +3611,38 @@ body.nav-open .topnav__menu-btn .icon-open { display: none; }
     align-items: start;
   }
 }
+
+/* The hosting option. It sits inside the self-hosting band rather than
+   on its own, because it is the counterpart to it — a reader who has
+   just been told "your machine, not mine" should meet the alternative
+   before they decide, not after they email. */
+.host-option {
+  margin-top: var(--space-10);
+  padding: var(--space-6);
+  border: var(--e-hairline);
+  border-left: 2px solid var(--accent);
+  background: var(--paper-faint);
+  display: grid;
+  gap: var(--space-5);
+}
+.host-option__head {
+  display: grid;
+  gap: var(--space-3);
+}
+.host-option__head .micro-label {
+  letter-spacing: 0.02em;
+}
+.claim-points--inline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+.claim-points--inline li {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+}
+@media (min-width: 760px) {
+  .claim-points--inline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
