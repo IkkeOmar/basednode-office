@@ -10,11 +10,11 @@
   <meta property="og:site_name" content="BasedNode" />
   <meta property="og:title" content="Cases — BasedNode" />
   <meta property="og:description" content="Six documented BasedNode projects with real numbers: API cost cut by 80-100x, 98% support accuracy, 40 hours of invoice work reduced to 4 minutes. Client names are anonymised; details can be discussed under NDA." />
-  <meta property="og:url" content="https://ikkeomar.github.io/basednode-office/cases.html" />
+  <meta property="og:url" content="https://ikkeomar.github.io/basednode-office/cases" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Cases — BasedNode" />
   <meta name="twitter:description" content="Six documented BasedNode projects with real numbers: API cost cut by 80-100x, 98% support accuracy, 40 hours of invoice work reduced to 4 minutes. Client names are anonymised; details can be discussed under NDA." />
-  <link rel="canonical" href="https://ikkeomar.github.io/basednode-office/cases.html" />
+  <link rel="canonical" href="https://ikkeomar.github.io/basednode-office/cases" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -27,23 +27,63 @@
 
   <header class="topnav">
     <div class="container topnav__inner">
-      <a href="index.html" class="topnav__logo" aria-label="BasedNode home">
+      <a href="./" class="topnav__logo" aria-label="BasedNode home">
         <span class="topnav__logo-mark" aria-hidden="true"></span>
         <span>BasedNode</span>
-        <span class="topnav__logo-meta" data-i18n="logo_meta">Copenhagen · Since 2019</span>
       </a>
       <nav aria-label="Primary">
-        <ul class="topnav__links">          <li><a href="services.html" data-i18n="services">What I build</a></li>
-          <li><a href="services.html#how" data-i18n="how">How it works</a></li>
-          <li><a href="services.html#pricing" data-i18n="pricing">Pricing</a></li>
-          <li><a href="services.html#faq" data-i18n="faq">FAQ</a></li>
-          <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+        <ul class="topnav__links">          <li><a href="services" data-i18n="services">What I build</a></li>
+          <li><a href="services#how" data-i18n="how">How it works</a></li>
+          <li><a href="services#pricing" data-i18n="pricing">Pricing</a></li>
+          <li><a href="services#faq" data-i18n="faq">FAQ</a></li>
+          <li><a href="contact" data-i18n="contact">Contact</a></li></ul>
       </nav>
       <div class="topnav__actions">
-        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
-          <span data-lang-label>DA</span>
-        </button>
-        <a href="#contact" class="btn btn--secondary btn--sm topnav__cta" data-i18n="nav_cta">Talk to me</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+                <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
+                  <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                    <rect width="37" height="28" fill="#D21034"/>
+                    <rect x="12" width="4" height="28" fill="#FFFFFF"/>
+                    <rect y="12" width="37" height="4" fill="#FFFFFF"/>
+                  </svg>
+                </button>
+                <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="en" aria-pressed="false" aria-label="Show in English">
+                  <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                    <rect width="60" height="30" fill="#FFFFFF"/>
+                    <rect x="30" width="30" height="30" fill="#012169"/>
+                    <rect x="0" y="0" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="4.615" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="9.231" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="13.846" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="18.462" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="23.077" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="27.692" width="30" height="2.308" fill="#B31942"/>
+                    <rect x="0" y="0" width="12" height="16.154" fill="#0A3161"/>
+                    <g fill="#FFFFFF">
+                      <circle cx="1.5" cy="2.5" r="0.95"/><circle cx="4.4" cy="2.5" r="0.95"/>
+                      <circle cx="7.3" cy="2.5" r="0.95"/><circle cx="10.2" cy="2.5" r="0.95"/>
+                      <circle cx="1.5" cy="6.2" r="0.95"/><circle cx="4.4" cy="6.2" r="0.95"/>
+                      <circle cx="7.3" cy="6.2" r="0.95"/><circle cx="10.2" cy="6.2" r="0.95"/>
+                      <circle cx="1.5" cy="9.9" r="0.95"/><circle cx="4.4" cy="9.9" r="0.95"/>
+                      <circle cx="7.3" cy="9.9" r="0.95"/><circle cx="10.2" cy="9.9" r="0.95"/>
+                      <circle cx="1.5" cy="13.6" r="0.95"/><circle cx="4.4" cy="13.6" r="0.95"/>
+                      <circle cx="7.3" cy="13.6" r="0.95"/><circle cx="10.2" cy="13.6" r="0.95"/>
+                    </g>
+                    <g fill="#FFFFFF">
+                      <polygon points="30,0 34.243,0 60,25.757 60,30 55.757,30 30,4.243"/>
+                      <polygon points="60,0 60,4.243 34.243,30 30,30 30,25.757 55.757,0"/>
+                    </g>
+                    <g fill="#C8102E">
+                      <polygon points="30,0 31.414,0 60,28.586 60,30 58.586,30 30,1.414"/>
+                      <polygon points="60,0 60,1.414 31.414,30 30,30 30,28.586 58.586,0"/>
+                    </g>
+                    <rect x="30" y="10" width="30" height="10" fill="#FFFFFF"/>
+                    <rect x="40" y="0" width="10" height="30" fill="#FFFFFF"/>
+                    <rect x="30" y="12" width="30" height="6" fill="#C8102E"/>
+                    <rect x="42" y="0" width="6" height="30" fill="#C8102E"/>
+                  </svg>
+                </button>
+              </div>
         <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="icon-open" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="40" y1="64" x2="216" y2="64"/>
@@ -61,11 +101,11 @@
     <!-- Panel lives INSIDE the sticky header so it drops out of the bar
          instead of scrolling away with the page. -->
     <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
-      <ul>        <li><a href="services.html" data-i18n="services">What I build</a></li>
-        <li><a href="services.html#how" data-i18n="how">How it works</a></li>
-        <li><a href="services.html#pricing" data-i18n="pricing">Pricing</a></li>
-        <li><a href="services.html#faq" data-i18n="faq">FAQ</a></li>
-        <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+      <ul>        <li><a href="services" data-i18n="services">What I build</a></li>
+        <li><a href="services#how" data-i18n="how">How it works</a></li>
+        <li><a href="services#pricing" data-i18n="pricing">Pricing</a></li>
+        <li><a href="services#faq" data-i18n="faq">FAQ</a></li>
+        <li><a href="contact" data-i18n="contact">Contact</a></li></ul>
     </nav>
   </header>
 
@@ -262,8 +302,8 @@
             <p class="prose start-grid__prose" data-i18n="cs_start_sub">Send me the task you would rather not do again and I will tell you what it would take to automate it, and what it costs.</p>
           </div>
           <div class="start-grid__actions">
-            <a href="contact.html" class="btn btn--primary btn--lg" data-i18n="cs_start_cta1">Tell me what is slow</a>
-            <a href="services.html" class="btn btn--secondary btn--lg" data-i18n="cs_start_cta2">See what I build</a>
+            <a href="contact" class="btn btn--primary btn--lg" data-i18n="cs_start_cta1">Tell me what is slow</a>
+            <a href="services" class="btn btn--secondary btn--lg" data-i18n="cs_start_cta2">See what I build</a>
           </div>
         </div>
       </div>
@@ -275,7 +315,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand-block">
-          <a href="index.html" class="footer__logo" aria-label="BasedNode home">
+          <a href="./" class="footer__logo" aria-label="BasedNode home">
             <span class="footer__logo-mark" aria-hidden="true"></span>
             <span>BasedNode</span>
           </a>
@@ -290,39 +330,83 @@
         <div class="footer__col">
           <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
           <ul>
-            <li><a href="services.html" data-i18n="foot_svc1">AI agents</a></li>
-            <li><a href="services.html" data-i18n="foot_svc2">Workflow automation</a></li>
-            <li><a href="services.html" data-i18n="foot_svc3">Data pipelines</a></li>
-            <li><a href="services.html" data-i18n="foot_svc4">Cost work</a></li>
-            <li><a href="services.html" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
-            <li><a href="services.html" data-i18n="foot_svc6">Marketing automation</a></li>
-            <li><a href="services.html" data-i18n="foot_svc7">Full AI products</a></li>
+            <li><a href="services" data-i18n="foot_svc1">AI agents</a></li>
+            <li><a href="services" data-i18n="foot_svc2">Workflow automation</a></li>
+            <li><a href="services" data-i18n="foot_svc3">Data pipelines</a></li>
+            <li><a href="services" data-i18n="foot_svc4">Cost work</a></li>
+            <li><a href="services" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
+            <li><a href="services" data-i18n="foot_svc6">Marketing automation</a></li>
+            <li><a href="services" data-i18n="foot_svc7">Full AI products</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-title" data-i18n="foot_col2">More</div>
           <ul>
-            <li><a href="cases.html" data-i18n="foot_l_cases">Cases</a></li>
-            <li><a href="resources.html" data-i18n="foot_l_resources">Resources</a></li>
-            <li><a href="about.html" data-i18n="foot_l_about">About</a></li>
-            <li><a href="services.html#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
-            <li><a href="services.html#faq" data-i18n="foot_l_faq">FAQ</a></li>
+            <li><a href="cases" data-i18n="foot_l_cases">Cases</a></li>
+            <li><a href="resources" data-i18n="foot_l_resources">Resources</a></li>
+            <li><a href="about" data-i18n="foot_l_about">About</a></li>
+            <li><a href="services#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
+            <li><a href="services#faq" data-i18n="foot_l_faq">FAQ</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-title" data-i18n="foot_col3">Company</div>
           <ul>
-            <li><a href="contact.html" data-i18n="foot_l_contact">Contact</a></li>
+            <li><a href="contact" data-i18n="foot_l_contact">Contact</a></li>
             <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
-            <li><a href="terms.html" data-i18n="foot_l_terms">Terms</a></li>
-            <li><a href="privacy.html" data-i18n="foot_l_privacy">Privacy policy</a></li>
+            <li><a href="terms" data-i18n="foot_l_terms">Terms</a></li>
+            <li><a href="privacy" data-i18n="foot_l_privacy">Privacy policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
         <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
         <span class="footer__bottom-links">
-          <button class="lang-toggle lang-toggle--dark" data-lang-toggle><span data-lang-label>DA</span></button>
+          <div class="lang-switch lang-switch--dark" role="group" aria-label="Language">
+                  <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
+                    <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <rect width="37" height="28" fill="#D21034"/>
+                      <rect x="12" width="4" height="28" fill="#FFFFFF"/>
+                      <rect y="12" width="37" height="4" fill="#FFFFFF"/>
+                    </svg>
+                  </button>
+                  <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="en" aria-pressed="false" aria-label="Show in English">
+                    <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <rect width="60" height="30" fill="#FFFFFF"/>
+                      <rect x="30" width="30" height="30" fill="#012169"/>
+                      <rect x="0" y="0" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="4.615" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="9.231" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="13.846" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="18.462" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="23.077" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="27.692" width="30" height="2.308" fill="#B31942"/>
+                      <rect x="0" y="0" width="12" height="16.154" fill="#0A3161"/>
+                      <g fill="#FFFFFF">
+                        <circle cx="1.5" cy="2.5" r="0.95"/><circle cx="4.4" cy="2.5" r="0.95"/>
+                        <circle cx="7.3" cy="2.5" r="0.95"/><circle cx="10.2" cy="2.5" r="0.95"/>
+                        <circle cx="1.5" cy="6.2" r="0.95"/><circle cx="4.4" cy="6.2" r="0.95"/>
+                        <circle cx="7.3" cy="6.2" r="0.95"/><circle cx="10.2" cy="6.2" r="0.95"/>
+                        <circle cx="1.5" cy="9.9" r="0.95"/><circle cx="4.4" cy="9.9" r="0.95"/>
+                        <circle cx="7.3" cy="9.9" r="0.95"/><circle cx="10.2" cy="9.9" r="0.95"/>
+                        <circle cx="1.5" cy="13.6" r="0.95"/><circle cx="4.4" cy="13.6" r="0.95"/>
+                        <circle cx="7.3" cy="13.6" r="0.95"/><circle cx="10.2" cy="13.6" r="0.95"/>
+                      </g>
+                      <g fill="#FFFFFF">
+                        <polygon points="30,0 34.243,0 60,25.757 60,30 55.757,30 30,4.243"/>
+                        <polygon points="60,0 60,4.243 34.243,30 30,30 30,25.757 55.757,0"/>
+                      </g>
+                      <g fill="#C8102E">
+                        <polygon points="30,0 31.414,0 60,28.586 60,30 58.586,30 30,1.414"/>
+                        <polygon points="60,0 60,1.414 31.414,30 30,30 30,28.586 58.586,0"/>
+                      </g>
+                      <rect x="30" y="10" width="30" height="10" fill="#FFFFFF"/>
+                      <rect x="40" y="0" width="10" height="30" fill="#FFFFFF"/>
+                      <rect x="30" y="12" width="30" height="6" fill="#C8102E"/>
+                      <rect x="42" y="0" width="6" height="30" fill="#C8102E"/>
+                    </svg>
+                  </button>
+                </div>
         </span>
       </div>
     </div>

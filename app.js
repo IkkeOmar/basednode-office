@@ -38,9 +38,6 @@
       var k = el.getAttribute("data-i18n");
       if (t[k] !== undefined) el.textContent = t[k];
     });
-    document.querySelectorAll("[data-lang-label]").forEach(function (el) {
-      el.textContent = current === "en" ? "DA" : "EN";
-    });
 
     /* Flow drawings are separate SVG files per language, because the text
        inside an SVG loaded via <img> cannot be swapped by the normal
@@ -62,8 +59,18 @@
         : "mailto:omar@basednode.xyz");
     });
     document.documentElement.setAttribute("lang", current === "en" ? "en" : "da-DK");
+
+    /* Language switch is a pair of flag buttons, one per language. The
+       active one is in full colour and marked aria-pressed; the other is
+       greyed out. Each button carries its own aria-label, so the label
+       says what clicking THAT flag does, not what the toggle does. */
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) {
-      b.setAttribute("aria-label", current === "en" ? "Vis på dansk" : "Show in English");
+      var target = b.getAttribute("data-lang-target");
+      if (!target) return;
+      var active = target === current;
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-label", target === "en" ? "Show in English" : "Vis på dansk");
     });
 
     var desc = document.querySelector('meta[name="description"]');
@@ -74,6 +81,14 @@
 
   function toggleLang() {
     applyLang(current === "en" ? "da" : "en");
+  }
+
+  /* The header switch is two separate flag buttons, each naming the
+     language it selects. A button for the language already active is a
+     no-op rather than a toggle, so clicking the visible flag never
+     flips the language out from under the reader. */
+  function selectLang(lang) {
+    applyLang(lang === "da" ? "da" : "en");
   }
 
   /* ---------------- Mobile menu ---------------- */
@@ -134,7 +149,12 @@
 
     document.addEventListener("click", function (e) {
       var lang = e.target.closest("[data-lang-toggle]");
-      if (lang) { toggleLang(); return; }
+      if (lang) {
+        var target = lang.getAttribute("data-lang-target");
+        if (target) { selectLang(target); return; }
+        toggleLang();
+        return;
+      }
       var menu = e.target.closest("[data-menu-btn]");
       if (menu) { toggleMobileMenu(); return; }
       var scrim = e.target.closest("[data-nav-scrim]");
