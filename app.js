@@ -41,6 +41,15 @@
     document.querySelectorAll("[data-lang-label]").forEach(function (el) {
       el.textContent = current === "en" ? "DA" : "EN";
     });
+
+    /* Flow drawings are separate SVG files per language, because the text
+       inside an SVG loaded via <img> cannot be swapped by the normal
+       data-i18n mechanism. Each drawing is marked with data-flow="<id>" and
+       the src is rebuilt for the active language. */
+    document.querySelectorAll("[data-flow]").forEach(function (el) {
+      var id = el.getAttribute("data-flow");
+      el.setAttribute("src", "_assets/illustrations/flow-" + id + "-" + current + ".svg");
+    });
     document.documentElement.setAttribute("lang", current === "en" ? "en" : "da-DK");
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) {
       b.setAttribute("aria-label", current === "en" ? "Vis på dansk" : "Show in English");

@@ -2688,3 +2688,72 @@ body.nav-open .topnav__menu-btn .icon-open { display: none; }
   .kv-table th,
   .kv-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; }
 }
+
+/* ══ FLOW DRAWINGS ══
+   The blueprint schematics. Same visual language as the hero drawing:
+   a thin frame, a faint plate behind the drawing, and a meta block below.
+   The drawings themselves are generated SVGs, one file per language, so
+   the text inside them is localised. */
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.flow-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: var(--e-hairline);
+  background: var(--paper);
+  transition: border-color var(--dur-base) var(--ease-out),
+              transform var(--dur-base) var(--ease-out);
+}
+
+.flow-card:hover {
+  border-color: var(--ink-line);
+  transform: translateY(-2px);
+}
+
+.flow-card__frame {
+  padding: var(--space-5);
+  background: var(--paper-faint);
+  border-bottom: var(--e-hairline);
+}
+
+.flow-card__frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.flow-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5);
+}
+
+.flow-card__sku {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper-muted);
+}
+
+.flow-card__name {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.flow-card__spec {
+  font-size: 0.8125rem;
+  color: var(--paper-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .flow-card__frame { padding: var(--space-4); }
+  .flow-card__meta { padding: var(--space-4); }
+}

@@ -94,7 +94,7 @@
           <!-- The one decisive visual: a real schematic of the work being automated -->
           <a href="#how" class="hero__drawing">
             <div class="hero__drawing-frame">
-              <img src="_assets/illustrations/workflow-invoice.svg" alt="Schematic of an invoice being received, read and posted to the ledger" />
+              <img data-flow="invoice" src="_assets/illustrations/flow-invoice-en.svg" alt="Schematic of an invoice being received, read and posted to the ledger" />
             </div>
             <div class="hero__drawing-meta">
               <span class="hero__drawing-sku">FLOW 01</span>
@@ -172,6 +172,52 @@
     </section>
 
     <!-- ══ 02 — HOW IT WORKS ══ -->
+    <!-- ══ FLOW DRAWINGS — three real workflows ══ -->
+    <section class="tight" id="flows">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="flows_label">§ 02 — The flows</span>
+          <h2 class="display-lg" data-i18n="flows_title">Three workflows, drawn.</h2>
+          <p class="prose" data-i18n="flows_desc">These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.</p>
+        </div>
+
+        <div class="flow-grid">
+          <figure class="flow-card">
+            <div class="flow-card__frame">
+              <img data-flow="invoice" src="_assets/illustrations/flow-invoice-en.svg" alt="Invoice received, extracted and posted to the ledger" />
+            </div>
+            <figcaption class="flow-card__meta">
+              <span class="flow-card__sku" data-i18n="flow_invoice_sku">FLOW 01</span>
+              <span class="flow-card__name" data-i18n="flow_invoice_name">Invoice in, booked, done.</span>
+              <span class="flow-card__spec" data-i18n="flow_invoice_spec">Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="flow-card">
+            <div class="flow-card__frame">
+              <img data-flow="support" src="_assets/illustrations/flow-support-en.svg" alt="Customer question arriving, answered by the agent and closed in the ticketing system" />
+            </div>
+            <figcaption class="flow-card__meta">
+              <span class="flow-card__sku" data-i18n="flow_support_sku">FLOW 02</span>
+              <span class="flow-card__name" data-i18n="flow_support_name">A question, answered and closed.</span>
+              <span class="flow-card__spec" data-i18n="flow_support_spec">2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="flow-card">
+            <div class="flow-card__frame">
+              <img data-flow="dashboard" src="_assets/illustrations/flow-dashboard-en.svg" alt="Numbers collected from several systems, queried in plain language and answered on one screen" />
+            </div>
+            <figcaption class="flow-card__meta">
+              <span class="flow-card__sku" data-i18n="flow_dashboard_sku">FLOW 03</span>
+              <span class="flow-card__name" data-i18n="flow_dashboard_name">Five systems, one question.</span>
+              <span class="flow-card__spec" data-i18n="flow_dashboard_spec">Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section id="how">
       <div class="container">
         <div class="section-head section-head__editorial">

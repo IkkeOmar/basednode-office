@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Schematic of an invoice being received, read and posted to the ledger">
+  <style>
+    .ink { stroke: #211F1B; }
+    .muted { stroke: #6F6A60; }
+    .accent { stroke: #F26B1F; }
+    .thin { stroke-width: 0.75; }
+    .hair { stroke-width: 0.5; }
+    .ink-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #211F1B; stroke: none; }
+    .muted-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #6F6A60; stroke: none; }
+    .accent-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #A8410C; stroke: none; font-weight: 600; }
+  </style>
+  <!-- BLUEPRINT FRAME -->
+    <rect class="ink thin" x="20" y="20" width="600" height="440" rx="0" />
+  <!-- CORNER TICK MARKS -->
+  <g class="ink thin">
+    <line class="ink thin" x1="20" y1="40" x2="30" y2="40" />
+    <line class="ink thin" x1="20" y1="60" x2="30" y2="60" />
+    <line class="ink thin" x1="20" y1="80" x2="30" y2="80" />
+    <line class="ink thin" x1="40" y1="20" x2="40" y2="30" />
+    <line class="ink thin" x1="60" y1="20" x2="60" y2="30" />
+    <line class="ink thin" x1="80" y1="20" x2="80" y2="30" />
+    <line class="ink thin" x1="610" y1="40" x2="620" y2="40" />
+    <line class="ink thin" x1="610" y1="60" x2="620" y2="60" />
+    <line class="ink thin" x1="610" y1="80" x2="620" y2="80" />
+    <line class="ink thin" x1="540" y1="20" x2="540" y2="30" />
+    <line class="ink thin" x1="560" y1="20" x2="560" y2="30" />
+    <line class="ink thin" x1="580" y1="20" x2="580" y2="30" />
+  </g>
+  <g transform="translate(420, 380)">
+    <rect class="ink thin" x="0" y="0" width="180" height="60" rx="0" />
+    <line class="ink hair" x1="0" y1="20" x2="180" y2="20" />
+    <line class="ink hair" x1="0" y1="40" x2="180" y2="40" />
+    <line class="ink hair" x1="100" y1="0" x2="100" y2="60" />
+    <text class="muted-text" x="6" y="14" font-size="9">FIG.</text>
+    <text class="ink-text" x="106" y="14" font-size="10" font-weight="500">01 / 03</text>
+    <text class="muted-text" x="6" y="34" font-size="9">DRAWN BY</text>
+    <text class="ink-text" x="106" y="34" font-size="10">BASEDNODE</text>
+    <text class="muted-text" x="6" y="54" font-size="9">SCALE</text>
+    <text class="ink-text" x="106" y="54" font-size="10">1 : 4</text>
+  </g>
+  <!-- STEP 1 -->
+  <g transform="translate(62.0, 80.0)">
+    <rect class="ink" x="0" y="0" width="130" height="170" rx="2" />
+    <line class="ink thin" x1="0" y1="30" x2="130" y2="30" />
+    <text class="muted-text" x="10" y="20" font-size="8">INVOICE</text>
+    <text class="ink-text" x="120" y="20" font-size="8" text-anchor="end">NO. 4471</text>
+    <line class="muted hair" x1="10" y1="48" x2="86" y2="120" />
+    <line class="muted hair" x1="10" y1="62" x2="104" y2="138" />
+    <line class="muted hair" x1="10" y1="76" x2="70" y2="104" />
+    <line class="ink thin" x1="10" y1="96" x2="120" y2="96" />
+    <line class="muted hair" x1="10" y1="112" x2="92" y2="122" />
+    <line class="muted hair" x1="10" y1="126" x2="80" y2="110" />
+    <text class="ink-text" x="120" y="150" font-size="10" text-anchor="end" font-weight="500">4,850.00</text>
+    <text class="muted-text" x="120" y="162" font-size="7" text-anchor="end">DKK</text>
+  </g>
+  <!-- STEP 2 -->
+  <g transform="translate(278.0, 108.0)">
+    <rect class="ink thin" x="0" y="0" width="146" height="114" rx="2" />
+    <text class="muted-text" x="10" y="18" font-size="8">EXTRACTED</text>
+    <line class="ink hair" x1="10" y1="26" x2="136" y2="26" />
+    <text class="muted-text" x="10" y="42" font-size="8">Supplier</text>
+    <text class="ink-text" x="136" y="42" font-size="8" text-anchor="end">NORDKRAFT A/S</text>
+    <text class="muted-text" x="10" y="60" font-size="8">Amount</text>
+    <text class="ink-text" x="136" y="60" font-size="8" text-anchor="end">4,850.00</text>
+    <text class="muted-text" x="10" y="78" font-size="8">VAT</text>
+    <text class="ink-text" x="136" y="78" font-size="8" text-anchor="end">970.00</text>
+    <text class="muted-text" x="10" y="96" font-size="8">Account</text>
+    <text class="ink-text" x="136" y="96" font-size="8" text-anchor="end">5700</text>
+  </g>
+  <!-- STEP 3 -->
+  <g transform="translate(510.0, 108.0)">
+    <rect class="ink" x="0" y="0" width="88" height="114" rx="2" />
+    <line class="ink thin" x1="0" y1="26" x2="88" y2="26" />
+    <text class="muted-text" x="8" y="18" font-size="7">POSTED</text>
+    <line class="muted hair" x1="8" y1="42" x2="80" y2="42" />
+    <line class="muted hair" x1="8" y1="56" x2="80" y2="56" />
+    <line class="muted hair" x1="8" y1="70" x2="80" y2="70" />
+    <text class="ink-text" x="80" y="98" font-size="9" text-anchor="end" font-weight="500">OK</text>
+  </g>
+  <!-- CONNECTOR 1 -->
+    <line class="ink thin" x1="198.0" y1="165" x2="270.0" y2="165" />
+    <circle cx="234.0" cy="165" r="4" fill="#F26B1F" stroke="none" />
+  <!-- CONNECTOR 2 -->
+    <line class="ink thin" x1="430.0" y1="165" x2="502.0" y2="165" />
+    <circle cx="466.0" cy="165" r="4" fill="#F26B1F" stroke="none" />
+    <text class="ink-text" x="62.0" y="68.0" font-size="8">01 · RECEIVED</text>
+    <text class="ink-text" x="278.0" y="96.0" font-size="8">02 · EXTRACTED</text>
+    <text class="ink-text" x="510.0" y="96.0" font-size="8">03 · POSTED</text>
+  <!-- CALLOUT -->
+  <g>
+    <line class="accent thin" x1="234.0" y1="165" x2="234.0" y2="248" />
+    <circle class="accent" cx="234.0" cy="165" r="2.5" fill="#F26B1F" />
+    <g transform="translate(160, 252)">
+    <rect class="ink thin" x="0" y="0" width="150" height="46" rx="0" />
+    <line class="ink hair" x1="0" y1="16" x2="150" y2="16" />
+    <text class="muted-text" x="6" y="12" font-size="7">DETAIL · A</text>
+    <text class="accent-text" x="6" y="30" font-size="8">HANDLING RULE 04</text>
+    <text class="muted-text" x="6" y="41" font-size="7">Account 5700 · VAT 25 %</text>
+    </g>
+  </g>
+  <g class="muted">
+    <line class="hair" x1="60" y1="300" x2="60" y2="330" />
+    <line class="hair" x1="600" y1="300" x2="600" y2="330" />
+    <line class="thin" x1="60" y1="325" x2="600" y2="325" />
+    <polygon points="66,322 66,328 60,325" fill="#6F6A60" />
+    <polygon points="594,322 594,328 600,325" fill="#6F6A60" />
+    <text class="muted-text" x="330.0" y="345" font-size="9" text-anchor="middle">3 HANDLINGSREGELER · 0 MINUTTER</text>
+  </g>
+  <g class="muted">
+    <line class="hair" x1="62.0" y1="80.0" x2="54" y2="80.0" />
+    <line class="hair" x1="62.0" y1="250.0" x2="54" y2="250.0" />
+    <line class="thin" x1="50" y1="80.0" x2="50" y2="250.0" />
+    <polygon points="47,86.0 53,86.0 50,80.0" fill="#6F6A60" />
+    <polygon points="47,244.0 53,244.0 50,250.0" fill="#6F6A60" />
+    <g transform="translate(42, 165) rotate(-90)">
+    <text class="muted-text" x="0" y="0" font-size="9" text-anchor="middle">4,5 MIN → 0</text>
+    </g>
+  </g>
+</svg>

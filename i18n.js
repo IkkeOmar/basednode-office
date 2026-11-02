@@ -149,7 +149,19 @@ window.BN_I18N = {
    "plan1_price": "from 4,000",
    "svc_fee_unit": "+ fee",
    "plan2_price": "12–20",
-   "plan3_price": "Equity"
+   "plan3_price": "Equity",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
   },
   "da": {
    "nav_services": "Hvad jeg bygger",
@@ -299,7 +311,19 @@ window.BN_I18N = {
    "plan1_price": "fra 4.000",
    "svc_fee_unit": "+ honorar",
    "plan2_price": "12–20",
-   "plan3_price": "Andel"
+   "plan3_price": "Andel",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
   }
  },
  "cases": {
@@ -410,7 +434,19 @@ window.BN_I18N = {
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
    "ct_c2_value": "Book 30 minutes",
-   "cs_stat_time": "40 h → 4 min"
+   "cs_stat_time": "40 h → 4 min",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds."
   },
   "da": {
    "cs_head_label": "§ 05 — Cases",
@@ -519,7 +555,19 @@ window.BN_I18N = {
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
    "ct_c2_value": "Book 30 minutter",
-   "cs_stat_time": "40 t → 4 min"
+   "cs_stat_time": "40 t → 4 min",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder."
   }
  },
  "services": {
@@ -703,7 +751,19 @@ window.BN_I18N = {
    "svc_fee_unit": "+ fee",
    "plan1_price": "from 4,000",
    "plan2_price": "12–20",
-   "plan3_price": "Equity"
+   "plan3_price": "Equity",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
   },
   "da": {
    "nav_services": "Hvad jeg bygger",
@@ -885,7 +945,19 @@ window.BN_I18N = {
    "svc_fee_unit": "+ honorar",
    "plan1_price": "fra 4.000",
    "plan2_price": "12–20",
-   "plan3_price": "Andel"
+   "plan3_price": "Andel",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
   }
  },
  "about": {
@@ -969,7 +1041,19 @@ window.BN_I18N = {
    "skip_to_content": "Skip to content",
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
-   "ct_c2_value": "Book 30 minutes"
+   "ct_c2_value": "Book 30 minutes",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds."
   },
   "da": {
    "ab_label": "Om mig",
@@ -1051,7 +1135,19 @@ window.BN_I18N = {
    "skip_to_content": "Gå til indhold",
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
-   "ct_c2_value": "Book 30 minutter"
+   "ct_c2_value": "Book 30 minutter",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder."
   }
  },
  "resources": {
@@ -1164,7 +1260,19 @@ window.BN_I18N = {
    "skip_to_content": "Skip to content",
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
-   "ct_c2_value": "Book 30 minutes"
+   "ct_c2_value": "Book 30 minutes",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
   },
   "da": {
    "rs_label": "Ressourcer",
@@ -1275,7 +1383,19 @@ window.BN_I18N = {
    "skip_to_content": "Gå til indhold",
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
-   "ct_c2_value": "Book 30 minutter"
+   "ct_c2_value": "Book 30 minutter",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
   }
  },
  "security": {
@@ -1357,7 +1477,19 @@ window.BN_I18N = {
    "skip_to_content": "Skip to content",
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
-   "ct_c2_value": "Book 30 minutes"
+   "ct_c2_value": "Book 30 minutes",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
   },
   "da": {
    "sec_label": "Sikkerhed & privatliv",
@@ -1437,7 +1569,19 @@ window.BN_I18N = {
    "skip_to_content": "Gå til indhold",
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
-   "ct_c2_value": "Book 30 minutter"
+   "ct_c2_value": "Book 30 minutter",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
   }
  },
  "privacy": {
@@ -1495,7 +1639,19 @@ window.BN_I18N = {
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
    "ct_c2_value": "Book 30 minutes",
-   "prv_cta_title": "Questions about privacy?"
+   "prv_cta_title": "Questions about privacy?",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
   },
   "da": {
    "prv_label": "Privatlivspolitik",
@@ -1551,7 +1707,19 @@ window.BN_I18N = {
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
    "ct_c2_value": "Book 30 minutter",
-   "prv_cta_title": "Spørgsmål til privatlivet?"
+   "prv_cta_title": "Spørgsmål til privatlivet?",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
   }
  },
  "contact": {
@@ -1643,7 +1811,19 @@ window.BN_I18N = {
    "skip_to_content": "Skip to content",
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
-   "ct_c2_value": "Book 30 minutes"
+   "ct_c2_value": "Book 30 minutes",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds."
   },
   "da": {
    "ct_label": "Kontakt",
@@ -1733,7 +1913,19 @@ window.BN_I18N = {
    "skip_to_content": "Gå til indhold",
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
-   "ct_c2_value": "Book 30 minutter"
+   "ct_c2_value": "Book 30 minutter",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder."
   }
  },
  "terms": {
@@ -1806,7 +1998,19 @@ window.BN_I18N = {
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
    "ct_c2_value": "Book 30 minutes",
-   "tm_cta_title": "Should something specific be stated?"
+   "tm_cta_title": "Should something specific be stated?",
+   "flows_label": "§ 02 — The flows",
+   "flows_title": "Three workflows, drawn.",
+   "flows_desc": "These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Invoice in, booked, done.",
+   "flow_invoice_spec": "Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "A question, answered and closed.",
+   "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Five systems, one question.",
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
   },
   "da": {
    "tm_label": "Vilkår",
@@ -1877,7 +2081,19 @@ window.BN_I18N = {
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
    "ct_c2_value": "Book 30 minutter",
-   "tm_cta_title": "Skal der stå noget bestemt?"
+   "tm_cta_title": "Skal der stå noget bestemt?",
+   "flows_label": "§ 02 — Flowsene",
+   "flows_title": "Tre arbejdsgange, tegnet.",
+   "flows_desc": "Det er ikke illustrationer af en idé. Hver enkel beskriver en rigtig arbejdsgang: hvad der kommer ind, hvad systemet læser ud af det, og hvad der skrives tilbage. Samme tegninger får du i tilbuddet.",
+   "flow_invoice_sku": "FLOW 01",
+   "flow_invoice_name": "Regning ind, bogført, færdig.",
+   "flow_invoice_spec": "En leverandør-PDF læst, moms fordelt, bogført på konto 5700. Fire og et halvt minuts manuelt arbejde bliver til nul.",
+   "flow_support_sku": "FLOW 02",
+   "flow_support_name": "Et spørgsmål, besvaret og lukket.",
+   "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
+   "flow_dashboard_sku": "FLOW 03",
+   "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
   }
  }
 };
