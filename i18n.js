@@ -183,7 +183,8 @@ window.BN_I18N = {
    "faq9_src": "Reference: European Data Protection Board — Secure personal data (guidance for small businesses).",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "nav_services": "Hvad jeg bygger",
@@ -367,7 +368,8 @@ window.BN_I18N = {
    "faq9_src": "Kilde: Europæiske Datatilsyn — Beskyttelse af personoplysninger (vejledning til små virksomheder).",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "cases": {
@@ -491,7 +493,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "cs_head_label": "§ 05 — Cases",
@@ -613,7 +616,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "services": {
@@ -831,7 +835,8 @@ window.BN_I18N = {
    "faq9_src": "Reference: European Data Protection Board — Secure personal data (guidance for small businesses).",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "nav_services": "Hvad jeg bygger",
@@ -1047,7 +1052,8 @@ window.BN_I18N = {
    "faq9_src": "Kilde: Europæiske Datatilsyn — Beskyttelse af personoplysninger (vejledning til små virksomheder).",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "about": {
@@ -1163,7 +1169,8 @@ window.BN_I18N = {
    "ab_step4_desc": "I put it in production, measure the result and scale it when it earns it.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "ab_label": "Om mig",
@@ -1277,7 +1284,8 @@ window.BN_I18N = {
    "ab_step4_desc": "Jeg sætter det i drift, måler resultatet og skalerer, når det har fortjent det.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "resources": {
@@ -1403,7 +1411,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "rs_label": "Ressourcer",
@@ -1527,7 +1536,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "security": {
@@ -1622,7 +1632,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "sec_label": "Sikkerhed & privatliv",
@@ -1715,7 +1726,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "privacy": {
@@ -1789,7 +1801,13 @@ window.BN_I18N = {
    "prv_plain_body": "This page stores nothing about you. No cookies, no analytics, no tracking. And when we build a system together, your customer data is yours — it stays in your own system, and I do not move it to me unless you ask me to.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "services": "What I build",
+   "how": "How it works",
+   "pricing": "Pricing",
+   "faq": "FAQ",
+   "about": "About me",
+   "contact": "Contact"
   },
   "da": {
    "prv_label": "Privatlivspolitik",
@@ -1861,7 +1879,13 @@ window.BN_I18N = {
    "prv_plain_body": "Denne side gemmer intet om dig. Den har ingen cookies, ingen analyseværktøjer og ingen sporing. Og når vi bygger et system sammen, er dine kundedata dine — de bliver i dit eget system, og jeg flytter dem ikke til mig, medmindre du beder mig om det.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "services": "Hvad jeg bygger",
+   "how": "Sådan foregår det",
+   "pricing": "Priser",
+   "faq": "Spørgsmål",
+   "about": "Om mig",
+   "contact": "Kontakt"
   }
  },
  "contact": {
@@ -1985,7 +2009,8 @@ window.BN_I18N = {
    "ct_step3_desc": "You get a written description of exactly what the system does, and a fixed price. Only once you have approved it do I start. If the scope changes along the way, the price changes with it, in writing.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "ct_label": "Kontakt",
@@ -2107,7 +2132,8 @@ window.BN_I18N = {
    "ct_step3_desc": "Du får en skriftlig beskrivelse af, præcis hvad systemet gør, og en fast pris. Først når du har godkendt den, begynder jeg. Ændrer omfanget sig undervejs, ændrer prisen sig med, skriftligt.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  },
  "terms": {
@@ -2193,7 +2219,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
    "foot_social_mail": "Email",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "About me"
   },
   "da": {
    "tm_label": "Vilkår",
@@ -2277,7 +2304,8 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
    "foot_social_mail": "E-mail",
    "foot_social_linkedin": "LinkedIn",
-   "foot_social_telegram": "Telegram"
+   "foot_social_telegram": "Telegram",
+   "about": "Om mig"
   }
  }
 };
