@@ -20,6 +20,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+    })();
+  </script>
 </head>
 <body data-page="security">
 
@@ -100,22 +117,22 @@
         </div>
 
         <div class="method-grid">
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="sec_m1_label">01</span>
             <h3 class="h3" data-i18n="sec_m1_title">No tracking tools</h3>
             <p class="method-item__body" data-i18n="sec_m1_body">There is no Google Analytics, no Facebook Pixel, no advertising cookies and no third-party scripts reading your behaviour. The only thing stored in your browser is your language choice, and it lives in localStorage rather than a cookie.</p>
           </div>
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="sec_m2_label">02</span>
             <h3 class="h3" data-i18n="sec_m2_title">Secrets stay server-side</h3>
             <p class="method-item__body" data-i18n="sec_m2_body">API keys, passwords and other credentials live in environment variables or a secret manager on your server. They are never written into frontend code and never end up in a bundle someone can download from the browser.</p>
           </div>
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="sec_m3_label">03</span>
             <h3 class="h3" data-i18n="sec_m3_title">No open ports</h3>
             <p class="method-item__body" data-i18n="sec_m3_body">Services I set up sit behind Cloudflare Tunnels. There is no public IP, no open ports and no direct access to the server from the internet. Every request is encrypted and checked before it gets in.</p>
           </div>
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="sec_m4_label">04</span>
             <h3 class="h3" data-i18n="sec_m4_title">Updates and fixes</h3>
             <p class="method-item__body" data-i18n="sec_m4_body">Dependencies are watched and security updates roll out automatically. The system runs with the fixes that exist, and you always have a backup of your own database and your own files.</p>

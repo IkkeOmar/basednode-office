@@ -20,6 +20,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+    })();
+  </script>
 </head>
 <body data-page="terms">
 

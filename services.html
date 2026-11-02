@@ -20,6 +20,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+    })();
+  </script>
 </head>
 <body data-page="services">
 
@@ -104,7 +121,7 @@
           <p class="prose" data-i18n="sv_s1_desc">Seven things, all of them the same idea: take the repetitive work off somebody's plate. You do not need all seven. Most people start with one and come back for the next.</p>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv1_num">§ 01</span>
@@ -130,13 +147,16 @@
           </div>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv2_num">§ 02</span>
               <h3 class="svc-detail__title" data-i18n="svc2_name">Workflow automation</h3>
             </div>
-            <span class="svc-detail__price" data-i18n="svc2_price">from 12,000 DKK</span>
+            <div class="svc-detail__pricewrap">
+              <span class="svc-detail__price" data-i18n="svc2_price">from 12,000 DKK</span>
+              <span class="svc-detail__unit" data-i18n="svc_price_unit">one-off, for the whole build</span>
+            </div>
           </div>
           <div class="svc-detail__body">
             <div>
@@ -156,13 +176,16 @@
           </div>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv3_num">§ 03</span>
               <h3 class="svc-detail__title" data-i18n="svc3_name">Data pipelines</h3>
             </div>
-            <span class="svc-detail__price" data-i18n="svc3_price">from 9,000 DKK</span>
+            <div class="svc-detail__pricewrap">
+              <span class="svc-detail__price" data-i18n="svc3_price">from 9,000 DKK</span>
+              <span class="svc-detail__unit" data-i18n="svc_price_unit">one-off, for the whole build</span>
+            </div>
           </div>
           <div class="svc-detail__body">
             <div>
@@ -182,13 +205,16 @@
           </div>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv4_num">§ 04</span>
               <h3 class="svc-detail__title" data-i18n="svc4_name">Cost work</h3>
             </div>
-            <span class="svc-detail__price" data-i18n="svc4_price">from 4,000 DKK</span>
+            <div class="svc-detail__pricewrap">
+              <span class="svc-detail__price" data-i18n="svc4_price">from 4,000 DKK</span>
+              <span class="svc-detail__unit" data-i18n="svc_price_unit">one-off, for the whole build</span>
+            </div>
           </div>
           <div class="svc-detail__body">
             <div>
@@ -208,13 +234,16 @@
           </div>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv5_num">§ 05</span>
               <h3 class="svc-detail__title" data-i18n="svc5_name">Dashboards and internal tools</h3>
             </div>
-            <span class="svc-detail__price" data-i18n="svc5_price">from 15,000 DKK</span>
+            <div class="svc-detail__pricewrap">
+              <span class="svc-detail__price" data-i18n="svc5_price">from 15,000 DKK</span>
+              <span class="svc-detail__unit" data-i18n="svc_price_unit">one-off, for the whole build</span>
+            </div>
           </div>
           <div class="svc-detail__body">
             <div>
@@ -234,13 +263,16 @@
           </div>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv6_num">§ 06</span>
               <h3 class="svc-detail__title" data-i18n="svc6_name">Marketing automation</h3>
             </div>
-            <span class="svc-detail__price" data-i18n="svc6_price">from 7,000 DKK</span>
+            <div class="svc-detail__pricewrap">
+              <span class="svc-detail__price" data-i18n="svc6_price">from 7,000 DKK</span>
+              <span class="svc-detail__unit" data-i18n="svc_price_unit">one-off, for the whole build</span>
+            </div>
           </div>
           <div class="svc-detail__body">
             <div>
@@ -260,13 +292,16 @@
           </div>
         </div>
 
-        <div class="svc-detail">
+        <div class="svc-detail" data-reveal="1">
           <div class="svc-detail__head">
             <div>
               <span class="case-card__domain" data-i18n="sv7_num">§ 07</span>
               <h3 class="svc-detail__title" data-i18n="svc7_name">Full AI products</h3>
             </div>
-            <span class="svc-detail__price" data-i18n="svc7_price">from 30,000 DKK</span>
+            <div class="svc-detail__pricewrap">
+              <span class="svc-detail__price" data-i18n="svc7_price">from 30,000 DKK</span>
+              <span class="svc-detail__unit" data-i18n="svc_price_unit">one-off, for the whole build</span>
+            </div>
           </div>
           <div class="svc-detail__body">
             <div>
@@ -298,19 +333,19 @@
         </div>
 
         <div class="wedge-list">
-          <div class="wedge-item">
+          <div class="wedge-item" data-reveal="1">
             <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge1_label">Wedge 01 / 03</span>
             <h3 class="h1 wedge-item__title" data-i18n="wedge1_title">You own it.</h3>
             <p class="prose" data-i18n="wedge1_desc">The code sits in your own accounts, the documentation is written for you, and the data stays with you. If we stop working together, nothing breaks and nobody has to ask permission to keep it running.</p>
             <p class="mono-data muted wedge-item__meta" data-i18n="wedge1_meta">Your accounts · Your data · Your copy</p>
           </div>
-          <div class="wedge-item">
+          <div class="wedge-item" data-reveal="1">
             <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge2_label">Wedge 02 / 03</span>
             <h3 class="h1 wedge-item__title" data-i18n="wedge2_title">Plain language, no theatre.</h3>
             <p class="prose" data-i18n="wedge2_desc">You will not get a slide deck about how AI is changing everything. You get a screen that does the job, and a number to call when it does something you did not expect.</p>
             <p class="mono-data muted wedge-item__meta" data-i18n="wedge2_meta">Documented · Explained · Runnable by you</p>
           </div>
-          <div class="wedge-item wedge-item--last">
+          <div class="wedge-item wedge-item--last" data-reveal="1">
             <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge3_label">Wedge 03 / 03</span>
             <h3 class="h1 wedge-item__title" data-i18n="wedge3_title">Scope before price.</h3>
             <p class="prose" data-i18n="wedge3_desc">We agree on exactly what the system does before I quote it. If the scope changes, the price changes with it, in writing. No surprise invoice in month three.</p>
@@ -320,19 +355,61 @@
       </div>
     </section>
 
+    <!-- ══ SELF-HOSTED BY DEFAULT ══ -->
+    <section class="claim-band" id="self-hosted">
+      <div class="container">
+        <div class="claim-band__head">
+          <span class="micro-label micro-label--accent" data-i18n="sh_label">§ 03 — How it runs</span>
+          <h2 class="display-lg" data-i18n="sh_title">I build it to run on your machine, not mine.</h2>
+          <p class="prose" data-i18n="sh_lead">Almost everything I build ends up self-hosted. Your own server, your own cloud account, your own keys. I do not rent you a platform and bill you for it on the side.</p>
+        </div>
+        <div class="claim-band__body">
+          <p class="prose" data-i18n="sh_body">That is a decision I make early, because it changes the architecture. A system that runs on your infrastructure is yours to keep, yours to move, and yours to switch off. There is no line in my invoice that starts with "platform fee" because there is no platform of mine involved.</p>
+          <ul class="claim-points">
+            <li data-i18n="sh_p1">Self-hosted by default</li>
+            <li data-i18n="sh_p2">Your keys, your account</li>
+            <li data-i18n="sh_p3">Runs on a small server or a NAS</li>
+            <li data-i18n="sh_p4">You can hand it to anyone else</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ THE AI BILL ══ -->
+    <section class="claim-band claim-band--tint" id="ai-cost">
+      <div class="container">
+        <div class="claim-band__head">
+          <span class="micro-label micro-label--accent" data-i18n="tc_label">§ 04 — The AI bill</span>
+          <h2 class="display-lg" data-i18n="tc_title">The AI bill is a design decision, not a fait accompli.</h2>
+          <p class="prose" data-i18n="tc_lead">A lot of people assume that building with AI means a big model on every request, forever. It does not. Most of the cost of an AI system is decided before the first prompt is written.</p>
+        </div>
+        <div class="claim-band__body">
+          <p class="prose" data-i18n="tc_body">I work on that deliberately. Choosing the right model for the job instead of the biggest one, splitting one expensive call into several cheap ones, caching what does not change, and routing the easy questions to a small local model — that is ordinary engineering for me, and it is why the running costs end up lower than people expect. The expensive model is a tool for the steps that genuinely need it, not the default for everything.</p>
+          <ul class="claim-points">
+            <li data-i18n="tc_p1">Model choice per task, not per project</li>
+            <li data-i18n="tc_p2">Small and local models where they fit</li>
+            <li data-i18n="tc_p3">Caching and batching before scaling up</li>
+            <li data-i18n="tc_p4">The cost is known before you commit</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ══ PRICING ══ -->
     <section id="pricing">
       <div class="container">
         <div class="section-head section-head__editorial">
-          <span class="micro-label" data-i18n="s4_label">§ 04 — Pricing</span>
+          <span class="micro-label" data-i18n="s4_label">§ 05 — Pricing</span>
           <h2 class="display-lg" data-i18n="pricing_title">Three ways to pay. One of them will fit.</h2>
           <p class="prose" data-i18n="pricing_sub">I would rather you pick the one that makes sense for your week than the one that sounds biggest.</p>
         </div>
 
         <div class="pricing-grid">
-          <div class="pricing-card">
+          <div class="pricing-card" data-reveal="1">
+            <span class="pricing-card__tag" data-i18n="plan1_tag">One-off price</span>
             <span class="pricing-card__name" data-i18n="plan1_name">Fixed price</span>
-            <span class="pricing-card__price" data-i18n="plan1_price">from 4,000</span><span class="pricing-card__unit">DKK</span>
+            <span class="pricing-card__price" data-i18n="plan1_price">from 4,000</span>
+            <span class="pricing-card__unit" data-i18n="plan1_unit">DKK, once for the whole project</span>
             <p class="pricing-card__desc" data-i18n="plan1_desc">We agree on what the system does, and it costs that. Best for one clear problem with a clear finish line.</p>
             <ul class="pricing-card__list">
               <li data-i18n="plan1_i1">Written scope before work starts</li>
@@ -340,9 +417,12 @@
               <li data-i18n="plan1_i3">Documented handover</li>
             </ul>
           </div>
-          <div class="pricing-card pricing-card--accent">
+          <div class="pricing-card pricing-card--accent" data-reveal="1">
+            <span class="pricing-card__flag" data-i18n="plan2_flag">Most common</span>
+            <span class="pricing-card__tag" data-i18n="plan2_tag">Share of revenue</span>
             <span class="pricing-card__name" data-i18n="plan2_name">Revenue share</span>
-            <span class="pricing-card__price" data-i18n="plan2_price">12–20</span><span class="pricing-card__unit">%</span>
+            <span class="pricing-card__price" data-i18n="plan2_price">12–20</span>
+            <span class="pricing-card__unit" data-i18n="plan2_unit">% of what the system brings in</span>
             <p class="pricing-card__desc" data-i18n="plan2_desc">A percentage of what the system actually brings in. Best when the value is real but hard to price up front.</p>
             <ul class="pricing-card__list">
               <li data-i18n="plan2_i1">Smaller upfront cost</li>
@@ -350,9 +430,11 @@
               <li data-i18n="plan2_i3">Reporting on what it produced</li>
             </ul>
           </div>
-          <div class="pricing-card">
+          <div class="pricing-card" data-reveal="1">
+            <span class="pricing-card__tag" data-i18n="plan3_tag">Equity</span>
             <span class="pricing-card__name" data-i18n="plan3_name">Partnership</span>
-            <span class="pricing-card__price" data-i18n="plan3_price">Equity</span><span class="pricing-card__unit" data-i18n="svc_fee_unit">+ fee</span>
+            <span class="pricing-card__price" data-i18n="plan3_price">Equity</span>
+            <span class="pricing-card__unit" data-i18n="plan3_unit">a share of the product, plus a fee</span>
             <p class="pricing-card__desc" data-i18n="plan3_desc">I build the product, you bring the market and the customers. We split what comes in.</p>
             <ul class="pricing-card__list">
               <li data-i18n="plan3_i1">For early-stage products</li>
@@ -370,12 +452,12 @@
     <section class="tight" id="faq">
       <div class="container container--narrow">
         <div class="section-head section-head__editorial">
-          <span class="micro-label" data-i18n="s5_label">§ 05 — Questions</span>
+          <span class="micro-label" data-i18n="s5_label">§ 06 — Questions</span>
           <h2 class="display-lg" data-i18n="faq_title">The questions everyone asks first.</h2>
         </div>
 
         <div class="faq-list">
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq1_q">What types of businesses do you work with?</summary>
             <p data-i18n="faq1_a">If any of these describe you, we should talk:</p>
             <ul class="faq-item__list">
@@ -387,13 +469,13 @@
               <li data-i18n="faq1_b6">You have an idea for an app or a software project you want to launch, but no idea where to start. If I like the project, and I can see real value in what you bring to it beyond the loose idea, I could come on as technical cofounder.</li>
             </ul>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq2_q">How long does a typical automation project take?</summary>
             <p data-i18n="faq2_a">It depends entirely on what we're building. If it's an AI agent for a specific niche problem, the timeline follows the complexity of the task — I won't spend more time than the job needs. That could be one or two days, or one or two months.
 
 If you want an actual assessment, call me or write with your specifics. We don't do corporate bull-shit, so I try to be as transparent as possible.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq3_q">What if I don't want to pay upfront?</summary>
             <p data-i18n="faq3_a">That's fine — depending on the project, we don't need upfront payment at all.
 
@@ -401,7 +483,7 @@ If I'm building software for the company, expect to pay a deposit and then a pay
 
 What I also offer is a performance-based option: taking a percentage of the company's income over a defined period, instead of a fixed fee. This is easy to arrange, and it's what I usually do for projects where I can help you get significantly more out of the process — rather than delivering the product and then leaving.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq4_q">Do you provide ongoing support after project completion?</summary>
             <p data-i18n="faq4_a">Absolutely — if you have the need for it.
 
@@ -409,7 +491,7 @@ My goal is always to hand the work over in a way that fits you, so you're not de
 
 If you want a "tech person on speed dial", that won't be free forever — but I'm glad to help smaller businesses with tasks that aren't too time-consuming.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq5_q">What's included in a free consultation?</summary>
             <p data-i18n="faq5_a">You tell me some of the frustrations you're running into. I ask questions to understand your processes and your business. Then I give you clear, actionable advice and solutions — free, and they don't necessarily involve my services.
 
@@ -417,13 +499,13 @@ You'd be surprised how far you can get with free tools, without paying a third p
 
 No sales pitch, and absolutely no commitment.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq6_q">Can you integrate with our existing software?</summary>
             <p data-i18n="faq6_a">That's kind of the whole point. I wouldn't want to fix what isn't broken — we can always just optimise what you're already doing.
 
 If I do see that a process you're using is unnecessarily expensive or time-consuming, I'll tell you what I'd recommend changing.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq7_q">What's the typical ROI for automation projects?</summary>
             <p data-i18n="faq7_a">That's a case-by-case question, and there isn't a single honest number for it.
 
@@ -433,7 +515,7 @@ So it depends on the project, and on the time and capital cost of the task being
 
 And I'm not out to replace human workers. I know most company owners don't want to fire their people — they want them doing more meaningful and important work.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq8_q">Do we need technical expertise to use your solutions?</summary>
             <p data-i18n="faq8_a">Not at all.
 
@@ -441,7 +523,7 @@ It would be a complete failure on my part to leave you with a system you don't k
 
 I design systems that make sense to real humans, not just other developers.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq9_q">How do you ensure data security and privacy?</summary>
             <p data-i18n="faq9_a">I treat your data like it's my own, because a data breach would ruin my reputation overnight.
 
@@ -454,13 +536,13 @@ In most cases I try to get the data and the finished system hosted and stored by
               <a href="https://www.edpb.europa.eu/sme/be-compliant/secure-personal-data_en" target="_blank" rel="noopener noreferrer" data-i18n="faq9_src">Reference: European Data Protection Board — Secure personal data (guidance for small businesses).</a>
             </p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq10_q">Can you work with our existing development team?</summary>
             <p data-i18n="faq10_a">Definitely. I can either work alongside your team or handle everything independently, whichever makes more sense for your situation. I've done both, and I'm pretty good at not stepping on anyone's toes.
 
 Personally, I've only worked with mid-size teams of five to eight people, on development projects or when training a team to use specialised software. If you have something else in mind, I'm sure I'm up for it — I'd just want the details cleared first.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq11_q">What happens if we need changes after the project is complete?</summary>
             <p data-i18n="faq11_a">I cover bug fixes and small tweaks for a reasonable period. That's just good business.
 
@@ -468,7 +550,7 @@ For bigger changes or new features, we can work out a fair rate.
 
 If you've been a client of mine, I always want to make sure you're taken care of.</p>
           </details>
-          <details class="faq-item">
+          <details class="faq-item" data-reveal="1">
             <summary data-i18n="faq12_q">Are you going to share my business insights and secrets with others?</summary>
             <p data-i18n="faq12_a">Of course not. I won't disclose anything you tell me, or put in writing, that you don't want shared.
 
@@ -487,7 +569,7 @@ Call me paranoid — fair.</p>
       <div class="container">
         <div class="start-grid">
           <div>
-            <span class="micro-label section-label" data-i18n="s6_label">§ 06 — Start</span>
+            <span class="micro-label section-label" data-i18n="s6_label">§ 07 — Start</span>
             <h2 class="display-lg" data-i18n="contact_title">Tell me what is slow in your week.</h2>
             <p class="prose start-grid__prose" data-i18n="contact_sub">One call, thirty minutes, no slides. We look at your week, and I tell you whether I can help — and if I cannot, I say who can.</p>
           </div>

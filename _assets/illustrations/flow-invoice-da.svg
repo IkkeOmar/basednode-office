@@ -9,6 +9,94 @@
     .ink-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #211F1B; stroke: none; }
     .muted-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #6F6A60; stroke: none; }
     .accent-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #A8410C; stroke: none; font-weight: 600; }
+
+    /* --------------------------------------------------------------
+       MOTION
+
+       The flow drawing was a still blueprint: it showed what the system
+       does, but not that it DOES anything. The diagram now runs.
+
+       The drawing is loaded as an IMG tag, so it cannot be scripted from
+       the page — but CSS animations inside an SVG document run regardless,
+       because the SVG is its own document. Verified: a circle in an
+       img-referenced SVG scales as expected.
+
+       NOTE: no angle brackets may appear in this comment. The SVG is
+       parsed as XML, and a stray "&lt;" inside the style block makes the
+       whole document fail to parse — the browser then renders an empty
+       box with no error, which is very hard to spot by eye.
+
+       The sequence reads as one event:
+         1. the panels fade up in order, like a plotter drawing the sheet
+         2. the connectors draw themselves between them
+         3. a packet of data travels down the chain, connector by
+            connector, and the nodes light up as it passes
+       After the intro the packet keeps looping, so the drawing never
+       looks frozen.
+
+       --i and --c are per-element indices set inline, so the stagger
+       comes from the generator rather than from hand-written delays.
+       -------------------------------------------------------------- */
+    .flow-panel {
+      opacity: 0;
+      animation: bn-flow-panel 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i) * 0.16s);
+    }
+    @keyframes bn-flow-panel {
+      from { opacity: 0; transform: translateY(7px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .flow-wire {
+      stroke-dasharray: 90;
+      stroke-dashoffset: 90;
+      animation: bn-flow-draw 0.45s ease-out both;
+      animation-delay: calc(var(--c) * 0.16s + 0.12s);
+    }
+    @keyframes bn-flow-draw { to { stroke-dashoffset: 0; } }
+
+    /* The packet. It travels the length of its own connector, so each
+       one is a separate element with its own distance. */
+    .flow-packet {
+      opacity: 0;
+      animation: bn-flow-packet 1.9s cubic-bezier(0.55, 0, 0.45, 1) infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-packet {
+      0%   { opacity: 0; transform: translateX(0); }
+      12%  { opacity: 1; }
+      88%  { opacity: 1; }
+      100% { opacity: 0; transform: translateX(var(--dist)); }
+    }
+
+    /* The node the packet is heading for. */
+    .flow-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bn-flow-node 1.9s ease-in-out infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-node {
+      0%, 78%, 100% { transform: scale(1); opacity: 0.55; }
+      18%           { transform: scale(1.35); opacity: 1; }
+    }
+
+    /* The confirmed result at the end of the ledger panel. */
+    .flow-ok {
+      animation: bn-flow-ok 1.9s ease-in-out infinite;
+      animation-delay: calc(var(--c) * 0.16s + 1.25s);
+    }
+    @keyframes bn-flow-ok {
+      0%, 70%, 100% { opacity: 0.55; }
+      82%           { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flow-panel { opacity: 1; animation: none; transform: none; }
+      .flow-wire  { stroke-dashoffset: 0; animation: none; }
+      .flow-packet { display: none; }
+      .flow-node, .flow-ok { animation: none; opacity: 1; }
+    }
   </style>
   <!-- BLUEPRINT FRAME -->
     <rect class="ink thin" x="20" y="20" width="600" height="440" rx="0" />
@@ -41,6 +129,7 @@
   </g>
   <!-- STEP 1 -->
   <g transform="translate(62.0, 80.0)">
+  <g class="flow-panel" style="--i:0">
     <rect class="ink" x="0" y="0" width="130" height="170" rx="2" />
     <line class="ink thin" x1="0" y1="30" x2="130" y2="30" />
     <text class="muted-text" x="10" y="20" font-size="8">FAKTURA</text>
@@ -54,8 +143,10 @@
     <text class="ink-text" x="120" y="150" font-size="10" text-anchor="end" font-weight="500">4.850,00</text>
     <text class="muted-text" x="120" y="162" font-size="7" text-anchor="end">DKK</text>
   </g>
+  </g>
   <!-- STEP 2 -->
   <g transform="translate(278.0, 108.0)">
+  <g class="flow-panel" style="--i:1">
     <rect class="ink thin" x="0" y="0" width="146" height="114" rx="2" />
     <text class="muted-text" x="10" y="18" font-size="8">UDTRUKKET</text>
     <line class="ink hair" x1="10" y1="26" x2="136" y2="26" />
@@ -68,22 +159,27 @@
     <text class="muted-text" x="10" y="96" font-size="8">Konto</text>
     <text class="ink-text" x="136" y="96" font-size="8" text-anchor="end">5700</text>
   </g>
+  </g>
   <!-- STEP 3 -->
   <g transform="translate(510.0, 108.0)">
+  <g class="flow-panel" style="--i:2">
     <rect class="ink" x="0" y="0" width="88" height="114" rx="2" />
     <line class="ink thin" x1="0" y1="26" x2="88" y2="26" />
     <text class="muted-text" x="8" y="18" font-size="7">BOGFØRT</text>
     <line class="muted hair" x1="8" y1="42" x2="80" y2="42" />
     <line class="muted hair" x1="8" y1="56" x2="80" y2="56" />
     <line class="muted hair" x1="8" y1="70" x2="80" y2="70" />
-    <text class="ink-text" x="80" y="98" font-size="9" text-anchor="end" font-weight="500">OK</text>
+    <text class="flow-ok" style="--c:2" x="80" y="98" font-size="9" text-anchor="end" font-weight="500" fill="#211F1B" stroke="none">OK</text>
+  </g>
   </g>
   <!-- CONNECTOR 1 -->
-    <line class="ink thin" x1="198.0" y1="165" x2="270.0" y2="165" />
-    <circle cx="234.0" cy="165" r="4" fill="#F26B1F" stroke="none" />
+    <line class="ink thin flow-wire" style="--c:0" x1="198.0" y1="165" x2="270.0" y2="165" />
+    <circle class="flow-node" style="--c:0" cx="234.0" cy="165" r="4" fill="#F26B1F" />
+    <circle class="flow-packet" style="--c:0;--dist:72.0px" cx="198.0" cy="165" r="2.5" fill="#F26B1F" />
   <!-- CONNECTOR 2 -->
-    <line class="ink thin" x1="430.0" y1="165" x2="502.0" y2="165" />
-    <circle cx="466.0" cy="165" r="4" fill="#F26B1F" stroke="none" />
+    <line class="ink thin flow-wire" style="--c:1" x1="430.0" y1="165" x2="502.0" y2="165" />
+    <circle class="flow-node" style="--c:1" cx="466.0" cy="165" r="4" fill="#F26B1F" />
+    <circle class="flow-packet" style="--c:1;--dist:72.0px" cx="430.0" cy="165" r="2.5" fill="#F26B1F" />
     <text class="ink-text" x="62.0" y="68.0" font-size="8">01 · MODTAGET</text>
     <text class="ink-text" x="278.0" y="96.0" font-size="8">02 · UDTRUKKET</text>
     <text class="ink-text" x="510.0" y="96.0" font-size="8">03 · BOGFØRT</text>

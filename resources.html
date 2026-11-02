@@ -20,6 +20,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+    })();
+  </script>
 </head>
 <body data-page="resources">
 
@@ -100,22 +117,22 @@
         </div>
 
         <div class="method-grid">
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="rs_c1_1_label">01</span>
             <h3 class="h3" data-i18n="rs_c1_1_title">Keeping the customer</h3>
             <p class="method-item__body" data-i18n="rs_c1_1_body">A welcome email, a follow-up after a purchase, a reminder about an abandoned basket. That kind of thing runs in the background all the time, and it is often the fastest thing to get a return on. A welcome sequence alone can recover 10-15 percent of the baskets that would otherwise be forgotten.</p>
           </div>
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="rs_c1_2_label">02</span>
             <h3 class="h3" data-i18n="rs_c1_2_title">Answering the same thing again and again</h3>
             <p class="method-item__body" data-i18n="rs_c1_2_body">Opening hours, prices, shipping, returns. Those questions can be answered around the clock. When a question is too hard, it goes to a person. Most businesses find that 50-70 percent of ordinary questions can be answered automatically.</p>
           </div>
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="rs_c1_3_label">03</span>
             <h3 class="h3" data-i18n="rs_c1_3_title">Finding patterns in the numbers</h3>
             <p class="method-item__body" data-i18n="rs_c1_3_body">Which products sell together, when your customers buy, which channel actually brings paying customers, and who is about to leave. Those are the questions that end up in a spreadsheet and get answered by feel.</p>
           </div>
-          <div class="method-item">
+          <div class="method-item" data-reveal="1">
             <span class="method-item__label" data-i18n="rs_c1_4_label">04</span>
             <h3 class="h3" data-i18n="rs_c1_4_title">Getting past the blank page</h3>
             <p class="method-item__body" data-i18n="rs_c1_4_body">Posts, newsletters, product descriptions. Not to replace your voice, but to get past the blank page. You give it your ideas and your style, and you get a draft you can edit. Three hours of writing becomes half an hour of editing.</p>

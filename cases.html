@@ -20,6 +20,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+    })();
+  </script>
 </head>
 <body data-page="cases">
 
@@ -106,7 +123,7 @@
 
         <div class="case-grid">
 
-          <div class="case-card">
+          <div class="case-card" data-reveal="1">
             <div class="case-card__head">
               <span class="case-card__title" data-i18n="cs1_title">LLM API cost optimization</span>
               <span class="case-card__domain" data-i18n="cs1_domain">Finance</span>
@@ -125,7 +142,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card" data-reveal="1">
             <div class="case-card__head">
               <span class="case-card__title" data-i18n="cs2_title">Customer support AI agent</span>
               <span class="case-card__domain" data-i18n="cs2_domain">Retail</span>
@@ -143,7 +160,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card" data-reveal="1">
             <div class="case-card__head">
               <span class="case-card__title" data-i18n="cs3_title">Invoice processing pipeline</span>
               <span class="case-card__domain" data-i18n="cs3_domain">Finance</span>
@@ -161,7 +178,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card" data-reveal="1">
             <div class="case-card__head">
               <span class="case-card__title" data-i18n="cs4_title">Real-time AI dashboard</span>
               <span class="case-card__domain" data-i18n="cs4_domain">Logistics</span>
@@ -179,7 +196,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card" data-reveal="1">
             <div class="case-card__head">
               <span class="case-card__title" data-i18n="cs5_title">Marketing automation engine</span>
               <span class="case-card__domain" data-i18n="cs5_domain">Retail</span>
@@ -197,7 +214,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card" data-reveal="1">
             <div class="case-card__head">
               <span class="case-card__title" data-i18n="cs6_title">Ad cost optimization</span>
               <span class="case-card__domain" data-i18n="cs6_domain">Education</span>
@@ -222,23 +239,23 @@
     <!-- ══ NUMBERS ══ -->
     <section class="tight">
       <div class="container">
-        <div class="stat-block">
-          <div class="stat">
+        <div class="stat-block" data-reveal="1">
+          <div class="stat" data-reveal="1">
             <span class="stat__label" data-i18n="cs_stat1_label">Projects documented here</span>
             <span class="stat__value">6</span>
             <span class="stat__note" data-i18n="cs_stat1_note">the six on this page, from 2019 to 2026</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-reveal="1">
             <span class="stat__label" data-i18n="cs_stat2_label">Support agent accuracy</span>
             <span class="stat__value">98<span class="stat__value-unit">%</span></span>
             <span class="stat__note" data-i18n="cs_stat2_note">measured on the 2,500 tickets a day it handled</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-reveal="1">
             <span class="stat__label" data-i18n="cs_stat3_label">Invoice work per week</span>
             <span class="stat__value" data-i18n="cs_stat_time">40 h → 4 min</span>
             <span class="stat__note" data-i18n="cs_stat3_note">from 40 hours of manual processing to under 4 minutes</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-reveal="1">
             <span class="stat__label" data-i18n="cs_stat4_label">Model cost reduction</span>
             <span class="stat__value">80–100<span class="stat__value-unit">×</span></span>
             <span class="stat__note" data-i18n="cs_stat4_note">on the API-heavy system taken over from another team</span>
@@ -250,7 +267,7 @@
     <!-- ══ ANONYMISATION ══ -->
     <section class="tight">
       <div class="container">
-        <div class="callout">
+        <div class="callout" data-reveal="1">
           <div class="callout__title" data-i18n="cs_callout_title">Why there are no client names here</div>
           <div class="callout__body" data-i18n="cs_callout_body">These projects are anonymised. The names belong to my clients, not to me, and most of them have no reason to be on a website because they asked me to build something quiet. The numbers are the part that matters, and they are the real ones. If you want the detail behind any case — the setup, the numbers, what broke on the way — ask me for it on the call and we can go through it under NDA.</div>
         </div>

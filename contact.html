@@ -20,6 +20,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+    })();
+  </script>
 </head>
 <body data-page="contact">
 
@@ -97,9 +114,9 @@
           <h2 class="display-lg" data-i18n="ct_s1_title">Choose what fits. Each topic has a template you can copy.</h2>
         </div>
 
-        <div class="topic-list">
+        <div class="topic-list" data-reveal="1">
           <!-- 01 -->
-          <div class="topic">
+          <div class="topic" data-reveal="1">
             <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-website">
               <span class="topic__name" data-i18n="ct_t1_name">Website / Webapp</span>
               <span class="topic__hint" data-i18n="ct_t1_hint">Website, webshop, dashboard, app</span>
@@ -128,7 +145,7 @@
           </div>
 
           <!-- 02 -->
-          <div class="topic">
+          <div class="topic" data-reveal="1">
             <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-agent">
               <span class="topic__name" data-i18n="ct_t2_name">AI agent / Automation</span>
               <span class="topic__hint" data-i18n="ct_t2_hint">Bookkeeping, repetitive tasks, customer service</span>
@@ -156,7 +173,7 @@
           </div>
 
           <!-- 03 -->
-          <div class="topic">
+          <div class="topic" data-reveal="1">
             <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-undervisning">
               <span class="topic__name" data-i18n="ct_t3_name">Teaching / Tutoring</span>
               <span class="topic__hint" data-i18n="ct_t3_hint">Maths, programming, AI courses</span>
@@ -183,7 +200,7 @@
           </div>
 
           <!-- 04 -->
-          <div class="topic">
+          <div class="topic" data-reveal="1">
             <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-samarbejde">
               <span class="topic__name" data-i18n="ct_t4_name">Partnership</span>
               <span class="topic__hint" data-i18n="ct_t4_hint">Revenue share, affiliate, equity</span>
@@ -209,7 +226,7 @@
           </div>
 
           <!-- 05 -->
-          <div class="topic">
+          <div class="topic" data-reveal="1">
             <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-andet">
               <span class="topic__name" data-i18n="ct_t5_name">Something else</span>
               <span class="topic__hint" data-i18n="ct_t5_hint">Just say hi — no template needed</span>
@@ -224,7 +241,7 @@
           </div>
         </div>
 
-        <div class="callout" style="margin-top: var(--space-8);">
+        <div class="callout" data-reveal="1" style="margin-top: var(--space-8);">
           <p class="callout__title" data-i18n="ct_callout_title">Not sure what to write?</p>
           <p class="callout__body" data-i18n="ct_callout_body">Then write "hi" and a couple of lines about what you do. I read it myself, and I reply with the first question I need answered. You do not have to turn it into a project before we have talked.</p>
         </div>
@@ -273,17 +290,17 @@
         </div>
 
         <div class="timeline">
-          <div class="timeline__step">
+          <div class="timeline__step" data-reveal="1">
             <span class="timeline__date" data-i18n="ct_step1_date">Step 01</span>
             <h3 class="timeline__title" data-i18n="ct_step1_title">You write, I reply</h3>
             <p class="timeline__desc" data-i18n="ct_step1_desc">I read the message and reply within one working day. If it is clear what you want built, I send a suggestion for scope and price straight away. Otherwise I ask one question.</p>
           </div>
-          <div class="timeline__step">
+          <div class="timeline__step" data-reveal="1">
             <span class="timeline__date" data-i18n="ct_step2_date">Step 02</span>
             <h3 class="timeline__title" data-i18n="ct_step2_title">A thirty-minute call</h3>
             <p class="timeline__desc" data-i18n="ct_step2_desc">We look at your week and your systems. I tell you what can be automated, what cannot, and how long it takes. If I am not the right person for it, I say so on that call.</p>
           </div>
-          <div class="timeline__step">
+          <div class="timeline__step" data-reveal="1">
             <span class="timeline__date" data-i18n="ct_step3_date">Step 03</span>
             <h3 class="timeline__title" data-i18n="ct_step3_title">Written scope and fixed price</h3>
             <p class="timeline__desc" data-i18n="ct_step3_desc">You get a written description of exactly what the system does, and a fixed price. Only once you have approved it do I start. If the scope changes along the way, the price changes with it, in writing.</p>
