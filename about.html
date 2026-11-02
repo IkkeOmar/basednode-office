@@ -76,9 +76,12 @@
   <div class="nav-scrim" data-nav-scrim hidden></div>
 
   <main id="main">    <!-- ══ PAGE HEAD ══ -->
-    <section class="page-head">
+    <section class="page-head ab-head">
       <div class="container page-head__inner">
-        <span class="micro-label" data-i18n="ab_label">About</span>
+        <span class="ab-eyebrow">
+          <span class="ab-eyebrow__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.6c.62 4.6 1.94 5.92 6.54 6.54-4.6.62-5.92 1.94-6.54 6.54-.62-4.6-1.94-5.92-6.54-6.54C10.06 8.52 11.38 7.2 12 2.6Z"/></svg></span>
+          <span data-i18n="ab_label">About</span>
+        </span>
         <h1 class="display-lg page-head__title" data-i18n="ab_title">It is just me. That is the point.</h1>
         <p class="page-head__lede" data-i18n="ab_lede">BasedNode is me, Omar, a civil engineer in physics and nanotechnology from DTU. I build software for companies that have more of the same work every day than they have time for. I have taught maths and programming since 2019 and worked with AI at GXU since 2025. And I am the one writing the code — not an agency with people you never meet.</p>
         <div class="page-head__meta">
@@ -89,35 +92,108 @@
       </div>
     </section>
 
-    <!-- ══ WHY SOLO ══ -->
-    <section>
+    <!-- ══ WHY SOLO + CAPABILITY CHIPS ══ -->
+    <section class="ab-intro">
       <div class="container">
         <div class="section-head section-head__editorial">
           <span class="micro-label" data-i18n="ab_s1_label">§ 01 — Why it is me</span>
-          <h2 class="display-lg" data-i18n="ab_s1_title">I can do it cheaply, because making it expensive is not my life's work.</h2>
-          <p class="prose" data-i18n="ab_s1_desc">There is a reason most small companies have not automated anything: hiring a developer is expensive, and it is hard to know whether it is worth it. I think most of the processes running inside a small company are easy to automate. They have simply never been built, because nobody had the time to go in and find out how the work actually gets done. That is what I go in and do. And because it is me rather than an agency, it costs less, and you talk to the person writing the code.</p>
+          <h2 class="display-lg" data-i18n="ab_s1_title">I can do it cheaply, because making it expensive is not my life’s work.</h2>
+          <p class="prose" data-i18n="ab_s1_desc">There is a reason most small companies have not automated anything: hiring a developer is expensive, and it is hard to know whether it is worth the money. I think most of the processes that run inside a small company are easy to automate. They have just not been built, because nobody had time to go in and find out how the work is actually done. That is what I go in and do. And because it is me and not an agency, it costs less, and you talk to the person writing the code.</p>
         </div>
+
+        <ul class="ab-chips">
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 3 7.5 12 12l9-4.5L12 3Z"/><path d="m3 12.5 9 4.5 9-4.5"/><path d="m3 17 9 4.5L21 17"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip1">M.Sc. in Engineering in Physics & Nanotechnology, DTU</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip2">Lead Generation & follow-up</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.6 20.4 7v10L12 21.4 3.6 17V7L12 2.6Z"/><path d="M12 8.4 15.9 10.7v4.6L12 17.6l-3.9-2.3v-4.6L12 8.4Z"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip3">Agentic Systems</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.4 18.6h9.6a3.8 3.8 0 0 0 .35-7.58 5.6 5.6 0 0 0-10.7 1.22A3.75 3.75 0 0 0 7.4 18.6Z"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip4">Cloud Infrastructure</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="4" width="17" height="6.6" rx="1.6"/><rect x="3.5" y="13.4" width="17" height="6.6" rx="1.6"/><path d="M7 7.3h.01M7 16.7h.01"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip5">Self hosting solutions</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.4 7 3.4 12l5 5"/><path d="m15.6 7 5 5-5 5"/><path d="m13.6 4.4-3.2 15.2"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip6">Development</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 3.6v16.8h16.4"/><path d="m7.4 16 3.6-4.6 3 2.6 5.1-6.4"/><circle cx="19.1" cy="7.6" r="1.15" fill="currentColor" stroke="none"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip7">Simulation software</span>
+          </li>
+          <li class="ab-chip">
+            <span class="ab-chip__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.4v3.2A1.4 1.4 0 0 0 5.4 15H8l7.6 4.4V4.6L8 9H5.4A1.4 1.4 0 0 0 4 10.4Z"/><path d="M8 15v4.2"/><path d="M19 9.4a3.6 3.6 0 0 1 0 5.2"/></svg></span>
+            <span class="ab-chip__label" data-i18n="ab_chip8">Marketing solutions</span>
+          </li>
+        </ul>
 
         <div class="wedge-list">
           <div class="wedge-item">
             <span class="micro-label micro-label--accent wedge-item__label" data-i18n="ab_w1_label">Wedge 01 / 03</span>
             <h3 class="h1 wedge-item__title" data-i18n="ab_w1_title">You talk to me, the whole way.</h3>
-            <p class="prose" data-i18n="ab_w1_desc">There is no account manager, no sales department and no handover to a junior. The person on the call is the person building it, and the person answering when the system does something unexpected.</p>
-            <p class="mono-data muted wedge-item__meta" data-i18n="ab_w1_meta">No middleman · One person · Every step</p>
+            <p class="prose" data-i18n="ab_w1_desc">There is no account manager, no sales department and no handover to a junior. The person in the call is the person who builds it, and the person who answers when the system does something unexpected.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="ab_w1_meta">No middle layer · One person · All the way</p>
           </div>
-          <div class="wedge-item">
-            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="ab_w2_label">Wedge 02 / 03</span>
-            <h3 class="h1 wedge-item__title" data-i18n="ab_w2_title">I know the trade, not just the software.</h3>
-            <p class="prose" data-i18n="ab_w2_desc">I have used the systems I build against. I know what a Danish invoice looks like, what account 5700 is, and why an accountant asks for a receipt. That is why the systems fit into what you already have instead of requiring you to change everything.</p>
-            <p class="mono-data muted wedge-item__meta" data-i18n="ab_w2_meta">Bookkeeping · Finance · Teaching · Operations</p>
-          </div>
+        <div class="wedge-item">
+          <span class="micro-label micro-label--accent wedge-item__label" data-i18n="ab_w2_label">Wedge 02 / 03</span>
+          <h3 class="h1 wedge-item__title" data-i18n="ab_w2_title">I know the trade, not only the software.</h3>
+          <p class="prose" data-i18n="ab_w2_desc">I have used the systems I build against. I know what a Danish invoice looks like, what account 5700 means, and why an auditor asks for a receipt. That is why the systems fit into what you already have instead of demanding that you change all of it.</p>
+          <p class="mono-data muted wedge-item__meta" data-i18n="ab_w2_meta">Bookkeeping · Finance · Teaching · Operations</p>
+        </div>
           <div class="wedge-item wedge-item--last">
             <span class="micro-label micro-label--accent wedge-item__label" data-i18n="ab_w3_label">Wedge 03 / 03</span>
-            <h3 class="h1 wedge-item__title" data-i18n="ab_w3_title">I do not take work I cannot do.</h3>
-            <p class="prose" data-i18n="ab_w3_desc">Sometimes a problem needs a different kind of specialist. When that is the case I say so on the first call, and I tell you who can help. That is why I spend half an hour on the first call for free.</p>
-            <p class="mono-data muted wedge-item__meta" data-i18n="ab_w3_meta">Free 30 minutes · Honest answer · Written scope</p>
+            <h3 class="h1 wedge-item__title" data-i18n="ab_w3_title">I do not take work I cannot solve.</h3>
+            <p class="prose" data-i18n="ab_w3_desc">It happens that a problem needs a different kind of specialist than me. When that is the case, I say so on the first call, and I tell you who can do it. That is why I spend half an hour on the first call before anything is agreed.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="ab_w3_meta">Honest answer · Written scope · Straight talk</p>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <!-- ══ HOW I WORK ══ -->
+    <section class="ab-how">
+      <div class="container">
+        <div class="ab-how__head">
+          <span class="ab-eyebrow ab-eyebrow--center">
+            <span class="ab-eyebrow__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.6c.62 4.6 1.94 5.92 6.54 6.54-4.6.62-5.92 1.94-6.54 6.54-.62-4.6-1.94-5.92-6.54-6.54C10.06 8.52 11.38 7.2 12 2.6Z"/></svg></span>
+            <span data-i18n="ab_how_label">How I work</span>
+          </span>
+          <h2 class="display-lg ab-how__title" data-i18n="ab_how_title">From idea to impact.</h2>
+          <p class="ab-how__sub" data-i18n="ab_how_sub">A proven four-step process that keeps the scope clear, the quality high and the result measurable.</p>
+        </div>
+
+        <ol class="ab-steps">
+          <li class="ab-step">
+            <span class="ab-step__badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.6" cy="10.6" r="6.4"/><path d="m15.4 15.4 5.4 5.4"/></svg></span>
+            <h3 class="ab-step__title" data-i18n="ab_step1_title">Discovery</h3>
+            <p class="ab-step__desc" data-i18n="ab_step1_desc">I go in and learn how the work is actually done — your business, your goals, your customers.</p>
+          </li>
+          <li class="ab-step">
+            <span class="ab-step__badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.6 14.4 14.4 3.6l6 6-10.8 10.8-6-6Z"/><path d="m7.2 10.8 2 2M10 8l2 2M12.8 5.2l2 2"/></svg></span>
+            <h3 class="ab-step__title" data-i18n="ab_step2_title">Design</h3>
+            <p class="ab-step__desc" data-i18n="ab_step2_desc">I draw the solution that fits your need precisely, before anything gets built.</p>
+          </li>
+          <li class="ab-step">
+            <span class="ab-step__badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8 20.4 7.2v9.6L12 21.2 3.6 16.8V7.2L12 2.8Z"/><path d="m3.6 7.2 8.4 4.4 8.4-4.4"/><path d="M12 11.6v9.6"/></svg></span>
+            <h3 class="ab-step__title" data-i18n="ab_step3_title">Build</h3>
+            <p class="ab-step__desc" data-i18n="ab_step3_desc">I build the system with continuous feedback and iteration, in short visible rounds.</p>
+          </li>
+          <li class="ab-step">
+            <span class="ab-step__badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v5.4M12 15.6V21M3 12h5.4M15.6 12H21"/><path d="m9.2 5.8 2.8-2.8 2.8 2.8M9.2 18.2l2.8 2.8 2.8-2.8M5.8 9.2 3 12l2.8 2.8M18.2 9.2 21 12l-2.8 2.8"/></svg></span>
+            <h3 class="ab-step__title" data-i18n="ab_step4_title">Deploy & Scale</h3>
+            <p class="ab-step__desc" data-i18n="ab_step4_desc">I put it in production, measure the result and scale it when it earns it.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -241,6 +317,20 @@
       <div class="footer__bottom">
         <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
         <span class="footer__bottom-links">
+          <ul class="footer__socials">
+            <li><a href="mailto:omar@basednode.xyz" class="footer__social">
+              <span class="footer__social-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3 6.6 8.05 5.75a1.6 1.6 0 0 0 1.9 0L21 6.6"/></svg></span>
+              <span data-i18n="foot_social_mail">Email</span>
+            </a></li>
+            <li><a href="https://linkedin.com/in/omar-jennane-576a26265" class="footer__social" target="_blank" rel="noopener noreferrer">
+              <span class="footer__social-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></span>
+              <span data-i18n="foot_social_linkedin">LinkedIn</span>
+            </a></li>
+            <li><a href="https://t.me/IkkeOmar" class="footer__social" target="_blank" rel="noopener noreferrer">
+              <span class="footer__social-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
+              <span data-i18n="foot_social_telegram">Telegram</span>
+            </a></li>
+          </ul>
           <div class="lang-switch lang-switch--dark" role="group" aria-label="Language">
         <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
           <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect width="37" height="28" fill="#D21034"/><rect x="12" width="4" height="28" fill="#FFFFFF"/><rect y="12" width="37" height="4" fill="#FFFFFF"/></svg>

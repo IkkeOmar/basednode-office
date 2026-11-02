@@ -180,7 +180,10 @@ window.BN_I18N = {
    "faq11_a": "I cover bug fixes and small tweaks for a reasonable period. That's just good business.\n\nFor bigger changes or new features, we can work out a fair rate.\n\nIf you've been a client of mine, I always want to make sure you're taken care of.",
    "faq12_q": "Are you going to share my business insights and secrets with others?",
    "faq12_a": "Of course not. I won't disclose anything you tell me, or put in writing, that you don't want shared.\n\nIf it's a system I personally thought up, drafted, tested and built for your company, I will use it as a starting point if another client later needs something similar. But I will strip out anything that could point to your company having that solution.\n\nThe reason I don't disclose which clients I work with, or which solutions I've built, is this: if any of my systems were compromised, or a library or tool I'm building with, knowing my clients would become an attack vector. That's why I take this kind of privacy very seriously.\n\nCall me paranoid — fair.",
-   "faq9_src": "Reference: European Data Protection Board — Secure personal data (guidance for small businesses)."
+   "faq9_src": "Reference: European Data Protection Board — Secure personal data (guidance for small businesses).",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "nav_services": "Hvad jeg bygger",
@@ -361,7 +364,10 @@ window.BN_I18N = {
    "faq11_a": "Jeg dækker fejlrettelser og små justeringer i en rimelig periode. Det er bare god forretningsskik.\n\nStørre ændringer eller nye funktioner kan vi aftale en fair pris for.\n\nHvis du har været kunde hos mig, vil jeg altid sikre mig, at du er godt betjent.",
    "faq12_q": "Vil du fortælle andre om mine forretningshemmeligheder?",
    "faq12_a": "Slet ikke. Jeg afslører intet, du fortæller mig eller skriver ned, som du ikke vil deler.\n\nHvis det er et system, jeg selv har tænkt, skrevet, testet og bygget til din virksomhed, bruger jeg det som udgangspunkt, hvis en anden kunde senere har brug for noget lignende. Men jeg fjerner alt, der kan pege på, at din virksomhed har den løsning.\n\nGrunden til, at jeg ikke fortæller, hvilke kunder jeg har, eller hvilke løsninger jeg har bygget, er denne: Hvis et af mine systemer blev kompromitteret — eller et bibliotek eller værktøj, jeg bygger videre på — ville kendskab til mine kunder være en angrebsflade. Derfor tager jeg den slags privatliv meget alvorligt.\n\nKald mig paranoid — fair nok.",
-   "faq9_src": "Kilde: Europæiske Datatilsyn — Beskyttelse af personoplysninger (vejledning til små virksomheder)."
+   "faq9_src": "Kilde: Europæiske Datatilsyn — Beskyttelse af personoplysninger (vejledning til små virksomheder).",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "cases": {
@@ -482,7 +488,10 @@ window.BN_I18N = {
    "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Five systems, one question.",
-   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds."
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "cs_head_label": "§ 05 — Cases",
@@ -601,7 +610,10 @@ window.BN_I18N = {
    "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
-   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder."
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "services": {
@@ -816,7 +828,10 @@ window.BN_I18N = {
    "faq11_a": "I cover bug fixes and small tweaks for a reasonable period. That's just good business.\n\nFor bigger changes or new features, we can work out a fair rate.\n\nIf you've been a client of mine, I always want to make sure you're taken care of.",
    "faq12_q": "Are you going to share my business insights and secrets with others?",
    "faq12_a": "Of course not. I won't disclose anything you tell me, or put in writing, that you don't want shared.\n\nIf it's a system I personally thought up, drafted, tested and built for your company, I will use it as a starting point if another client later needs something similar. But I will strip out anything that could point to your company having that solution.\n\nThe reason I don't disclose which clients I work with, or which solutions I've built, is this: if any of my systems were compromised, or a library or tool I'm building with, knowing my clients would become an attack vector. That's why I take this kind of privacy very seriously.\n\nCall me paranoid — fair.",
-   "faq9_src": "Reference: European Data Protection Board — Secure personal data (guidance for small businesses)."
+   "faq9_src": "Reference: European Data Protection Board — Secure personal data (guidance for small businesses).",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "nav_services": "Hvad jeg bygger",
@@ -1029,7 +1044,10 @@ window.BN_I18N = {
    "faq11_a": "Jeg dækker fejlrettelser og små justeringer i en rimelig periode. Det er bare god forretningsskik.\n\nStørre ændringer eller nye funktioner kan vi aftale en fair pris for.\n\nHvis du har været kunde hos mig, vil jeg altid sikre mig, at du er godt betjent.",
    "faq12_q": "Vil du fortælle andre om mine forretningshemmeligheder?",
    "faq12_a": "Slet ikke. Jeg afslører intet, du fortæller mig eller skriver ned, som du ikke vil deler.\n\nHvis det er et system, jeg selv har tænkt, skrevet, testet og bygget til din virksomhed, bruger jeg det som udgangspunkt, hvis en anden kunde senere har brug for noget lignende. Men jeg fjerner alt, der kan pege på, at din virksomhed har den løsning.\n\nGrunden til, at jeg ikke fortæller, hvilke kunder jeg har, eller hvilke løsninger jeg har bygget, er denne: Hvis et af mine systemer blev kompromitteret — eller et bibliotek eller værktøj, jeg bygger videre på — ville kendskab til mine kunder være en angrebsflade. Derfor tager jeg den slags privatliv meget alvorligt.\n\nKald mig paranoid — fair nok.",
-   "faq9_src": "Kilde: Europæiske Datatilsyn — Beskyttelse af personoplysninger (vejledning til små virksomheder)."
+   "faq9_src": "Kilde: Europæiske Datatilsyn — Beskyttelse af personoplysninger (vejledning til små virksomheder).",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "about": {
@@ -1041,20 +1059,20 @@ window.BN_I18N = {
    "ab_meta2": "DTU · Physics & Nanotechnology",
    "ab_meta3": "Languages: Danish and English",
    "ab_s1_label": "§ 01 — Why it is me",
-   "ab_s1_title": "I can do it cheaply, because making it expensive is not my life's work.",
-   "ab_s1_desc": "There is a reason most small companies have not automated anything: hiring a developer is expensive, and it is hard to know whether it is worth it. I think most of the processes running inside a small company are easy to automate. They have simply never been built, because nobody had the time to go in and find out how the work actually gets done. That is what I go in and do. And because it is me rather than an agency, it costs less, and you talk to the person writing the code.",
+   "ab_s1_title": "I can do it cheaply, because making it expensive is not my life’s work.",
+   "ab_s1_desc": "There is a reason most small companies have not automated anything: hiring a developer is expensive, and it is hard to know whether it is worth the money. I think most of the processes that run inside a small company are easy to automate. They have just not been built, because nobody had time to go in and find out how the work is actually done. That is what I go in and do. And because it is me and not an agency, it costs less, and you talk to the person writing the code.",
    "ab_w1_label": "Wedge 01 / 03",
    "ab_w1_title": "You talk to me, the whole way.",
-   "ab_w1_desc": "There is no account manager, no sales department and no handover to a junior. The person on the call is the person building it, and the person answering when the system does something unexpected.",
-   "ab_w1_meta": "No middleman · One person · Every step",
+   "ab_w1_desc": "There is no account manager, no sales department and no handover to a junior. The person in the call is the person who builds it, and the person who answers when the system does something unexpected.",
+   "ab_w1_meta": "No middle layer · One person · All the way",
    "ab_w2_label": "Wedge 02 / 03",
-   "ab_w2_title": "I know the trade, not just the software.",
-   "ab_w2_desc": "I have used the systems I build against. I know what a Danish invoice looks like, what account 5700 is, and why an accountant asks for a receipt. That is why the systems fit into what you already have instead of requiring you to change everything.",
+   "ab_w2_title": "I know the trade, not only the software.",
+   "ab_w2_desc": "I have used the systems I build against. I know what a Danish invoice looks like, what account 5700 means, and why an auditor asks for a receipt. That is why the systems fit into what you already have instead of demanding that you change all of it.",
    "ab_w2_meta": "Bookkeeping · Finance · Teaching · Operations",
    "ab_w3_label": "Wedge 03 / 03",
-   "ab_w3_title": "I do not take work I cannot do.",
-   "ab_w3_desc": "Sometimes a problem needs a different kind of specialist. When that is the case I say so on the first call, and I tell you who can help. That is why I spend half an hour on the first call for free.",
-   "ab_w3_meta": "Free 30 minutes · Honest answer · Written scope",
+   "ab_w3_title": "I do not take work I cannot solve.",
+   "ab_w3_desc": "It happens that a problem needs a different kind of specialist than me. When that is the case, I say so on the first call, and I tell you who can do it. That is why I spend half an hour on the first call before anything is agreed.",
+   "ab_w3_meta": "Honest answer · Written scope · Straight talk",
    "ab_s2_label": "§ 02 — Background",
    "ab_s2_title": "Teaching, industry and software since 2019.",
    "ab_t1_date": "2019",
@@ -1123,7 +1141,29 @@ window.BN_I18N = {
    "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Five systems, one question.",
-   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds."
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain Danish. The answer takes nine seconds.",
+   "ab_chip1": "M.Sc. in Engineering in Physics & Nanotechnology, DTU",
+   "ab_chip2": "Lead Generation & follow-up",
+   "ab_chip3": "Agentic Systems",
+   "ab_chip4": "Cloud Infrastructure",
+   "ab_chip5": "Self hosting solutions",
+   "ab_chip6": "Development",
+   "ab_chip7": "Simulation software",
+   "ab_chip8": "Marketing solutions",
+   "ab_how_label": "How I work",
+   "ab_how_title": "From idea to impact.",
+   "ab_how_sub": "A proven four-step process that keeps the scope clear, the quality high and the result measurable.",
+   "ab_step1_title": "Discovery",
+   "ab_step1_desc": "I go in and learn how the work is actually done — your business, your goals, your customers.",
+   "ab_step2_title": "Design",
+   "ab_step2_desc": "I draw the solution that fits your need precisely, before anything gets built.",
+   "ab_step3_title": "Build",
+   "ab_step3_desc": "I build the system with continuous feedback and iteration, in short visible rounds.",
+   "ab_step4_title": "Deploy & Scale",
+   "ab_step4_desc": "I put it in production, measure the result and scale it when it earns it.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "ab_label": "Om mig",
@@ -1215,7 +1255,29 @@ window.BN_I18N = {
    "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
-   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder."
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt dansk. Svaret tager ni sekunder.",
+   "ab_chip1": "Civilingeniør i Fysik & Nanoteknologi, DTU",
+   "ab_chip2": "Leadgenerering & opfølgning",
+   "ab_chip3": "Agentbaserede systemer",
+   "ab_chip4": "Cloudinfrastruktur",
+   "ab_chip5": "Selvhostede løsninger",
+   "ab_chip6": "Udvikling",
+   "ab_chip7": "Simulationssoftware",
+   "ab_chip8": "Marketingløsninger",
+   "ab_how_label": "Sådan arbejder jeg",
+   "ab_how_title": "Fra idé til resultat.",
+   "ab_how_sub": "En dokumenteret firetrinsproces, der holder omfanget klart, kvaliteten høj og resultatet målbart.",
+   "ab_step1_title": "Afdækning",
+   "ab_step1_desc": "Jeg går ind og lærer, hvordan arbejdet faktisk bliver lavet — din forretning, dine mål, dine kunder.",
+   "ab_step2_title": "Design",
+   "ab_step2_desc": "Jeg tegner den løsning, der passer præcist til dit behov, før der bygges noget.",
+   "ab_step3_title": "Byg",
+   "ab_step3_desc": "Jeg bygger systemet med løbende feedback og iteration i korte, synlige runder.",
+   "ab_step4_title": "Sæt i drift & skaler",
+   "ab_step4_desc": "Jeg sætter det i drift, måler resultatet og skalerer, når det har fortjent det.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "resources": {
@@ -1338,7 +1400,10 @@ window.BN_I18N = {
    "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Five systems, one question.",
-   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "rs_label": "Ressourcer",
@@ -1459,7 +1524,10 @@ window.BN_I18N = {
    "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
-   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "security": {
@@ -1551,7 +1619,10 @@ window.BN_I18N = {
    "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Five systems, one question.",
-   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "sec_label": "Sikkerhed & privatliv",
@@ -1641,7 +1712,10 @@ window.BN_I18N = {
    "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
-   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "privacy": {
@@ -1712,7 +1786,10 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
    "prv_s4_body2": "I do not store information about your customers or suppliers. It is not data I have any reason to own. I build the system, and the data stays in your own systems — and when a system is ready to go live, it is moved to you, unless you specifically ask me to host it for you. That only happens by agreement, and then it is written down what is part of that agreement.",
    "prv_plain_title": "The short version",
-   "prv_plain_body": "This page stores nothing about you. No cookies, no analytics, no tracking. And when we build a system together, your customer data is yours — it stays in your own system, and I do not move it to me unless you ask me to."
+   "prv_plain_body": "This page stores nothing about you. No cookies, no analytics, no tracking. And when we build a system together, your customer data is yours — it stays in your own system, and I do not move it to me unless you ask me to.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "prv_label": "Privatlivspolitik",
@@ -1781,7 +1858,10 @@ window.BN_I18N = {
    "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
    "prv_s4_body2": "Oplysninger om dine kunder og leverandører gemmer jeg ikke. Det er ikke data, jeg har noget i at eje. Jeg bygger systemet, og data bliver i dine egne systemer — og når et system står klar til at blive taget i brug, flytter det data til dig, medmindre du udtrykkeligt beder mig om at hoste det for dig. Det sker kun efter aftale, og så står det skriftligt, hvad der er en del af aftalen.",
    "prv_plain_title": "Kort sagt",
-   "prv_plain_body": "Denne side gemmer intet om dig. Den har ingen cookies, ingen analyseværktøjer og ingen sporing. Og når vi bygger et system sammen, er dine kundedata dine — de bliver i dit eget system, og jeg flytter dem ikke til mig, medmindre du beder mig om det."
+   "prv_plain_body": "Denne side gemmer intet om dig. Den har ingen cookies, ingen analyseværktøjer og ingen sporing. Og når vi bygger et system sammen, er dine kundedata dine — de bliver i dit eget system, og jeg flytter dem ikke til mig, medmindre du beder mig om det.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "contact": {
@@ -1902,7 +1982,10 @@ window.BN_I18N = {
    "ct_step2_desc": "We look at your week and your systems. I tell you what can be automated, what cannot, and how long it takes. If I am not the right person for it, I say so on that call.",
    "ct_step3_date": "Step 03",
    "ct_step3_title": "Written scope and fixed price",
-   "ct_step3_desc": "You get a written description of exactly what the system does, and a fixed price. Only once you have approved it do I start. If the scope changes along the way, the price changes with it, in writing."
+   "ct_step3_desc": "You get a written description of exactly what the system does, and a fixed price. Only once you have approved it do I start. If the scope changes along the way, the price changes with it, in writing.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "ct_label": "Kontakt",
@@ -2021,7 +2104,10 @@ window.BN_I18N = {
    "ct_step2_desc": "Vi ser på din uge og dine systemer. Jeg fortæller dig, hvad der kan automatiseres, hvad der ikke kan, og hvor lang tid det tager. Hvis jeg ikke er den rigtige til opgaven, siger jeg det på det opkald.",
    "ct_step3_date": "Skridt 03",
    "ct_step3_title": "Skriftligt omfang og fast pris",
-   "ct_step3_desc": "Du får en skriftlig beskrivelse af, præcis hvad systemet gør, og en fast pris. Først når du har godkendt den, begynder jeg. Ændrer omfanget sig undervejs, ændrer prisen sig med, skriftligt."
+   "ct_step3_desc": "Du får en skriftlig beskrivelse af, præcis hvad systemet gør, og en fast pris. Først når du har godkendt den, begynder jeg. Ændrer omfanget sig undervejs, ændrer prisen sig med, skriftligt.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  },
  "terms": {
@@ -2104,7 +2190,10 @@ window.BN_I18N = {
    "flow_support_spec": "2,500 tickets a day. Order data pulled, a real answer drafted, closed without a person touching it.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Five systems, one question.",
-   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds."
+   "flow_dashboard_spec": "Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.",
+   "foot_social_mail": "Email",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   },
   "da": {
    "tm_label": "Vilkår",
@@ -2185,7 +2274,10 @@ window.BN_I18N = {
    "flow_support_spec": "2.500 sager om dagen. Ordredata hentet, et rigtigt svar skrevet, lukket uden at en person rører det.",
    "flow_dashboard_sku": "FLOW 03",
    "flow_dashboard_name": "Fem systemer, ét spørgsmål.",
-   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder."
+   "flow_dashboard_spec": "Tal samlet fra alle kilder og derefter spurgt til i almindeligt sprog. Svaret tager ni sekunder.",
+   "foot_social_mail": "E-mail",
+   "foot_social_linkedin": "LinkedIn",
+   "foot_social_telegram": "Telegram"
   }
  }
 };

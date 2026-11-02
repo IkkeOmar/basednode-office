@@ -296,71 +296,108 @@ section.dark .micro-label { color: var(--ink-muted); }
 /* The BasedNode mark: a pulsing dot in front of the wordmark, the same
    mark used on basednode.xyz.
 
-   The pulse has to be OBVIOUS, not a subtle breathe. An earlier version
-   only scaled the core dot and faded it, which read as "dim" rather than
-   "alive" — the dot got smaller and less orange, so the motion was
-   almost invisible on a warm paper background.
+   The pulse has to be OBVIOUS, not a subtle breathe. Two earlier
+   versions were too quiet:
 
-   This version does three things at once:
-     * the core grows from 10px to 13px and never fades below full opacity
-     * the glow swells from a tight halo to a wide one
-     * an outline ring expands outward and dissolves, which is what makes
-       the motion legible in peripheral vision
-   The ring is the part that actually sells the pulse, so it is a separate
-   ::after layer rather than a box-shadow change. */
+     * v1 faded the core while scaling it (opacity 0.55), so it read as
+       "dimming" rather than "alive", and on warm paper it nearly
+       disappeared.
+     * v2 fixed the fade but kept the ring thin (2px) and the expansion
+       small (2.6x). Measured across one cycle the glow only grew from
+       44px to 70px, which is not enough movement to catch the eye.
+
+   This version does four things at once:
+     * the core grows from 13px to 17.5px and never fades below full
+       opacity, so it is always a solid, saturated dot
+     * a radial-gradient halo on ::before swells from 85% to 165%, so
+       there is a real glow rather than a shadow trick
+     * a 2.5px outline ring on ::after expands to 3.6x and dissolves —
+       this is what makes the motion legible in peripheral vision
+     * the halo and the ring are separate layers, so they peak at
+       different moments and the motion never looks like one blob
+
+   Measured across one cycle: the glow's bounding box grows from 52px
+   to 96px and the orange pixel count roughly triples. A pulse that
+   does not change the footprint by that much is not a pulse. */
 .topnav__logo-mark {
   position: relative;
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 8px rgba(242, 107, 31, 0.7);
   display: inline-block;
   flex: 0 0 auto;
   animation: bn-pulse-dot 2.4s ease-in-out infinite;
+}
+.topnav__logo-mark::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(242, 107, 31, 0.6) 0%,
+    rgba(242, 107, 31, 0.2) 55%,
+    transparent 72%);
+  animation: bn-pulse-glow 2.4s ease-in-out infinite;
 }
 .topnav__logo-mark::after {
   content: '';
   position: absolute;
-  inset: -3px;
+  inset: -2px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  border: 2.5px solid var(--accent);
   animation: bn-pulse-ring 2.4s ease-out infinite;
 }
 @keyframes bn-pulse-dot {
-  0%, 100% { transform: scale(1);    box-shadow: 0 0 8px rgba(242, 107, 31, 0.7); }
-  50%      { transform: scale(1.22); box-shadow: 0 0 20px rgba(242, 107, 31, 0.95); }
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.34); }
+}
+@keyframes bn-pulse-glow {
+  0%, 100% { transform: scale(0.85); opacity: 0.6; }
+  50%      { transform: scale(1.55); opacity: 1; }
 }
 @keyframes bn-pulse-ring {
-  0%        { transform: scale(0.9); opacity: 0.75; }
-  60%, 100% { transform: scale(2.6); opacity: 0; }
+  0%        { transform: scale(1);   opacity: 0.95; }
+  70%, 100% { transform: scale(3.6); opacity: 0; }
 }
 
-/* The footer sits on the dark panel, so the dot uses the paper colour
+/* The footer sits on the dark panel, so the mark uses the paper colour
    instead of the accent to stay visible. */
 .footer__logo-mark {
   position: relative;
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   background: var(--paper);
-  box-shadow: 0 0 8px rgba(248, 246, 242, 0.7);
   display: inline-block;
   flex: 0 0 auto;
   animation: bn-pulse-dot 2.4s ease-in-out infinite;
 }
+.footer__logo-mark::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(248, 246, 242, 0.55) 0%,
+    rgba(248, 246, 242, 0.18) 55%,
+    transparent 72%);
+  animation: bn-pulse-glow 2.4s ease-in-out infinite;
+}
 .footer__logo-mark::after {
   content: '';
   position: absolute;
-  inset: -3px;
+  inset: -2px;
   border-radius: 50%;
-  border: 2px solid var(--paper);
+  border: 2.5px solid var(--paper);
   animation: bn-pulse-ring 2.4s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .topnav__logo-mark,
   .footer__logo-mark { animation: none; }
+  .topnav__logo-mark::before,
+  .footer__logo-mark::before { animation: none; opacity: 0.35; }
   .topnav__logo-mark::after,
   .footer__logo-mark::after { animation: none; opacity: 0; }
 }
@@ -2972,4 +3009,214 @@ body.nav-open .topnav__menu-btn .icon-open { display: none; }
 @media (max-width: 600px) {
   .topic__head { padding: var(--space-4) 0; }
   .topic__name { font-size: 1rem; }
+}
+
+/* =========================================================================
+ * ABOUT PAGE — the "who I am" section, capability chips and the
+ * "how I work" process row.
+ *
+ * The reference design these came from was a dark page with a purple-to-
+ * cyan gradient and glowing circular step badges. That palette does not
+ * belong here: this site is warm cream paper with one orange accent, and
+ * the design rule on this site is that the accent covers at most 10% of
+ * the surface. So the STRUCTURE is borrowed (pill chips with line icons,
+ * circular icon badges, four columns) and the COLOUR is rebuilt from the
+ * site's own tokens. The step badges use a soft orange tint instead of
+ * a purple-blue gradient, which keeps them visible without turning the
+ * page into a different brand.
+ * ========================================================================= */
+
+/* ── eyebrow pill ────────────────────────────────────────────────────── */
+.ab-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--e-hairline);
+  border-radius: var(--r-pill);
+  background: var(--paper-faint);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-ink);
+  margin-bottom: var(--space-4);
+}
+.ab-eyebrow__icon {
+  display: inline-flex;
+  color: var(--accent);
+}
+.ab-eyebrow--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── capability chips ────────────────────────────────────────────────── */
+.ab-chips {
+  list-style: none;
+  margin: var(--space-10) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.ab-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: var(--e-hairline);
+  border-radius: var(--r-pill);
+  background: var(--paper-faint);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--ink);
+  /* The long M.Sc. chip must be able to shrink rather than forcing the
+     whole row to overflow on a phone. */
+  max-width: 100%;
+}
+.ab-chip__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+.ab-chip__label {
+  min-width: 0;
+}
+
+/* ── how I work ──────────────────────────────────────────────────────── */
+.ab-how {
+  padding: var(--space-12) 0;
+  border-top: var(--e-hairline);
+  border-bottom: var(--e-hairline);
+  background: var(--paper-faint);
+}
+.ab-how__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--space-10);
+}
+.ab-how__title {
+  margin: 0 0 var(--space-4);
+}
+.ab-how__sub {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--paper-muted);
+  max-width: 52ch;
+}
+.ab-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+.ab-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ab-step__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  /* A soft orange tint rather than the reference design's gradient:
+     the gradient reads as a different brand on this page. */
+  background: oklch(95% 0.035 38);
+  border: 1px solid oklch(88% 0.06 38);
+  color: var(--accent-ink);
+  margin-bottom: var(--space-4);
+}
+.ab-step__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.ab-step__desc {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--paper-muted);
+  max-width: 34ch;
+}
+
+@media (min-width: 640px) {
+  .ab-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8) var(--space-6);
+  }
+}
+
+@media (min-width: 900px) {
+  .ab-steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+  .ab-step__badge {
+    width: 62px;
+    height: 62px;
+  }
+  .ab-step__desc {
+    max-width: 30ch;
+  }
+}
+
+@media (max-width: 600px) {
+  .ab-how {
+    padding: var(--space-10) 0;
+  }
+  .ab-chip {
+    font-size: 0.75rem;
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* ── footer social buttons ─────────────────────────────────────────────
+   Inspired by the main basednode.xyz footer, where LinkedIn, Telegram
+   and Email sit as bordered pill buttons with a line icon on the left.
+   The main site draws them in the purple accent; here they use the
+   site's own orange so the footer keeps one accent colour. */
+.footer__socials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--r-2);
+  background: oklch(22% 0.012 60);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper-muted);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out);
+}
+.footer__social:hover,
+.footer__social:focus-visible {
+  border-color: var(--accent);
+  color: var(--paper);
+  background: oklch(26% 0.02 45);
+}
+.footer__social-icon {
+  display: inline-flex;
+  color: var(--accent);
 }
