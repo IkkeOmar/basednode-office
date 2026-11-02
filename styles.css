@@ -2303,9 +2303,10 @@ section.dark .micro-label { color: var(--ink-muted); }
 /* The panel: fixed to the header, full-bleed, slides down from under it. */
 .mobile-menu {
   position: fixed;
-  /* 1px down so it covers the header's own bottom border instead of
-     sitting flush against it and leaving a hairline seam */
-  top: calc(var(--header-h) + 1px);
+  /* -1px so the panel overlaps the header's own bottom border instead of
+     leaving a hairline seam between the bar and the panel. The panel is a
+     child of the header, so it paints over the parent's border. */
+  top: calc(var(--header-h) - 1px);
   left: 0;
   right: 0;
   z-index: calc(var(--z-raised) - 1);
@@ -2360,7 +2361,7 @@ section.dark .micro-label { color: var(--ink-muted); }
 /* The scrim behind the panel, so tapping outside closes it */
 .nav-scrim {
   position: fixed;
-  inset: calc(var(--header-h) + 1px) 0 0 0;
+  inset: var(--header-h) 0 0 0;
   z-index: calc(var(--z-raised) - 2);
   background: oklch(18% 0.012 60 / 0.28);
   opacity: 0;
@@ -2384,6 +2385,14 @@ body.nav-open { overflow: hidden; }
 .topnav__menu-btn .icon-close { display: none; }
 body.nav-open .topnav__menu-btn .icon-close { display: block; }
 body.nav-open .topnav__menu-btn .icon-open { display: none; }
+
+/* The panel exists only below the desktop breakpoint. On desktop the
+   inline nav links take over, so the panel must be fully out of the
+   tree — not just invisible — or it sits over the page. */
+@media (min-width: 900px) {
+  .mobile-menu { display: none; }
+  .nav-scrim { display: none; }
+}
 
 /* Reduced motion: no slide, no fade */
 @media (prefers-reduced-motion: reduce) {
