@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F6F2" />
+  <title>BasedNode — Invoicing, bookkeeping and admin. Automated.</title>
+  <meta name="description" content="BasedNode builds the software that runs the repetitive part of a small Danish company: reading incoming invoices, posting them, chasing leads, answering the same customer question. Fixed price or revenue share." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-to-content" href="#main">Skip to content</a>
+
+  <header class="topnav">
+    <div class="container topnav__inner">
+      <a href="index.html" class="topnav__logo" aria-label="BasedNode home">
+        <span class="topnav__logo-mark" aria-hidden="true"></span>
+        <span>BasedNode</span>
+        <span class="topnav__logo-meta">Copenhagen · Since 2019</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="topnav__links">
+          <li><a href="#services" data-i18n="nav_services">What I build</a></li>
+          <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+          <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="topnav__actions">
+        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
+          <span data-lang-label>DA</span>
+        </button>
+        <a href="#contact" class="btn btn--secondary btn--sm topnav__cta" data-i18n="nav_cta">Talk to me</a>
+        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="40" y1="64" x2="216" y2="64"/>
+            <line x1="40" y1="128" x2="216" y2="128"/>
+            <line x1="40" y1="192" x2="216" y2="192"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
+    <ul>
+      <li><a href="#services" data-i18n="nav_services">What I build</a></li>
+      <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+      <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+      <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- ══ HERO — copy left, the workflow drawing right ══ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+
+          <div class="hero__text">
+            <span class="hero__eyebrow" data-i18n="hero_eyebrow">AI &amp; automation studio · Copenhagen</span>
+            <h1 class="display-xl hero__title" data-i18n="hero_title">Invoicing, bookkeeping and admin. Automated.</h1>
+            <p class="hero__sub" data-i18n="hero_sub">I build the software that runs the repetitive part of a small company: reading incoming invoices, posting them to the ledger, following up on leads, and answering the same customer question fifty times. You get a working system, documented, that you own.</p>
+
+            <div class="hero__ctas">
+              <a href="#services" class="btn btn--primary btn--lg" data-i18n="hero_cta1">See what I build</a>
+              <a href="#contact" class="btn btn--secondary btn--lg" data-i18n="hero_cta2">Talk to me</a>
+            </div>
+            <p class="hero__hint" data-i18n="hero_hint">Fixed price or revenue share. Code, documentation and data stay yours. No lock-in, and nothing to log into.</p>
+          </div>
+
+          <!-- The one decisive visual: a real schematic of the work being automated -->
+          <a href="#how" class="hero__drawing">
+            <div class="hero__drawing-frame">
+              <img src="_assets/illustrations/workflow-invoice.svg" alt="Schematic of an invoice being received, read and posted to the ledger" />
+            </div>
+            <div class="hero__drawing-meta">
+              <span class="hero__drawing-sku">FLOW 01</span>
+              <span class="hero__drawing-name" data-i18n="drawing_name">Invoice in, booked, done</span>
+              <span class="hero__drawing-spec" data-i18n="drawing_spec">Supplier PDF read, VAT split, posted to account 5700. 4.5 minutes of manual work becomes zero.</span>
+              <span class="hero__drawing-link" data-i18n="drawing_link">See what it costs →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 01 — WHAT I BUILD ══ -->
+    <section class="tight" id="services">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s1_label">§ 01 — What I build</span>
+          <h2 class="display-lg" data-i18n="s1_title">Seven things I build. Most companies need two.</h2>
+          <p class="prose" data-i18n="s1_desc">Each one is a piece of software that runs on its own after I hand it over. You do not need all seven. Most people start with the first one, feel the difference in a week, and come back for the second.</p>
+        </div>
+
+        <div class="cat-dir" aria-label="Services">
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 01</span>
+            <span class="cat-dir__name" data-i18n="svc1_name">AI agents</span>
+            <span class="cat-dir__lead" data-i18n="svc1_lead">Answers support questions from your own documents</span>
+            <span class="cat-dir__count" data-i18n="svc1_price">from 8,500 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 02</span>
+            <span class="cat-dir__name" data-i18n="svc2_name">Workflow automation</span>
+            <span class="cat-dir__lead" data-i18n="svc2_lead">Invoices, mail routing, approvals, reminders</span>
+            <span class="cat-dir__count" data-i18n="svc2_price">from 12,000 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 03</span>
+            <span class="cat-dir__name" data-i18n="svc3_name">Data pipelines</span>
+            <span class="cat-dir__lead" data-i18n="svc3_lead">Your data from five systems, cleaned and joined</span>
+            <span class="cat-dir__count" data-i18n="svc3_price">from 9,000 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 04</span>
+            <span class="cat-dir__name" data-i18n="svc4_name">Cost work</span>
+            <span class="cat-dir__lead" data-i18n="svc4_lead">Same result, smaller model bill</span>
+            <span class="cat-dir__count" data-i18n="svc4_price">from 4,000 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 05</span>
+            <span class="cat-dir__name" data-i18n="svc5_name">Dashboards and internal tools</span>
+            <span class="cat-dir__lead" data-i18n="svc5_lead">One screen with the numbers, askable in plain Danish</span>
+            <span class="cat-dir__count" data-i18n="svc5_price">from 15,000 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 06</span>
+            <span class="cat-dir__name" data-i18n="svc6_name">Marketing automation</span>
+            <span class="cat-dir__lead" data-i18n="svc6_lead">Every lead followed up, without a spreadsheet</span>
+            <span class="cat-dir__count" data-i18n="svc6_price">from 7,000 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+          <a class="cat-dir__row" href="#contact">
+            <span class="cat-dir__num">§ 07</span>
+            <span class="cat-dir__name" data-i18n="svc7_name">Full AI products</span>
+            <span class="cat-dir__lead" data-i18n="svc7_lead">An app built from scratch, for a fixed price or a share</span>
+            <span class="cat-dir__count" data-i18n="svc7_price">from 30,000 DKK</span>
+            <span class="cat-dir__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 02 — HOW IT WORKS ══ -->
+    <section id="how">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s2_label">§ 02 — How it works</span>
+          <h2 class="display-lg" data-i18n="s2_title">Three things you get that a template does not give you.</h2>
+          <p class="prose" data-i18n="s2_desc">Not because anyone else is bad at this. Because a template was never written for your week, your systems, or your way of working.</p>
+        </div>
+
+        <div class="wedge-list">
+          <div class="wedge-item">
+            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge1_label">Wedge 01 / 03</span>
+            <h3 class="h1 wedge-item__title" data-i18n="wedge1_title">You own it.</h3>
+            <p class="prose" data-i18n="wedge1_desc">The code sits in your accounts, the documentation is written for you, and the data stays with you. If we stop working together, nothing breaks and nobody has to ask permission to keep it running.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="wedge1_meta">Your accounts · Your data · Your copy</p>
+          </div>
+          <div class="wedge-item">
+            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge2_label">Wedge 02 / 03</span>
+            <h3 class="h1 wedge-item__title" data-i18n="wedge2_title">Plain language, no theatre.</h3>
+            <p class="prose" data-i18n="wedge2_desc">You will not get a slide deck about how AI is changing everything. You get a screen that does the job, and a number to call when it does something you did not expect.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="wedge2_meta">Documented · Explained · Runnable by you</p>
+          </div>
+          <div class="wedge-item wedge-item--last">
+            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge3_label">Wedge 03 / 03</span>
+            <h3 class="h1 wedge-item__title" data-i18n="wedge3_title">Scope before price.</h3>
+            <p class="prose" data-i18n="wedge3_desc">We agree on exactly what the system does before I quote it. If the scope changes, the price changes with it, in writing. No surprise invoice in month three.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="wedge3_meta">Written scope · Fixed price · Change log</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 03 — THE PRICE MOMENT ══ -->
+    <section>
+      <div class="container">
+        <div class="moment">
+          <div>
+            <h2 class="moment__heading" data-i18n="moment_heading">One project, one price. This is what a typical automation looks like.</h2>
+            <p class="muted" data-i18n="moment_sub">The order that takes two hours to place anywhere else, itemised here so you can see what you are paying for.</p>
+            <ul class="moment__items">
+              <li data-i18n="m_item1">1 × Setup: invoice to ledger, installed</li>
+              <li data-i18n="m_item2">1 × Agent answering from your own documents</li>
+              <li data-i18n="m_item3">4 × Connections (CRM, ERP, mail, storage)</li>
+              <li data-i18n="m_item4">1 × Running and monitoring, 12 months</li>
+            </ul>
+            <p class="mono-data muted moment__total" data-i18n="m_total">Total: 30,100 DKK · excl. VAT · delivered in 3 weeks</p>
+            <div class="moment__cta">
+              <a href="#contact" class="btn btn--primary" data-i18n="moment_cta">Get a price for yours</a>
+            </div>
+          </div>
+          <div class="moment__visual" aria-hidden="true">
+            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- project schedule, drawn like a drawing sheet -->
+              <rect class="ink thin" x="4" y="4" width="312" height="192" />
+              <g class="muted hair">
+                <line x1="40" y1="40" x2="300" y2="40" />
+                <line x1="40" y1="76" x2="300" y2="76" />
+                <line x1="40" y1="112" x2="300" y2="112" />
+                <line x1="40" y1="148" x2="300" y2="148" />
+              </g>
+              <g class="muted thin">
+                <line x1="40" y1="28" x2="40" y2="160" />
+                <line x1="105" y1="28" x2="105" y2="160" />
+                <line x1="170" y1="28" x2="170" y2="160" />
+                <line x1="235" y1="28" x2="235" y2="160" />
+                <line x1="300" y1="28" x2="300" y2="160" />
+              </g>
+              <!-- the four deliverables as bars -->
+              <rect class="ink" x="42" y="32" width="126" height="14" rx="2" />
+              <rect class="ink" x="107" y="68" width="126" height="14" rx="2" />
+              <rect class="ink" x="172" y="104" width="63" height="14" rx="2" />
+              <rect class="accent" x="236" y="140" width="63" height="14" rx="2" fill="#F26B1F" stroke="none" />
+              <!-- week markers -->
+              <g class="muted-text" style="font-size:7px" fill="#6F6A60" stroke="none" font-family="ui-monospace, monospace">
+                <text x="40" y="24">UGE 1</text>
+                <text x="105" y="24">UGE 2</text>
+                <text x="170" y="24">UGE 3</text>
+                <text x="235" y="24">UGE 4</text>
+              </g>
+              <!-- labels -->
+              <g style="font-size:7.5px" fill="#6F6A60" stroke="none" font-family="ui-monospace, monospace">
+                <text x="42" y="178">OPSÆTNING</text>
+                <text x="107" y="178">AGENT</text>
+                <text x="172" y="178">FORBINDELSER</text>
+                <text x="236" y="178">DRIFT</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 04 — NUMBERS ══ -->
+    <section class="tight">
+      <div class="container">
+        <div class="stat-block">
+          <div class="stat">
+            <span class="stat__label" data-i18n="stat1_label">Projects delivered</span>
+            <span class="stat__value">50<span class="stat__value-unit">+</span></span>
+            <span class="stat__note" data-i18n="stat1_note">since 2019, across finance, retail, education and logistics</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label" data-i18n="stat2_label">Client satisfaction</span>
+            <span class="stat__value">98<span class="stat__value-unit">%</span></span>
+            <span class="stat__note" data-i18n="stat2_note">measured on projects that ran longer than one month</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label" data-i18n="stat3_label">Model cost reduction</span>
+            <span class="stat__value">80–100<span class="stat__value-unit">×</span></span>
+            <span class="stat__note" data-i18n="stat3_note">on the API-heavy systems I took over from other teams</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label" data-i18n="stat4_label">Fixed price from</span>
+            <span class="stat__value">4,000<span class="stat__value-unit">DKK</span></span>
+            <span class="stat__note" data-i18n="stat4_note">one small, finished thing, delivered and documented</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TECH STRIP ══ -->
+    <section class="tight">
+      <div class="container">
+        <div class="trust-strip">
+          <span class="micro-label trust-strip__lead" data-i18n="tech_lead">I work with</span>
+          <span>Python</span>
+          <span>FastAPI</span>
+          <span>Postgres</span>
+          <span>n8n</span>
+          <span>OpenAI</span>
+          <span>Anthropic</span>
+          <span>Next.js</span>
+          <span>Docker</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 05 — THE PROMISE ══ -->
+    <section class="airy">
+      <div class="container container--narrow">
+        <span class="micro-label section-label" data-i18n="s3_label">§ 03 — The promise</span>
+        <p class="display-lg pullquote" data-i18n="promise">The code, the documentation and the data are yours. I build it, you own it.</p>
+        <p class="prose" data-i18n="promise_sub">Not a trial, not a rented platform, not a login I keep the keys to. If you decide to take it in-house, the handover is a folder with everything in it and a call where I walk you through it.</p>
+        <p class="pullquote__cta"><a href="#contact" class="btn btn--tertiary" data-i18n="promise_cta">Start with one problem →</a></p>
+      </div>
+    </section>
+
+    <!-- ══ 06 — PRICING ══ -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s4_label">§ 04 — Pricing</span>
+          <h2 class="display-lg" data-i18n="pricing_title">Three ways to pay. One of them will fit.</h2>
+          <p class="prose" data-i18n="pricing_sub">I would rather you pick the one that makes sense for your week than the one that sounds biggest.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <span class="pricing-card__name" data-i18n="plan1_name">Fixed price</span>
+            <span class="pricing-card__price">from 4,000<span class="pricing-card__unit">DKK</span></span>
+            <p class="pricing-card__desc" data-i18n="plan1_desc">We agree on what the system does, and it costs that. Best for one clear problem with a clear finish line.</p>
+            <ul class="pricing-card__list">
+              <li data-i18n="plan1_i1">Written scope before work starts</li>
+              <li data-i18n="plan1_i2">Fixed price, change log if scope moves</li>
+              <li data-i18n="plan1_i3">Documented handover</li>
+            </ul>
+          </div>
+          <div class="pricing-card pricing-card--accent">
+            <span class="pricing-card__name" data-i18n="plan2_name">Revenue share</span>
+            <span class="pricing-card__price">12–20<span class="pricing-card__unit">%</span></span>
+            <p class="pricing-card__desc" data-i18n="plan2_desc">A percentage of what the system actually brings in. Best when the value is real but hard to price up front.</p>
+            <ul class="pricing-card__list">
+              <li data-i18n="plan2_i1">Smaller upfront cost</li>
+              <li data-i18n="plan2_i2">I stay on it while it runs</li>
+              <li data-i18n="plan2_i3">Reporting on what it produced</li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <span class="pricing-card__name" data-i18n="plan3_name">Partnership</span>
+            <span class="pricing-card__price">Equity<span class="pricing-card__unit">+ fee</span></span>
+            <p class="pricing-card__desc" data-i18n="plan3_desc">I build the product, you bring the market and the customers. We split what comes in.</p>
+            <ul class="pricing-card__list">
+              <li data-i18n="plan3_i1">For early-stage products</li>
+              <li data-i18n="plan3_i2">Reduced cash retainer</li>
+              <li data-i18n="plan3_i3">Agreement in writing, up front</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="pricing-note" data-i18n="pricing_note">All prices exclude VAT. Every engagement starts with a free 30-minute call, and I will tell you on that call if I am the wrong person for it.</p>
+      </div>
+    </section>
+
+    <!-- ══ 07 — FAQ ══ -->
+    <section class="tight" id="faq">
+      <div class="container container--narrow">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s5_label">§ 05 — Questions</span>
+          <h2 class="display-lg" data-i18n="faq_title">The five questions everyone asks first.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary data-i18n="faq1_q">How long does a project take?</summary>
+            <p data-i18n="faq1_a">Two to eight weeks, depending on scope. The first working version is usually live inside three weeks, because I would rather show you something running than describe it.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq2_q">Do I have to replace the systems I already use?</summary>
+            <p data-i18n="faq2_a">Usually not. Most of the work is connecting what you already have — your ERP, your CRM, your mail — and removing the manual step in between. Nothing gets ripped out unless you want it to.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq3_q">What does it cost?</summary>
+            <p data-i18n="faq3_a">It depends on scope, and I will not guess from a website form. After the first call you get a written scope and a fixed price, so you can compare it against doing nothing.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq4_q">Who owns the code and the data?</summary>
+            <p data-i18n="faq4_a">You do, from day one. Everything is delivered in your own accounts, with documentation written for someone who has not seen the code before.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq5_q">Do you work with companies outside Denmark?</summary>
+            <p data-i18n="faq5_a">Yes. The work is remote, and I have delivered for teams in Denmark, Germany and Sweden. Everything is in English and Danish, so nothing gets lost in translation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 08 — CONTACT ══ -->
+    <section id="contact">
+      <div class="container">
+        <div class="start-grid">
+          <div>
+            <span class="micro-label section-label" data-i18n="s6_label">§ 06 — Start</span>
+            <h2 class="display-lg" data-i18n="contact_title">Tell me what is slow in your week.</h2>
+            <p class="prose start-grid__prose" data-i18n="contact_sub">One call, thirty minutes, no slides. We look at your week, and I tell you whether I can help — and if I cannot, I will say who can.</p>
+          </div>
+          <div class="start-grid__actions">
+            <a href="mailto:omar@basednode.xyz" class="btn btn--primary btn--lg" data-i18n="contact_cta1">Write to me</a>
+            <a href="mailto:omar@basednode.xyz?subject=30-minutes%20call" class="btn btn--secondary btn--lg" data-i18n="contact_cta2">Book 30 minutes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-block">
+          <a href="index.html" class="footer__logo" aria-label="BasedNode home">
+            <span class="footer__logo-mark" aria-hidden="true"></span>
+            <span>BasedNode</span>
+          </a>
+          <p class="footer__desc" data-i18n="footer_desc">Automation for the repetitive half of running a company. Copenhagen.</p>
+          <address class="footer__address">
+            BasedNode<br/>
+            Copenhagen, Denmark<br/>
+            omar@basednode.xyz
+          </address>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
+          <ul>
+            <li><a href="#services" data-i18n="svc1_name">AI agents</a></li>
+            <li><a href="#services" data-i18n="svc2_name">Workflow automation</a></li>
+            <li><a href="#services" data-i18n="svc3_name">Data pipelines</a></li>
+            <li><a href="#services" data-i18n="svc4_name">Cost work</a></li>
+            <li><a href="#services" data-i18n="svc5_name">Dashboards and internal tools</a></li>
+            <li><a href="#services" data-i18n="svc6_name">Marketing automation</a></li>
+            <li><a href="#services" data-i18n="svc7_name">Full AI products</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col2">How it works</div>
+          <ul>
+            <li><a href="#how" data-i18n="wedge1_title">You own it</a></li>
+            <li><a href="#how" data-i18n="wedge2_title">Plain language, no theatre</a></li>
+            <li><a href="#how" data-i18n="wedge3_title">Scope before price</a></li>
+            <li><a href="#pricing" data-i18n="pricing_title">Pricing</a></li>
+            <li><a href="#faq" data-i18n="faq_title">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col3">Company</div>
+          <ul>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
+            <li><a href="#pricing" data-i18n="foot_terms">Terms</a></li>
+            <li><a href="#pricing" data-i18n="foot_privacy">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 BasedNode · Copenhagen</span>
+        <span class="footer__bottom-links">
+          <button class="lang-toggle lang-toggle--dark" data-lang-toggle><span data-lang-label>DA</span></button>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
