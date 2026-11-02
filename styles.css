@@ -2256,6 +2256,39 @@ section.dark .micro-label { color: var(--ink-muted); }
   color: var(--paper-muted);
 }
 
+/* Answers are written as paragraphs separated by a blank line. The copy
+   carries the newlines and textContent preserves them, so pre-line renders
+   them as real paragraph breaks without the markup needing <p> per block. */
+.faq-item p { white-space: pre-line; }
+
+/* FAQ 1 answers with a bulleted list of who the studio works for. */
+.faq-item__list {
+  margin: calc(var(--space-4) * -1) 0 var(--space-4);
+  padding: 0 0 0 calc(var(--space-4) + 1.1em);
+  max-width: 68ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--paper-muted);
+}
+.faq-item__list li { margin-bottom: var(--space-2); }
+.faq-item__list li:last-child { margin-bottom: 0; }
+.faq-item__list li::marker { color: var(--accent-ink); }
+
+/* The source line under the data-security answer. */
+.faq-item__source {
+  padding: 0 0 var(--space-4);
+  max-width: 68ch;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--paper-muted);
+}
+.faq-item__source a {
+  color: var(--paper-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.faq-item__source a:hover { color: var(--accent-ink); }
+
 /* The catalogue-style rows double as the service list; keep them legible
    when they carry a price instead of a SKU count. */
 .cat-dir__count { white-space: nowrap; }
