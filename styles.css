@@ -2611,7 +2611,18 @@ body.nav-open .topnav__menu-btn .icon-open { display: none; }
 .contact-card__note { font-size: 0.875rem; color: var(--paper-muted); line-height: 1.55; }
 
 /* ---- Prose block for legal / long text ---- */
-.doc-block { max-width: 70ch; }
+/* Legal/document prose: cap the measure at a comfortable reading length.
+   `ch` measures the width of "0" in the current font, which is narrower than
+   average text — 70ch rendered ~98 characters per line, far too wide to read.
+   A pixel cap gives a true measure: ~7.6px per character at 15px, so
+   68ch of prose lands at ~640px / ~84 characters. Target 60-75 characters,
+   which is 500-600px here. */
+.doc-block { max-width: 620px; }
+.doc-block p { max-width: 620px; }
+@media (min-width: 900px) {
+  .doc-block { max-width: 640px; }
+  .doc-block p { max-width: 640px; }
+}
 .doc-block h2 { font-size: 1.125rem; font-weight: 500; margin: var(--space-8) 0 var(--space-3); }
 .doc-block h3 { font-size: 1rem; font-weight: 500; margin: var(--space-5) 0 var(--space-2); }
 .doc-block p { font-size: 0.9375rem; line-height: 1.65; color: var(--ink); margin-bottom: var(--space-4); }

@@ -1449,7 +1449,7 @@ window.BN_I18N = {
    "prv_meta2": "Updated: November 2026",
    "prv_s1_title": "1. Who we are",
    "prv_s1_body": "BasedNode ApS, CVR 43750194, Copenhagen, Denmark. The controller of your personal data is me, Omar Jennane. You can write to omar@basednode.xyz.",
-   "prv_s2_title": "Questions about privacy?",
+   "prv_s2_title": "2. What we collect",
    "prv_s2_body": "When you write to me, I receive what you have written: your name, your email address and your message. If we start a project, I also collect whatever the project requires — for example the names of contact people, departments or suppliers that you ask me to handle in the system.",
    "prv_s2_body2": "I do not collect your IP address, your browser type, or any behavioural data about how you read this page. The site uses no cookies and no analytics tools. Your language choice is stored in localStorage in your own browser and never leaves your device.",
    "prv_s3_title": "3. Why we process it",
@@ -1464,7 +1464,7 @@ window.BN_I18N = {
    "prv_s7_body": "This site uses no cookies. The only thing stored locally in your browser is your language choice (Danish or English), and it lives in localStorage, which never leaves your device and cannot be used to track you across other sites.",
    "prv_s8_title": "8. Contact",
    "prv_s8_body": "If you have a question about this policy, or want to exercise your rights, write to omar@basednode.xyz. I reply within one working day. Last updated November 2026.",
-   "prv_s2_label": "Contact",
+   "prv_s2_label": "Data",
    "prv_s2_desc": "Write to me if there is something you want in writing, or if you want to know what happens to the data you have given me.",
    "prv_cta1": "Write to me",
    "prv_cta2": "See the security",
@@ -1494,7 +1494,8 @@ window.BN_I18N = {
    "skip_to_content": "Skip to content",
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
-   "ct_c2_value": "Book 30 minutes"
+   "ct_c2_value": "Book 30 minutes",
+   "prv_cta_title": "Questions about privacy?"
   },
   "da": {
    "prv_label": "Privatlivspolitik",
@@ -1504,7 +1505,7 @@ window.BN_I18N = {
    "prv_meta2": "Opdateret: november 2026",
    "prv_s1_title": "1. Hvem vi er",
    "prv_s1_body": "BasedNode ApS, CVR 43750194, København, Danmark. Dataansvarlig for dine personoplysninger er mig, Omar Jennane. Du kan skrive til omar@basednode.xyz.",
-   "prv_s2_title": "Spørgsmål til privatlivet?",
+   "prv_s2_title": "2. Hvilke oplysninger vi indsamler",
    "prv_s2_body": "Når du skriver til mig, modtager jeg de oplysninger, du selv har skrevet: dit navn, din mailadresse og din besked. Hvis vi går i gang med et projekt, indsamler jeg desuden de oplysninger, som projektet kræver, for eksempel navne på kontaktpersoner, afdelinger eller leverandører, som du beder mig håndtere i systemet.",
    "prv_s2_body2": "Jeg indsamler ikke din IP-adresse, din browsertype eller nogen form for adfærdsdata om, hvordan du læser denne side. Siden bruger ingen cookies og ingen analyseværktøjer. Dit sprogvalg gemmes i localStorage i din egen browser og forlader aldrig din enhed.",
    "prv_s3_title": "3. Hvorfor vi behandler dem",
@@ -1519,7 +1520,7 @@ window.BN_I18N = {
    "prv_s7_body": "Siden bruger ingen cookies. Det eneste, der gemmes lokalt i din browser, er dit sprogvalg (dansk eller engelsk), og det ligger i localStorage, som aldrig forlader din enhed og ikke kan bruges til at spore dig på andre sider.",
    "prv_s8_title": "8. Kontakt",
    "prv_s8_body": "Har du spørgsmål til denne politik, eller vil du gøre dine rettigheder gældende, så skriv til omar@basednode.xyz. Jeg svarer inden for en arbejdsdag. Sidst opdateret november 2026.",
-   "prv_s2_label": "Kontakt",
+   "prv_s2_label": "Oplysninger",
    "prv_s2_desc": "Skriv til mig, hvis der er noget, du vil have sagt skriftligt, eller hvis du vil vide, hvad der sker med de data, du har givet mig.",
    "prv_cta1": "Skriv til mig",
    "prv_cta2": "Se sikkerheden",
@@ -1549,7 +1550,8 @@ window.BN_I18N = {
    "skip_to_content": "Gå til indhold",
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
-   "ct_c2_value": "Book 30 minutter"
+   "ct_c2_value": "Book 30 minutter",
+   "prv_cta_title": "Spørgsmål til privatlivet?"
   }
  },
  "contact": {
@@ -1743,7 +1745,7 @@ window.BN_I18N = {
    "tm_meta2": "Version: November 2026",
    "tm_s1_title": "1. Scope",
    "tm_s1_body": "You get a written description of what the system is supposed to do before work begins. That description is the scope of the agreement. If the scope changes along the way, the price and the timeline change with it, in writing, before the new work starts. No work outside the agreed scope begins without a new written agreement.",
-   "tm_s2_title": "Should something specific be stated?",
+   "tm_s2_title": "2. Price and payment",
    "tm_s2_body": "The price is fixed and excludes VAT. It is stated in the quote together with the payment terms. For projects under 10,000 kr. excluding VAT, half is due when the agreement starts and half on delivery. Larger projects are split into several instalments, stated in the quote. Non-Danish customers are invoiced in euro or Danish kroner, depending on what was agreed.",
    "tm_s3_title": "3. Time",
    "tm_s3_body": "The timeline is an estimate, not a guarantee. The first working version normally lands within three weeks for a project of the size described in point 1. If you enter with a plan that depends on deliveries from you, the timeline and the price move accordingly.",
@@ -1761,8 +1763,8 @@ window.BN_I18N = {
    "tm_s9_body": "My liability is limited to the amount you paid for the individual project. I am not liable for indirect loss, lost revenue or lost data unless it is caused by my negligence. The system must be used for what it was built for.",
    "tm_s10_title": "10. Law and rights",
    "tm_s10_body": "The agreement is governed by Danish law. If the written agreement and this page disagree, the written agreement applies. Last updated November 2026.",
-   "tm_s2_label": "Contact",
-   "tm_s2_desc": "Many companies have their own standard supplier agreement. Write to me and I will write the terms the way you have them.",
+   "tm_s2_label": "Price",
+   "tm_s2_desc": "Many companies have their own standard for supplier agreements. Write to me and I will draft the terms in the form you already use.",
    "tm_cta1": "Write to me",
    "tm_cta2": "Security & privacy",
    "footer_desc": "I build the software that takes the repetitive work off your plate. Copenhagen.",
@@ -1803,7 +1805,8 @@ window.BN_I18N = {
    "skip_to_content": "Skip to content",
    "logo_meta": "Copenhagen · Since 2019",
    "copyright": "© 2026 BasedNode · Copenhagen",
-   "ct_c2_value": "Book 30 minutes"
+   "ct_c2_value": "Book 30 minutes",
+   "tm_cta_title": "Should something specific be stated?"
   },
   "da": {
    "tm_label": "Vilkår",
@@ -1813,7 +1816,7 @@ window.BN_I18N = {
    "tm_meta2": "Version: november 2026",
    "tm_s1_title": "1. Omfang",
    "tm_s1_body": "Du får en skriftlig beskrivelse af, hvad systemet skal gøre, inden arbejdet begynder. Den beskrivelse er aftalens omfang. Hvis omfanget ændres undervejs, ændres prisen og tidsplanen med, skriftligt, før det nye arbejde begynder. Intet arbejde uden for det aftalte omfang begynder uden en ny skriftlig aftale.",
-   "tm_s2_title": "Skal der stå noget bestemt?",
+   "tm_s2_title": "2. Pris og betaling",
    "tm_s2_body": "Prisen er fast og ekskl. moms. Den angives i tilbuddet sammen med betalingsbetingelserne. For projekter under 10.000 kr. ekskl. moms forfalder halvdelen ved aftalens start og halvdelen ved levering. Større projekter deles i flere rater, og det står i tilbuddet. Udenlandske kunder faktureres i euro eller danske kroner, afhængigt af hvad der er aftalt.",
    "tm_s3_title": "3. Tid",
    "tm_s3_body": "Tidsplanen er et estimat, ikke en garanti. Den første fungerende version ligger normalt inden for tre uger for et projekt af den størrelse, der er beskrevet i punkt 1. Hvis din plan afhænger af leverancer fra dig, skal tidsplanen og prisen justeres tilsvarende.",
@@ -1831,7 +1834,7 @@ window.BN_I18N = {
    "tm_s9_body": "Mit ansvar er begrænset til det beløb, du har betalt for det enkelte projekt. Jeg er ikke ansvarlig for indirekte tab, tab af omsætning eller tab af data, medmindre det skyldes min forsømmelse. Systemet skal bruges til det, det er bygget til.",
    "tm_s10_title": "10. Lov og rettigheder",
    "tm_s10_body": "Aftalen er underlagt dansk ret. Er der uoverensstemmelse mellem den skriftlige aftale og denne side, er den skriftlige aftale det, der gælder. Sidst opdateret november 2026.",
-   "tm_s2_label": "Kontakt",
+   "tm_s2_label": "Pris",
    "tm_s2_desc": "Mange virksomheder har deres egen standard for leverandøraftaler. Skriv til mig, så skriver jeg vilkårene, sådan som I har dem.",
    "tm_cta1": "Skriv til mig",
    "tm_cta2": "Sikkerhed & privatliv",
@@ -1873,7 +1876,8 @@ window.BN_I18N = {
    "skip_to_content": "Gå til indhold",
    "logo_meta": "København · Siden 2019",
    "copyright": "© 2026 BasedNode · København",
-   "ct_c2_value": "Book 30 minutter"
+   "ct_c2_value": "Book 30 minutter",
+   "tm_cta_title": "Skal der stå noget bestemt?"
   }
  }
 };
