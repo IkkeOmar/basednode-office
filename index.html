@@ -12,24 +12,23 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
 </head>
-<body>
-  <a class="skip-to-content" href="#main">Skip to content</a>
+<body data-page="home">
+
+  <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
 
   <header class="topnav">
     <div class="container topnav__inner">
       <a href="index.html" class="topnav__logo" aria-label="BasedNode home">
         <span class="topnav__logo-mark" aria-hidden="true"></span>
         <span>BasedNode</span>
-        <span class="topnav__logo-meta">Copenhagen · Since 2019</span>
+        <span class="topnav__logo-meta" data-i18n="logo_meta">Copenhagen · Since 2019</span>
       </a>
       <nav aria-label="Primary">
-        <ul class="topnav__links">
-          <li><a href="#services" data-i18n="nav_services">What I build</a></li>
-          <li><a href="#how" data-i18n="nav_how">How it works</a></li>
-          <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
-          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-        </ul>
+        <ul class="topnav__links">          <li><a href="#services" data-i18n="services">What I build</a></li>
+          <li><a href="#how" data-i18n="how">How it works</a></li>
+          <li><a href="#pricing" data-i18n="pricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="contact">Contact</a></li></ul>
       </nav>
       <div class="topnav__actions">
         <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
@@ -53,13 +52,11 @@
     <!-- Panel lives INSIDE the sticky header so it drops out of the bar
          instead of scrolling away with the page. -->
     <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
-      <ul>
-        <li><a href="#services" data-i18n="nav_services">What I build</a></li>
-        <li><a href="#how" data-i18n="nav_how">How it works</a></li>
-        <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
-        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-      </ul>
+      <ul>        <li><a href="#services" data-i18n="services">What I build</a></li>
+        <li><a href="#how" data-i18n="how">How it works</a></li>
+        <li><a href="#pricing" data-i18n="pricing">Pricing</a></li>
+        <li><a href="#faq" data-i18n="faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="contact">Contact</a></li></ul>
     </nav>
   </header>
 
@@ -74,9 +71,9 @@
         <div class="hero__grid">
 
           <div class="hero__text">
-            <span class="hero__eyebrow" data-i18n="hero_eyebrow">AI &amp; automation studio · Copenhagen</span>
+            <span class="hero__eyebrow" data-i18n="hero_eyebrow">AI & automation studio · Copenhagen</span>
             <h1 class="display-xl hero__title" data-i18n="hero_title">Invoicing, bookkeeping and admin. Automated.</h1>
-            <p class="hero__sub" data-i18n="hero_sub">I go in, understand the job — however niche it is — and build a system that does it reliably on its own. Reading invoices, posting them to the ledger, following up on leads, answering the same customer question fifty times. You get a working system, documented, that you own.</p>
+            <p class="hero__sub" data-i18n="hero_sub">I go in, learn how the work is actually done — however narrow it is — and build a system that does it on its own, reliably. Reading invoices, posting them to the ledger, chasing leads, answering the same customer question for the fiftieth time. You get a working system, documented, that you own.</p>
 
             <div class="hero__ctas">
               <a href="#services" class="btn btn--primary btn--lg" data-i18n="hero_cta1">See what I build</a>
@@ -93,7 +90,7 @@
             <div class="hero__drawing-meta">
               <span class="hero__drawing-sku">FLOW 01</span>
               <span class="hero__drawing-name" data-i18n="drawing_name">Invoice in, booked, done</span>
-              <span class="hero__drawing-spec" data-i18n="drawing_spec">Supplier PDF read, VAT split, posted to account 5700. 4.5 minutes of manual work becomes zero — this work is easy and repetitive, which is exactly why it should be a system, not a person.</span>
+              <span class="hero__drawing-spec" data-i18n="drawing_spec">Supplier PDF read, VAT split, posted to account 5700. Four and a half minutes of manual work becomes zero. The work is easy and repetitive, which is exactly why it should be a system, not a person.</span>
               <span class="hero__drawing-link" data-i18n="drawing_link">See what it costs →</span>
             </div>
           </a>
@@ -108,35 +105,35 @@
         <div class="section-head section-head__editorial">
           <span class="micro-label" data-i18n="s1_label">§ 01 — What I build</span>
           <h2 class="display-lg" data-i18n="s1_title">Seven things I build. Most companies need two.</h2>
-          <p class="prose" data-i18n="s1_desc">I go in, learn the job — however narrow it is — and build a system that does it reliably on its own. Most of that work is easy and repetitive, which is exactly why it should not be a person doing it for the eighth hour. You do not need all seven. Most people start with the first one, feel the difference in a week, and come back for the second.</p>
+          <p class="prose" data-i18n="s1_desc">I go in, learn how the work is really done — however narrow it is — and build a system that does it on its own, reliably. Most of that work is easy and repetitive, which is exactly why it should not be a person on their eighth hour. You do not need all seven. Most people start with the first, feel the difference within a week, and come back for the second.</p>
         </div>
 
         <div class="cat-dir" aria-label="Services">
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 01</span>
             <span class="cat-dir__name" data-i18n="svc1_name">AI agents</span>
-            <span class="cat-dir__lead" data-i18n="svc1_lead">One job, however niche — learned, then done autonomously</span>
+            <span class="cat-dir__lead" data-i18n="svc1_lead">One job, however narrow — learned properly, then done on its own</span>
             <span class="cat-dir__count" data-i18n="svc1_price">from 8,500 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 02</span>
             <span class="cat-dir__name" data-i18n="svc2_name">Workflow automation</span>
-            <span class="cat-dir__lead" data-i18n="svc2_lead">Processes you already run, standardised so nobody loses a day to Excel</span>
+            <span class="cat-dir__lead" data-i18n="svc2_lead">Processes you already run, tidied up so nobody loses a day to Excel</span>
             <span class="cat-dir__count" data-i18n="svc2_price">from 12,000 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 03</span>
             <span class="cat-dir__name" data-i18n="svc3_name">Data pipelines</span>
-            <span class="cat-dir__lead" data-i18n="svc3_lead">Your data from five systems, cleaned and joined</span>
+            <span class="cat-dir__lead" data-i18n="svc3_lead">Data from five systems, cleaned up and joined into one</span>
             <span class="cat-dir__count" data-i18n="svc3_price">from 9,000 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 04</span>
             <span class="cat-dir__name" data-i18n="svc4_name">Cost work</span>
-            <span class="cat-dir__lead" data-i18n="svc4_lead">Same result, smaller model bill</span>
+            <span class="cat-dir__lead" data-i18n="svc4_lead">Same answer, smaller bill for the model calls</span>
             <span class="cat-dir__count" data-i18n="svc4_price">from 4,000 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
@@ -150,14 +147,14 @@
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 06</span>
             <span class="cat-dir__name" data-i18n="svc6_name">Marketing automation</span>
-            <span class="cat-dir__lead" data-i18n="svc6_lead">Every lead followed up, without a spreadsheet</span>
+            <span class="cat-dir__lead" data-i18n="svc6_lead">Every lead followed up, without a spreadsheet in sight</span>
             <span class="cat-dir__count" data-i18n="svc6_price">from 7,000 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 07</span>
             <span class="cat-dir__name" data-i18n="svc7_name">Full AI products</span>
-            <span class="cat-dir__lead" data-i18n="svc7_lead">An app built from scratch, for a fixed price or a share</span>
+            <span class="cat-dir__lead" data-i18n="svc7_lead">An app built from scratch, for a fixed price or a share of what it earns</span>
             <span class="cat-dir__count" data-i18n="svc7_price">from 30,000 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
@@ -170,15 +167,15 @@
       <div class="container">
         <div class="section-head section-head__editorial">
           <span class="micro-label" data-i18n="s2_label">§ 02 — How it works</span>
-          <h2 class="display-lg" data-i18n="s2_title">Three things you get that a template does not give you.</h2>
-          <p class="prose" data-i18n="s2_desc">Not because anyone else is bad at this. Because a template was never written for your week, your systems, or your way of working.</p>
+          <h2 class="display-lg" data-i18n="s2_title">Three things you get that a template cannot give you.</h2>
+          <p class="prose" data-i18n="s2_desc">Not because anyone else is bad at this. Because a template was never written for your week, your systems, or the way you work.</p>
         </div>
 
         <div class="wedge-list">
           <div class="wedge-item">
             <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge1_label">Wedge 01 / 03</span>
             <h3 class="h1 wedge-item__title" data-i18n="wedge1_title">You own it.</h3>
-            <p class="prose" data-i18n="wedge1_desc">The code sits in your accounts, the documentation is written for you, and the data stays with you. If we stop working together, nothing breaks and nobody has to ask permission to keep it running.</p>
+            <p class="prose" data-i18n="wedge1_desc">The code sits in your own accounts, the documentation is written for you, and the data stays with you. If we stop working together, nothing breaks and nobody has to ask permission to keep it running.</p>
             <p class="mono-data muted wedge-item__meta" data-i18n="wedge1_meta">Your accounts · Your data · Your copy</p>
           </div>
           <div class="wedge-item">
@@ -307,7 +304,7 @@
       <div class="container container--narrow">
         <span class="micro-label section-label" data-i18n="s3_label">§ 03 — The promise</span>
         <p class="display-lg pullquote" data-i18n="promise">The code, the documentation and the data are yours. I build it, you own it.</p>
-        <p class="prose" data-i18n="promise_sub">Not a trial, not a rented platform, not a login I keep the keys to. If you decide to take it in-house, the handover is a folder with everything in it and a call where I walk you through it.</p>
+        <p class="prose" data-i18n="promise_sub">Not a trial, not a rented platform, not a login I keep the key to. If you decide to take it in-house, the handover is a folder with everything in it and a call where I walk you through it.</p>
         <p class="pullquote__cta"><a href="#contact" class="btn btn--tertiary" data-i18n="promise_cta">Start with one problem →</a></p>
       </div>
     </section>
@@ -324,7 +321,7 @@
         <div class="pricing-grid">
           <div class="pricing-card">
             <span class="pricing-card__name" data-i18n="plan1_name">Fixed price</span>
-            <span class="pricing-card__price">from 4,000<span class="pricing-card__unit">DKK</span></span>
+            <span class="pricing-card__price" data-i18n="plan1_price">from 4,000</span><span class="pricing-card__unit">DKK</span>
             <p class="pricing-card__desc" data-i18n="plan1_desc">We agree on what the system does, and it costs that. Best for one clear problem with a clear finish line.</p>
             <ul class="pricing-card__list">
               <li data-i18n="plan1_i1">Written scope before work starts</li>
@@ -334,7 +331,7 @@
           </div>
           <div class="pricing-card pricing-card--accent">
             <span class="pricing-card__name" data-i18n="plan2_name">Revenue share</span>
-            <span class="pricing-card__price">12–20<span class="pricing-card__unit">%</span></span>
+            <span class="pricing-card__price" data-i18n="plan2_price">12–20</span><span class="pricing-card__unit">%</span>
             <p class="pricing-card__desc" data-i18n="plan2_desc">A percentage of what the system actually brings in. Best when the value is real but hard to price up front.</p>
             <ul class="pricing-card__list">
               <li data-i18n="plan2_i1">Smaller upfront cost</li>
@@ -344,7 +341,7 @@
           </div>
           <div class="pricing-card">
             <span class="pricing-card__name" data-i18n="plan3_name">Partnership</span>
-            <span class="pricing-card__price">Equity<span class="pricing-card__unit">+ fee</span></span>
+            <span class="pricing-card__price" data-i18n="plan3_price">Equity</span><span class="pricing-card__unit" data-i18n="svc_fee_unit">+ fee</span>
             <p class="pricing-card__desc" data-i18n="plan3_desc">I build the product, you bring the market and the customers. We split what comes in.</p>
             <ul class="pricing-card__list">
               <li data-i18n="plan3_i1">For early-stage products</li>
@@ -398,7 +395,7 @@
           <div>
             <span class="micro-label section-label" data-i18n="s6_label">§ 06 — Start</span>
             <h2 class="display-lg" data-i18n="contact_title">Tell me what is slow in your week.</h2>
-            <p class="prose start-grid__prose" data-i18n="contact_sub">One call, thirty minutes, no slides. We look at your week, and I tell you whether I can help — and if I cannot, I will say who can.</p>
+            <p class="prose start-grid__prose" data-i18n="contact_sub">One call, thirty minutes, no slides. We look at your week, and I tell you whether I can help — and if I cannot, I say who can.</p>
           </div>
           <div class="start-grid__actions">
             <a href="mailto:omar@basednode.xyz" class="btn btn--primary btn--lg" data-i18n="contact_cta1">Write to me</a>
@@ -421,44 +418,45 @@
           <p class="footer__desc" data-i18n="footer_desc">Automation for the repetitive half of running a company. Copenhagen.</p>
           <address class="footer__address">
             BasedNode<br/>
-            Copenhagen, Denmark<br/>
-            omar@basednode.xyz
+            <span data-i18n="foot_city">Copenhagen, Denmark</span><br/>
+            <span data-i18n="foot_cvr">CVR 43750194</span><br/>
+            <a href="mailto:omar@basednode.xyz">omar@basednode.xyz</a>
           </address>
         </div>
         <div class="footer__col">
           <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
           <ul>
-            <li><a href="#services" data-i18n="svc1_name">AI agents</a></li>
-            <li><a href="#services" data-i18n="svc2_name">Workflow automation</a></li>
-            <li><a href="#services" data-i18n="svc3_name">Data pipelines</a></li>
-            <li><a href="#services" data-i18n="svc4_name">Cost work</a></li>
-            <li><a href="#services" data-i18n="svc5_name">Dashboards and internal tools</a></li>
-            <li><a href="#services" data-i18n="svc6_name">Marketing automation</a></li>
-            <li><a href="#services" data-i18n="svc7_name">Full AI products</a></li>
+            <li><a href="services.html" data-i18n="foot_svc1">AI agents</a></li>
+            <li><a href="services.html" data-i18n="foot_svc2">Workflow automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc3">Data pipelines</a></li>
+            <li><a href="services.html" data-i18n="foot_svc4">Cost work</a></li>
+            <li><a href="services.html" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
+            <li><a href="services.html" data-i18n="foot_svc6">Marketing automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc7">Full AI products</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <div class="footer__col-title" data-i18n="foot_col2">How it works</div>
+          <div class="footer__col-title" data-i18n="foot_col2">More</div>
           <ul>
-            <li><a href="#how" data-i18n="wedge1_title">You own it</a></li>
-            <li><a href="#how" data-i18n="wedge2_title">Plain language, no theatre</a></li>
-            <li><a href="#how" data-i18n="wedge3_title">Scope before price</a></li>
-            <li><a href="#pricing" data-i18n="pricing_title">Pricing</a></li>
-            <li><a href="#faq" data-i18n="faq_title">FAQ</a></li>
+            <li><a href="cases.html" data-i18n="foot_l_cases">Cases</a></li>
+            <li><a href="resources.html" data-i18n="foot_l_resources">Resources</a></li>
+            <li><a href="about.html" data-i18n="foot_l_about">About</a></li>
+            <li><a href="services.html#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
+            <li><a href="services.html#faq" data-i18n="foot_l_faq">FAQ</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-title" data-i18n="foot_col3">Company</div>
           <ul>
-            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            <li><a href="contact.html" data-i18n="foot_l_contact">Contact</a></li>
             <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
-            <li><a href="#pricing" data-i18n="foot_terms">Terms</a></li>
-            <li><a href="#pricing" data-i18n="foot_privacy">Privacy</a></li>
+            <li><a href="terms.html" data-i18n="foot_l_terms">Terms</a></li>
+            <li><a href="privacy.html" data-i18n="foot_l_privacy">Privacy policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© 2026 BasedNode · Copenhagen</span>
+        <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
         <span class="footer__bottom-links">
           <button class="lang-toggle lang-toggle--dark" data-lang-toggle><span data-lang-label>DA</span></button>
         </span>
@@ -466,6 +464,7 @@
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

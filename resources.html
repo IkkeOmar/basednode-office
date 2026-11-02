@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F6F2" />
+  <title>AI & automation, in plain Danish — BasedNode</title>
+  <meta name="description" content="A plain-language guide to what AI and automation can do for a small business, how to start, and what the words mean. No jargon, no sign-up." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body data-page="resources">
+
+  <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
+
+  <header class="topnav">
+    <div class="container topnav__inner">
+      <a href="index.html" class="topnav__logo" aria-label="BasedNode home">
+        <span class="topnav__logo-mark" aria-hidden="true"></span>
+        <span>BasedNode</span>
+        <span class="topnav__logo-meta" data-i18n="logo_meta">Copenhagen · Since 2019</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="topnav__links">          <li><a href="services.html" data-i18n="services">What I build</a></li>
+          <li><a href="services.html#how" data-i18n="how">How it works</a></li>
+          <li><a href="services.html#pricing" data-i18n="pricing">Pricing</a></li>
+          <li><a href="services.html#faq" data-i18n="faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+      </nav>
+      <div class="topnav__actions">
+        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
+          <span data-lang-label>DA</span>
+        </button>
+        <a href="#contact" class="btn btn--secondary btn--sm topnav__cta" data-i18n="nav_cta">Talk to me</a>
+        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="40" y1="64" x2="216" y2="64"/>
+            <line x1="40" y1="128" x2="216" y2="128"/>
+            <line x1="40" y1="192" x2="216" y2="192"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="72" y1="72" x2="184" y2="184"/>
+            <line x1="184" y1="72" x2="72" y2="184"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel lives INSIDE the sticky header so it drops out of the bar
+         instead of scrolling away with the page. -->
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
+      <ul>        <li><a href="services.html" data-i18n="services">What I build</a></li>
+        <li><a href="services.html#how" data-i18n="how">How it works</a></li>
+        <li><a href="services.html#pricing" data-i18n="pricing">Pricing</a></li>
+        <li><a href="services.html#faq" data-i18n="faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <!-- Tap-outside scrim, sits behind the panel -->
+  <div class="nav-scrim" data-nav-scrim hidden></div>
+
+  <main id="main">    <!-- ══ PAGE HEAD ══ -->
+    <section class="page-head">
+      <div class="container page-head__inner">
+        <span class="micro-label" data-i18n="rs_label">Resources</span>
+        <h1 class="display-lg page-head__title" data-i18n="rs_title">AI and automation, in plain language.</h1>
+        <p class="page-head__lede" data-i18n="rs_lede">A short guide to what AI and automation can actually do for a small company, how you get started, and what the words mean. Written for an owner who is not a developer. You do not have to read all of it, and you do not have to learn anything to use it.</p>
+        <div class="page-head__meta">
+          <span data-i18n="rs_meta1">3 chapters + a glossary</span>
+          <span data-i18n="rs_meta2">No sign-up</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CHAPTER 1 ══ -->
+    <section class="tight">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="rs_c1_label">Chapter 1</span>
+          <h2 class="display-lg" data-i18n="rs_c1_title">What it can actually do.</h2>
+          <p class="prose" data-i18n="rs_c1_desc">AI is not one thing. It is a lot of different tools that share a characteristic: they can do something that requires judgement, because they have learned patterns instead of calculating. That is why they are good at what is repetitive and clear, and poor at anything that needs you to notice whether a result is correct. Here are four places where it works.</p>
+        </div>
+
+        <div class="method-grid">
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="rs_c1_1_label">01</span>
+            <h3 class="h3" data-i18n="rs_c1_1_title">Keeping the customer</h3>
+            <p class="method-item__body" data-i18n="rs_c1_1_body">A welcome email, a follow-up after a purchase, a reminder about an abandoned basket. That kind of thing runs in the background all the time, and it is often the fastest thing to get a return on. A welcome sequence alone can recover 10-15 percent of the baskets that would otherwise be forgotten.</p>
+          </div>
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="rs_c1_2_label">02</span>
+            <h3 class="h3" data-i18n="rs_c1_2_title">Answering the same thing again and again</h3>
+            <p class="method-item__body" data-i18n="rs_c1_2_body">Opening hours, prices, shipping, returns. Those questions can be answered around the clock. When a question is too hard, it goes to a person. Most businesses find that 50-70 percent of ordinary questions can be answered automatically.</p>
+          </div>
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="rs_c1_3_label">03</span>
+            <h3 class="h3" data-i18n="rs_c1_3_title">Finding patterns in the numbers</h3>
+            <p class="method-item__body" data-i18n="rs_c1_3_body">Which products sell together, when your customers buy, which channel actually brings paying customers, and who is about to leave. Those are the questions that end up in a spreadsheet and get answered by feel.</p>
+          </div>
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="rs_c1_4_label">04</span>
+            <h3 class="h3" data-i18n="rs_c1_4_title">Getting past the blank page</h3>
+            <p class="method-item__body" data-i18n="rs_c1_4_body">Posts, newsletters, product descriptions. Not to replace your voice, but to get past the blank page. You give it your ideas and your style, and you get a draft you can edit. Three hours of writing becomes half an hour of editing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CHAPTER 2 ══ -->
+    <section>
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="rs_c2_label">Chapter 2</span>
+          <h2 class="display-lg" data-i18n="rs_c2_title">How to get started, in five steps.</h2>
+          <p class="prose" data-i18n="rs_c2_desc">This is the order I would follow if it were my own company. Start with one thing. Get it running. Then move on.</p>
+        </div>
+
+        <div class="guide-steps">
+          <div class="guide-step">
+            <span class="guide-step__num" data-i18n="rs_c2_1_num">Step 01</span>
+            <h3 class="guide-step__title" data-i18n="rs_c2_1_title">Find one task you do every day</h3>
+            <p class="guide-step__body" data-i18n="rs_c2_1_body">Not the whole department. One task. The one you do because you did not choose it. When that runs, you have a finished thing you can show, and a feeling for what it cost. That feeling is what makes the next one happen.</p>
+          </div>
+          <div class="guide-step">
+            <span class="guide-step__num" data-i18n="rs_c2_2_num">Step 02</span>
+            <h3 class="guide-step__title" data-i18n="rs_c2_2_title">Connect your tools</h3>
+            <p class="guide-step__body" data-i18n="rs_c2_2_body">You have a CRM, mail, a calendar, a shop, a stock system. When they talk to each other, something happens automatically that you would otherwise have to remember: a new customer enters the CRM, gets an email, and a task lands in the calendar. It does not require a developer. It requires a willingness to draw lines between the fields.</p>
+          </div>
+          <div class="guide-step">
+            <span class="guide-step__num" data-i18n="rs_c2_3_num">Step 03</span>
+            <h3 class="guide-step__title" data-i18n="rs_c2_3_title">Put an AI layer on top</h3>
+            <p class="guide-step__body" data-i18n="rs_c2_3_body">Once data is moving, AI can make it sensible. An assistant that reads your FAQ and answers in plain language. An email written from what the customer bought. A dashboard that summarises the week and tells you what to look at. This is where the difference between automated and merely automated appears.</p>
+          </div>
+          <div class="guide-step">
+            <span class="guide-step__num" data-i18n="rs_c2_4_num">Step 04</span>
+            <h3 class="guide-step__title" data-i18n="rs_c2_4_title">Build on, one at a time</h3>
+            <p class="guide-step__body" data-i18n="rs_c2_4_body">Automate lead capture from web to CRM. Get it running reliably. Then automate invoice reminders. Then customer satisfaction surveys. Each one saves a few hours a month, and after half a year those hours are a working week.</p>
+          </div>
+          <div class="guide-step">
+            <span class="guide-step__num" data-i18n="rs_c2_5_num">Step 05</span>
+            <h3 class="guide-step__title" data-i18n="rs_c2_5_title">Keep it secure</h3>
+            <p class="guide-step__body" data-i18n="rs_c2_5_body">The more tools talk to each other, the more data moves around. Use a password manager. Turn on two-factor authentication wherever it exists. Take backups. And never share API keys or passwords — treat access to your system the way you treat access to your bank account.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ GLOSSARY ══ -->
+    <section class="tight">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="rs_g_label">Glossary</span>
+          <h2 class="display-lg" data-i18n="rs_g_title">The words you will run into.</h2>
+          <p class="prose" data-i18n="rs_g_desc">No prior knowledge assumed. If you need a definition that is not here, ask — it is not a silly question.</p>
+        </div>
+
+        <div class="glossary-list">
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g1_term">LLM</span>
+            <p class="glossary-item__def" data-i18n="rs_g1_def">Large Language Model. A model trained on large amounts of text that can understand, summarise and write. Think of a very well-read assistant who can write, explain and answer.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g2_term">API</span>
+            <p class="glossary-item__def" data-i18n="rs_g2_def">A digital handshake between two programs. When your CRM talks to your mail tool, it happens through an API. It is what lets tools work together as one system.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g3_term">Automation</span>
+            <p class="glossary-item__def" data-i18n="rs_g3_def">Getting a computer to do a repetitive task so you do not have to. Like a rule: "when a new customer signs up, send a welcome email and create them in the CRM".</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g4_term">Agent</span>
+            <p class="glossary-item__def" data-i18n="rs_g4_def">An AI program that can act on its own — answer questions, write reports, analyse data. A chatbot replies. An agent acts.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g5_term">RAG</span>
+            <p class="glossary-item__def" data-i18n="rs_g5_def">Retrieval-Augmented Generation. A method where the AI looks up your own documents before it answers. That means the answer is based on your business rather than on general knowledge.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g6_term">Embedding</span>
+            <p class="glossary-item__def" data-i18n="rs_g6_def">A way of turning words into numbers, so a computer can work out that "winter coat" and "warm jacket" mean something similar. It is the basis of a search that understands what you actually mean.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g7_term">Vector database</span>
+            <p class="glossary-item__def" data-i18n="rs_g7_def">A database that stores information by meaning rather than by keyword. That is how it finds the right document even when you used different words than the original.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g8_term">Workflow</span>
+            <p class="glossary-item__def" data-i18n="rs_g8_def">A sequence of automatic steps that happen in order. "Form submitted → customer created in CRM → welcome email sent → task added to calendar".</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g9_term">Pipeline</span>
+            <p class="glossary-item__def" data-i18n="rs_g9_def">A series of connected steps that data flows through. A lead pipeline can move someone from "visitor" to "subscriber" to "meeting booked" to "customer" without you touching it.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g10_term">Dashboard</span>
+            <p class="glossary-item__def" data-i18n="rs_g10_def">One screen with the numbers that matter, gathered in one place. Sales today, new leads, open tasks. Instead of checking five tools you look at one. Like the instrument panel in a car.</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g11_term">Prompt</span>
+            <p class="glossary-item__def" data-i18n="rs_g11_def">The instruction you give the AI. A good prompt is specific. Instead of "write about my service" you can write "write three paragraphs about my garden waste removal, aimed at homeowners over 60, with a free estimate offer".</p>
+          </div>
+          <div class="glossary-item">
+            <span class="glossary-item__term" data-i18n="rs_g12_term">Fine-tuning</span>
+            <p class="glossary-item__def" data-i18n="rs_g12_def">Training a general model further on your own data until it becomes a specialist in your field. Like taking a capable new hire who knows a bit of everything and teaching them everything about your specific business.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section>
+      <div class="container">
+        <div class="start-grid">
+          <div>
+            <span class="micro-label section-label" data-i18n="rs_s2_label">Next step</span>
+            <h2 class="display-lg" data-i18n="rs_s2_title">Shall I find the task for you?</h2>
+            <p class="prose start-grid__prose" data-i18n="rs_s2_desc">It takes half an hour. We look at your week, and I tell you what can be automated and what it costs.</p>
+          </div>
+          <div class="start-grid__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg" data-i18n="rs_cta1">Book 30 minutes</a>
+            <a href="services.html" class="btn btn--secondary btn--lg" data-i18n="rs_cta2">See what I build</a>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-block">
+          <a href="index.html" class="footer__logo" aria-label="BasedNode home">
+            <span class="footer__logo-mark" aria-hidden="true"></span>
+            <span>BasedNode</span>
+          </a>
+          <p class="footer__desc" data-i18n="footer_desc">Automation for the repetitive half of running a company. Copenhagen.</p>
+          <address class="footer__address">
+            BasedNode<br/>
+            <span data-i18n="foot_city">Copenhagen, Denmark</span><br/>
+            <span data-i18n="foot_cvr">CVR 43750194</span><br/>
+            <a href="mailto:omar@basednode.xyz">omar@basednode.xyz</a>
+          </address>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
+          <ul>
+            <li><a href="services.html" data-i18n="foot_svc1">AI agents</a></li>
+            <li><a href="services.html" data-i18n="foot_svc2">Workflow automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc3">Data pipelines</a></li>
+            <li><a href="services.html" data-i18n="foot_svc4">Cost work</a></li>
+            <li><a href="services.html" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
+            <li><a href="services.html" data-i18n="foot_svc6">Marketing automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc7">Full AI products</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col2">More</div>
+          <ul>
+            <li><a href="cases.html" data-i18n="foot_l_cases">Cases</a></li>
+            <li><a href="resources.html" data-i18n="foot_l_resources">Resources</a></li>
+            <li><a href="about.html" data-i18n="foot_l_about">About</a></li>
+            <li><a href="services.html#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
+            <li><a href="services.html#faq" data-i18n="foot_l_faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col3">Company</div>
+          <ul>
+            <li><a href="contact.html" data-i18n="foot_l_contact">Contact</a></li>
+            <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
+            <li><a href="terms.html" data-i18n="foot_l_terms">Terms</a></li>
+            <li><a href="privacy.html" data-i18n="foot_l_privacy">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
+        <span class="footer__bottom-links">
+          <button class="lang-toggle lang-toggle--dark" data-lang-toggle><span data-lang-label>DA</span></button>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

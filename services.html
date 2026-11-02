@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F6F2" />
+  <title>What I build — BasedNode</title>
+  <meta name="description" content="The seven systems BasedNode builds: AI agents, workflow automation, data pipelines, cost work, dashboards and internal tools, marketing automation and full AI products. Fixed price from 4,000 DKK." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body data-page="services">
+
+  <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
+
+  <header class="topnav">
+    <div class="container topnav__inner">
+      <a href="index.html" class="topnav__logo" aria-label="BasedNode home">
+        <span class="topnav__logo-mark" aria-hidden="true"></span>
+        <span>BasedNode</span>
+        <span class="topnav__logo-meta" data-i18n="logo_meta">Copenhagen · Since 2019</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="topnav__links">          <li><a href="#services" data-i18n="services">What I build</a></li>
+          <li><a href="#how" data-i18n="how">How it works</a></li>
+          <li><a href="#pricing" data-i18n="pricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+      </nav>
+      <div class="topnav__actions">
+        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
+          <span data-lang-label>DA</span>
+        </button>
+        <a href="#contact" class="btn btn--secondary btn--sm topnav__cta" data-i18n="nav_cta">Talk to me</a>
+        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="40" y1="64" x2="216" y2="64"/>
+            <line x1="40" y1="128" x2="216" y2="128"/>
+            <line x1="40" y1="192" x2="216" y2="192"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="72" y1="72" x2="184" y2="184"/>
+            <line x1="184" y1="72" x2="72" y2="184"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel lives INSIDE the sticky header so it drops out of the bar
+         instead of scrolling away with the page. -->
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
+      <ul>        <li><a href="#services" data-i18n="services">What I build</a></li>
+        <li><a href="#how" data-i18n="how">How it works</a></li>
+        <li><a href="#pricing" data-i18n="pricing">Pricing</a></li>
+        <li><a href="#faq" data-i18n="faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <!-- Tap-outside scrim, sits behind the panel -->
+  <div class="nav-scrim" data-nav-scrim hidden></div>
+
+  <main id="main">
+
+    <!-- ══ PAGE HEAD ══ -->
+    <section class="page-head">
+      <div class="container">
+        <div class="page-head__inner">
+          <span class="micro-label" data-i18n="sv_head_label">§ 01 — What I build</span>
+          <h1 class="display-lg page-head__title" data-i18n="sv_head_title">Seven systems. Here is what goes into each one.</h1>
+          <p class="page-head__lede" data-i18n="sv_head_lede">Each service below starts the same way: I look at how the work is actually done, and build the system that takes over. Most companies need two of them. Here is what you get, in plain terms, before we talk about price.</p>
+          <div class="page-head__meta">
+            <span data-i18n="sv_head_meta1">7 services</span>
+            <span data-i18n="sv_head_meta2">Fixed price from 4,000 DKK</span>
+            <span data-i18n="sv_head_meta3">Delivered in 2–8 weeks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ THE SEVEN SERVICES ══ -->
+    <section class="tight" id="services">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="sv_s1_label">§ 01.1 — The seven</span>
+          <h2 class="display-lg" data-i18n="sv_s1_title">What I build, in detail.</h2>
+          <p class="prose" data-i18n="sv_s1_desc">Seven things, all of them the same idea: take the repetitive half of somebody's week off them. You do not need all seven. Most people start with one and come back for the next.</p>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv1_num">§ 01</span>
+              <h3 class="svc-detail__title" data-i18n="svc1_name">AI agents</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc1_price">from 8,500 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc1_lead">One job, however narrow — learned properly, then done on its own</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc1_b1">One agent per task: it reads your own documents and writes the answer, not a generic guess.</li>
+                <li data-i18n="svc1_b2">Retrieval over your files — contracts, price lists, past mails — with the source shown for every answer.</li>
+                <li data-i18n="svc1_b3">Fine-tuned on your own examples where the wording matters: sales replies, order confirmations.</li>
+                <li data-i18n="svc1_b4">Runs on your own server, calling the OpenAI or Anthropic API with your key, never mine.</li>
+                <li data-i18n="svc1_b5">Handover is the code, the prompts, an evaluation set and a runbook you can follow yourself.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc1_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc1_hand_body">The agent runs on your machine, not on mine. You get the prompts, the evaluation set and the rules for when it must ask a human instead of guessing. If it drifts, you can see where.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv2_num">§ 02</span>
+              <h3 class="svc-detail__title" data-i18n="svc2_name">Workflow automation</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc2_price">from 12,000 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc2_lead">Processes you already run, tidied up so nobody loses a day to Excel</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc2_b1">I map the process as it actually runs, including the workarounds nobody has written down.</li>
+                <li data-i18n="svc2_b2">Built in n8n, so the flow stays visible and editable without touching code.</li>
+                <li data-i18n="svc2_b3">Connects to your ERP, CRM, mail and shared drive, usually through existing APIs.</li>
+                <li data-i18n="svc2_b4">Replaces the copy-paste between two systems and the Excel file in the middle of it.</li>
+                <li data-i18n="svc2_b5">Alerts go to the person who owns the task, so nothing fails quietly in a queue.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc2_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc2_hand_body">The flows live in n8n, so you can open one and read it. Nothing runs that you cannot open. The manual step it replaced is usually deleted the same week we finish.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv3_num">§ 03</span>
+              <h3 class="svc-detail__title" data-i18n="svc3_name">Data pipelines</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc3_price">from 9,000 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc3_lead">Data from five systems, cleaned up and joined into one</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc3_b1">Sources pulled on a schedule: SQL database, CSV drop, REST API, ERP export.</li>
+                <li data-i18n="svc3_b2">Cleaned and joined in Postgres, with every transformation written down as code.</li>
+                <li data-i18n="svc3_b3">A stable table per source, so nothing downstream has to parse raw files a second time.</li>
+                <li data-i18n="svc3_b4">Loads into your BI tool or warehouse without the manual export on the first of the month.</li>
+                <li data-i18n="svc3_b5">You get the schema, the run log and a restart button for the day something breaks.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc3_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc3_hand_body">The schema, the SQL and a runbook. If someone else has to take it over, they can read how it works and change it without calling me.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv4_num">§ 04</span>
+              <h3 class="svc-detail__title" data-i18n="svc4_name">Cost work</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc4_price">from 4,000 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc4_lead">Same answer, smaller bill for the model calls</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc4_b1">Prompts and context trimmed until the answer is the same length as it was.</li>
+                <li data-i18n="svc4_b2">Caching for the repeated questions that were being paid for every single time.</li>
+                <li data-i18n="svc4_b3">Smaller model for the easy steps, larger one only where it changes the answer.</li>
+                <li data-i18n="svc4_b4">Token usage logged per call, so the saving shows up as a number and not a feeling.</li>
+                <li data-i18n="svc4_b5">On one project the monthly bill went from €12,000 to under €150.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc4_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc4_hand_body">A before-and-after number on your own usage, plus the changes that produced it. You keep the cheaper setup whether or not we work together again.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv5_num">§ 05</span>
+              <h3 class="svc-detail__title" data-i18n="svc5_name">Dashboards and internal tools</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc5_price">from 15,000 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc5_lead">One screen with the numbers, askable in plain Danish</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc5_b1">One screen with the numbers you actually check, and nothing else.</li>
+                <li data-i18n="svc5_b2">Ask a question in Danish and get an answer with the table behind it.</li>
+                <li data-i18n="svc5_b3">Built on FastAPI with Postgres behind it — the same stack I run in production.</li>
+                <li data-i18n="svc5_b4">Replaces the weekly report somebody builds by hand and sends out on Friday.</li>
+                <li data-i18n="svc5_b5">Access rights per role, so people see their own numbers and not everyone else's.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc5_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc5_hand_body">The app, the database and a set of accounts with the right access. You can add a question the dashboard answers without me.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv6_num">§ 06</span>
+              <h3 class="svc-detail__title" data-i18n="svc6_name">Marketing automation</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc6_price">from 7,000 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc6_lead">Every lead followed up, without a spreadsheet in sight</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc6_b1">Leads from your forms, site and mail land in one place — no spreadsheet in between.</li>
+                <li data-i18n="svc6_b2">Sequences written for your actual offer, with the timing you would have used yourself.</li>
+                <li data-i18n="svc6_b3">Synced with your CRM, so the status of every lead is visible without asking anyone.</li>
+                <li data-i18n="svc6_b4">Every send is logged: who received what, when, and what happened next.</li>
+                <li data-i18n="svc6_b5">Sequences stop on a reply, so no lead is contacted twice by accident.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc6_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc6_hand_body">The sequences, the templates and the CRM fields. Everything is editable, and the log shows what each lead answered.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail">
+          <div class="svc-detail__head">
+            <div>
+              <span class="case-card__domain" data-i18n="sv7_num">§ 07</span>
+              <h3 class="svc-detail__title" data-i18n="svc7_name">Full AI products</h3>
+            </div>
+            <span class="svc-detail__price" data-i18n="svc7_price">from 30,000 DKK</span>
+          </div>
+          <div class="svc-detail__body">
+            <div>
+              <p class="prose" data-i18n="svc7_lead">An app built from scratch, for a fixed price or a share of what it earns</p>
+              <ul class="svc-detail__list">
+                <li data-i18n="svc7_b1">Scope, wireframes and a working first version before the invoice goes out.</li>
+                <li data-i18n="svc7_b2">Next.js in front, FastAPI behind, deployed with Docker in your own account.</li>
+                <li data-i18n="svc7_b3">Your users, your data, your hosting account, from the first commit.</li>
+                <li data-i18n="svc7_b4">Priced as a fixed sum or a share of what it earns, agreed in writing up front.</li>
+                <li data-i18n="svc7_b5">Handover is the repository, the documentation and a walkthrough call.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="micro-label" data-i18n="svc7_hand_label">At handover</span>
+              <p class="prose" data-i18n="svc7_hand_body">The repository, the deployment and the documentation. No dependencies on my accounts, and no licence you have to keep paying for.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ HOW IT WORKS ══ -->
+    <section id="how">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s2_label">§ 02 — How it works</span>
+          <h2 class="display-lg" data-i18n="s2_title">Three things you get that a template cannot give you.</h2>
+          <p class="prose" data-i18n="s2_desc">Not because anyone else is bad at this. Because a template was never written for your week, your systems, or the way you work.</p>
+        </div>
+
+        <div class="wedge-list">
+          <div class="wedge-item">
+            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge1_label">Wedge 01 / 03</span>
+            <h3 class="h1 wedge-item__title" data-i18n="wedge1_title">You own it.</h3>
+            <p class="prose" data-i18n="wedge1_desc">The code sits in your own accounts, the documentation is written for you, and the data stays with you. If we stop working together, nothing breaks and nobody has to ask permission to keep it running.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="wedge1_meta">Your accounts · Your data · Your copy</p>
+          </div>
+          <div class="wedge-item">
+            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge2_label">Wedge 02 / 03</span>
+            <h3 class="h1 wedge-item__title" data-i18n="wedge2_title">Plain language, no theatre.</h3>
+            <p class="prose" data-i18n="wedge2_desc">You will not get a slide deck about how AI is changing everything. You get a screen that does the job, and a number to call when it does something you did not expect.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="wedge2_meta">Documented · Explained · Runnable by you</p>
+          </div>
+          <div class="wedge-item wedge-item--last">
+            <span class="micro-label micro-label--accent wedge-item__label" data-i18n="wedge3_label">Wedge 03 / 03</span>
+            <h3 class="h1 wedge-item__title" data-i18n="wedge3_title">Scope before price.</h3>
+            <p class="prose" data-i18n="wedge3_desc">We agree on exactly what the system does before I quote it. If the scope changes, the price changes with it, in writing. No surprise invoice in month three.</p>
+            <p class="mono-data muted wedge-item__meta" data-i18n="wedge3_meta">Written scope · Fixed price · Change log</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PRICING ══ -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s4_label">§ 04 — Pricing</span>
+          <h2 class="display-lg" data-i18n="pricing_title">Three ways to pay. One of them will fit.</h2>
+          <p class="prose" data-i18n="pricing_sub">I would rather you pick the one that makes sense for your week than the one that sounds biggest.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <span class="pricing-card__name" data-i18n="plan1_name">Fixed price</span>
+            <span class="pricing-card__price" data-i18n="plan1_price">from 4,000</span><span class="pricing-card__unit">DKK</span>
+            <p class="pricing-card__desc" data-i18n="plan1_desc">We agree on what the system does, and it costs that. Best for one clear problem with a clear finish line.</p>
+            <ul class="pricing-card__list">
+              <li data-i18n="plan1_i1">Written scope before work starts</li>
+              <li data-i18n="plan1_i2">Fixed price, change log if scope moves</li>
+              <li data-i18n="plan1_i3">Documented handover</li>
+            </ul>
+          </div>
+          <div class="pricing-card pricing-card--accent">
+            <span class="pricing-card__name" data-i18n="plan2_name">Revenue share</span>
+            <span class="pricing-card__price" data-i18n="plan2_price">12–20</span><span class="pricing-card__unit">%</span>
+            <p class="pricing-card__desc" data-i18n="plan2_desc">A percentage of what the system actually brings in. Best when the value is real but hard to price up front.</p>
+            <ul class="pricing-card__list">
+              <li data-i18n="plan2_i1">Smaller upfront cost</li>
+              <li data-i18n="plan2_i2">I stay on it while it runs</li>
+              <li data-i18n="plan2_i3">Reporting on what it produced</li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <span class="pricing-card__name" data-i18n="plan3_name">Partnership</span>
+            <span class="pricing-card__price" data-i18n="plan3_price">Equity</span><span class="pricing-card__unit" data-i18n="svc_fee_unit">+ fee</span>
+            <p class="pricing-card__desc" data-i18n="plan3_desc">I build the product, you bring the market and the customers. We split what comes in.</p>
+            <ul class="pricing-card__list">
+              <li data-i18n="plan3_i1">For early-stage products</li>
+              <li data-i18n="plan3_i2">Reduced cash retainer</li>
+              <li data-i18n="plan3_i3">Agreement in writing, up front</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="pricing-note" data-i18n="pricing_note">All prices exclude VAT. Every engagement starts with a free 30-minute call, and I will tell you on that call if I am the wrong person for it.</p>
+      </div>
+    </section>
+
+    <!-- ══ FAQ ══ -->
+    <section class="tight" id="faq">
+      <div class="container container--narrow">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="s5_label">§ 05 — Questions</span>
+          <h2 class="display-lg" data-i18n="faq_title">The five questions everyone asks first.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary data-i18n="faq1_q">How long does a project take?</summary>
+            <p data-i18n="faq1_a">Two to eight weeks, depending on scope. The first working version is usually live inside three weeks, because I would rather show you something running than describe it.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq2_q">Do I have to replace the systems I already use?</summary>
+            <p data-i18n="faq2_a">Usually not. Most of the work is connecting what you already have — your ERP, your CRM, your mail — and removing the manual step in between. Nothing gets ripped out unless you want it to.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq3_q">What does it cost?</summary>
+            <p data-i18n="faq3_a">It depends on scope, and I will not guess from a website form. After the first call you get a written scope and a fixed price, so you can compare it against doing nothing.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq4_q">Who owns the code and the data?</summary>
+            <p data-i18n="faq4_a">You do, from day one. Everything is delivered in your own accounts, with documentation written for someone who has not seen the code before.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq5_q">Do you work with companies outside Denmark?</summary>
+            <p data-i18n="faq5_a">Yes. The work is remote, and I have delivered for teams in Denmark, Germany and Sweden. Everything is in English and Danish, so nothing gets lost in translation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ START ══ -->
+    <section id="contact">
+      <div class="container">
+        <div class="start-grid">
+          <div>
+            <span class="micro-label section-label" data-i18n="s6_label">§ 06 — Start</span>
+            <h2 class="display-lg" data-i18n="contact_title">Tell me what is slow in your week.</h2>
+            <p class="prose start-grid__prose" data-i18n="contact_sub">One call, thirty minutes, no slides. We look at your week, and I tell you whether I can help — and if I cannot, I say who can.</p>
+          </div>
+          <div class="start-grid__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg" data-i18n="contact_cta1">Write to me</a>
+            <a href="cases.html" class="btn btn--secondary btn--lg" data-i18n="sv_start_cta2">See the cases</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-block">
+          <a href="index.html" class="footer__logo" aria-label="BasedNode home">
+            <span class="footer__logo-mark" aria-hidden="true"></span>
+            <span>BasedNode</span>
+          </a>
+          <p class="footer__desc" data-i18n="footer_desc">Automation for the repetitive half of running a company. Copenhagen.</p>
+          <address class="footer__address">
+            BasedNode<br/>
+            <span data-i18n="foot_city">Copenhagen, Denmark</span><br/>
+            <span data-i18n="foot_cvr">CVR 43750194</span><br/>
+            <a href="mailto:omar@basednode.xyz">omar@basednode.xyz</a>
+          </address>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
+          <ul>
+            <li><a href="services.html" data-i18n="foot_svc1">AI agents</a></li>
+            <li><a href="services.html" data-i18n="foot_svc2">Workflow automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc3">Data pipelines</a></li>
+            <li><a href="services.html" data-i18n="foot_svc4">Cost work</a></li>
+            <li><a href="services.html" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
+            <li><a href="services.html" data-i18n="foot_svc6">Marketing automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc7">Full AI products</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col2">More</div>
+          <ul>
+            <li><a href="cases.html" data-i18n="foot_l_cases">Cases</a></li>
+            <li><a href="resources.html" data-i18n="foot_l_resources">Resources</a></li>
+            <li><a href="about.html" data-i18n="foot_l_about">About</a></li>
+            <li><a href="services.html#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
+            <li><a href="services.html#faq" data-i18n="foot_l_faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col3">Company</div>
+          <ul>
+            <li><a href="contact.html" data-i18n="foot_l_contact">Contact</a></li>
+            <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
+            <li><a href="terms.html" data-i18n="foot_l_terms">Terms</a></li>
+            <li><a href="privacy.html" data-i18n="foot_l_privacy">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
+        <span class="footer__bottom-links">
+          <button class="lang-toggle lang-toggle--dark" data-lang-toggle><span data-lang-label>DA</span></button>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

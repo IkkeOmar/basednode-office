@@ -2424,3 +2424,256 @@ body.nav-open .topnav__menu-btn .icon-open { display: none; }
   .cat-dir__count { grid-area: count; font-size: 0.75rem; }
   .cat-dir__arrow { grid-area: arrow; align-self: center; }
 }
+
+
+/* =========================================================================
+ * 30. SUBPAGE COMPONENTS
+ *
+ * New pages (cases, services, about, resources, security, contact) reuse the
+ * existing catalogue (cat-dir, wedge-list, pricing-card, stat, faq-list,
+ * timeline, method-grid, team-row, data-table, trust-strip, chip, card).
+ * These are the few genuinely new pieces.
+ * ========================================================================= */
+
+/* ---- Page head: eyebrow + title + lede, for every subpage ---- */
+.page-head {
+  padding: var(--space-12) 0 var(--space-8);
+  border-bottom: var(--e-hairline);
+}
+.page-head__inner { max-width: 880px; }
+.page-head__title {
+  margin: var(--space-4) 0 var(--space-5);
+}
+.page-head__lede {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 68ch;
+}
+.page-head__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper-muted);
+}
+.page-head__crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper-muted);
+  text-decoration: none;
+}
+.page-head__crumb:hover { color: var(--accent-ink); }
+
+/* ---- Case study card ---- */
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: var(--e-hairline);
+}
+.case-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding: var(--space-8) 0;
+  border-bottom: var(--e-hairline);
+}
+.case-card__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
+.case-card__title { font-size: 1.125rem; font-weight: 500; }
+.case-card__domain {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper-muted);
+}
+.case-card__desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink); max-width: 62ch; }
+.case-card__metric {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.case-card__metric-note {
+  font-size: 0.8125rem;
+  color: var(--paper-muted);
+  margin-top: var(--space-1);
+}
+.case-card__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+/* ---- Service detail block: one long-form entry per service ---- */
+.svc-detail {
+  padding: var(--space-8) 0;
+  border-bottom: var(--e-hairline);
+}
+.svc-detail__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.svc-detail__title { font-size: 1.25rem; font-weight: 500; }
+.svc-detail__price {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.svc-detail__body { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+.svc-detail__list { list-style: none; padding: 0; margin: 0; }
+.svc-detail__list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.svc-detail__list li::before {
+  content: '—';
+  font-family: var(--font-mono);
+  color: var(--paper-muted);
+}
+
+/* ---- Glossary: term + plain-language definition ---- */
+.glossary-list { border-top: var(--e-hairline); }
+.glossary-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding: var(--space-5) 0;
+  border-bottom: var(--e-hairline);
+}
+.glossary-item__term {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.glossary-item__def { font-size: 0.9375rem; line-height: 1.6; color: var(--ink); max-width: 66ch; }
+
+/* ---- Guide step: numbered, for the resources walkthrough ---- */
+.guide-step {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  border-bottom: var(--e-hairline);
+}
+.guide-step__num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-ink);
+  letter-spacing: 0.04em;
+}
+.guide-step__title { font-size: 1rem; font-weight: 500; }
+.guide-step__body { font-size: 0.9375rem; line-height: 1.6; color: var(--ink); max-width: 66ch; }
+
+/* ---- Key/value table, for legal + pricing facts ---- */
+.kv-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.kv-table th,
+.kv-table td { text-align: left; vertical-align: top; padding: var(--space-4) var(--space-5) var(--space-4) 0; border-bottom: var(--e-hairline); }
+.kv-table th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--paper-muted);
+  width: 34%;
+}
+
+/* ---- Contact cards ---- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: var(--e-hairline);
+}
+.contact-card {
+  padding: var(--space-6) 0;
+  border-bottom: var(--e-hairline);
+}
+.contact-card__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper-muted);
+  margin-bottom: var(--space-3);
+}
+.contact-card__value { font-size: 1rem; margin-bottom: var(--space-2); }
+.contact-card__value a { color: var(--ink); }
+.contact-card__note { font-size: 0.875rem; color: var(--paper-muted); line-height: 1.55; }
+
+/* ---- Prose block for legal / long text ---- */
+.doc-block { max-width: 70ch; }
+.doc-block h2 { font-size: 1.125rem; font-weight: 500; margin: var(--space-8) 0 var(--space-3); }
+.doc-block h3 { font-size: 1rem; font-weight: 500; margin: var(--space-5) 0 var(--space-2); }
+.doc-block p { font-size: 0.9375rem; line-height: 1.65; color: var(--ink); margin-bottom: var(--space-4); }
+.doc-block ul { margin: 0 0 var(--space-4); padding-left: var(--space-5); }
+.doc-block li { font-size: 0.9375rem; line-height: 1.6; color: var(--ink); margin-bottom: var(--space-2); }
+.doc-block strong { font-weight: 500; }
+
+/* ---- Link row: inline links to sibling pages ---- */
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-top: var(--e-hairline);
+  border-bottom: var(--e-hairline);
+}
+.link-row a {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.link-row a:hover { color: var(--accent-ink); }
+
+/* ---- Callout: the one thing a page wants the reader to remember ---- */
+.callout {
+  border: var(--e-hairline);
+  border-left: 2px solid var(--accent);
+  padding: var(--space-5);
+  background: var(--paper-faint);
+  max-width: 70ch;
+}
+.callout__title { font-size: 0.9375rem; font-weight: 500; margin-bottom: var(--space-2); }
+.callout__body { font-size: 0.875rem; line-height: 1.6; color: var(--ink); }
+
+/* =========================================================================
+ * 31. SUBPAGE COMPONENTS — RESPONSIVE
+ * ========================================================================= */
+
+@media (min-width: 768px) {
+  .case-grid { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-10); }
+  .case-card { grid-template-columns: 1fr auto; align-items: start; }
+  .case-card__body { grid-column: 1 / -1; }
+  .case-card__metric { text-align: right; }
+  .svc-detail__body { grid-template-columns: 1.6fr 1fr; gap: var(--space-10); }
+  .glossary-item { grid-template-columns: minmax(140px, 220px) 1fr; gap: var(--space-8); }
+  .guide-step { grid-template-columns: 90px 1fr; gap: var(--space-8); }
+  .guide-step__body { grid-column: 2; }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-10); }
+}
+
+@media (min-width: 1100px) {
+  .case-grid { grid-template-columns: repeat(3, 1fr); }
+  .case-card { grid-template-columns: 1fr; }
+  .case-card__metric { text-align: left; }
+  .case-card__body { grid-column: auto; }
+}
+
+@media (max-width: 767px) {
+  .page-head { padding: var(--space-8) 0 var(--space-6); }
+  .page-head__lede { font-size: 1rem; }
+  .kv-table th { width: 40%; }
+  .kv-table th,
+  .kv-table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; }
+}

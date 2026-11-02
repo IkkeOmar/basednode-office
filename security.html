@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F6F2" />
+  <title>Security — BasedNode</title>
+  <meta name="description" content="How BasedNode handles your data and access: your code in your own accounts, no tracking, no analytics, secrets kept server-side, and no open ports." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body data-page="security">
+
+  <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
+
+  <header class="topnav">
+    <div class="container topnav__inner">
+      <a href="index.html" class="topnav__logo" aria-label="BasedNode home">
+        <span class="topnav__logo-mark" aria-hidden="true"></span>
+        <span>BasedNode</span>
+        <span class="topnav__logo-meta" data-i18n="logo_meta">Copenhagen · Since 2019</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="topnav__links">          <li><a href="services.html" data-i18n="services">What I build</a></li>
+          <li><a href="services.html#how" data-i18n="how">How it works</a></li>
+          <li><a href="services.html#pricing" data-i18n="pricing">Pricing</a></li>
+          <li><a href="services.html#faq" data-i18n="faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+      </nav>
+      <div class="topnav__actions">
+        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
+          <span data-lang-label>DA</span>
+        </button>
+        <a href="#contact" class="btn btn--secondary btn--sm topnav__cta" data-i18n="nav_cta">Talk to me</a>
+        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="40" y1="64" x2="216" y2="64"/>
+            <line x1="40" y1="128" x2="216" y2="128"/>
+            <line x1="40" y1="192" x2="216" y2="192"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="72" y1="72" x2="184" y2="184"/>
+            <line x1="184" y1="72" x2="72" y2="184"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel lives INSIDE the sticky header so it drops out of the bar
+         instead of scrolling away with the page. -->
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
+      <ul>        <li><a href="services.html" data-i18n="services">What I build</a></li>
+        <li><a href="services.html#how" data-i18n="how">How it works</a></li>
+        <li><a href="services.html#pricing" data-i18n="pricing">Pricing</a></li>
+        <li><a href="services.html#faq" data-i18n="faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="contact">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <!-- Tap-outside scrim, sits behind the panel -->
+  <div class="nav-scrim" data-nav-scrim hidden></div>
+
+  <main id="main">    <!-- ══ PAGE HEAD ══ -->
+    <section class="page-head">
+      <div class="container page-head__inner">
+        <span class="micro-label" data-i18n="sec_label">Security & privacy</span>
+        <h1 class="display-lg page-head__title" data-i18n="sec_title">Your data stays with you.</h1>
+        <p class="page-head__lede" data-i18n="sec_lede">This page explains how BasedNode handles data and access, without marketing language. It is short, because there is not much to hide: no tracking, no analytics, and no login to somebody else's dashboard.</p>
+        <div class="page-head__meta">
+          <span data-i18n="sec_meta1">BasedNode · CVR 43750194</span>
+          <span data-i18n="sec_meta2">Updated: November 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ HOW IT WORKS ══ -->
+    <section class="tight">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="sec_s1_label">§ 01 — How it works</span>
+          <h2 class="display-lg" data-i18n="sec_s1_title">Your code lives in your own accounts.</h2>
+          <p class="prose" data-i18n="sec_s1_desc">That is the most important line on this page. When I build a system, the code sits in your GitHub, your cloud account and your own API accounts. I get access while we work together. When we are done, you can remove my access and the system keeps running. There is no vendor who can switch it off if we ever part ways.</p>
+        </div>
+
+        <div class="method-grid">
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="sec_m1_label">01</span>
+            <h3 class="h3" data-i18n="sec_m1_title">No tracking tools</h3>
+            <p class="method-item__body" data-i18n="sec_m1_body">There is no Google Analytics, no Facebook Pixel, no advertising cookies and no third-party scripts reading your behaviour. The only thing stored in your browser is your language choice, and it lives in localStorage rather than a cookie.</p>
+          </div>
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="sec_m2_label">02</span>
+            <h3 class="h3" data-i18n="sec_m2_title">Secrets stay server-side</h3>
+            <p class="method-item__body" data-i18n="sec_m2_body">API keys, passwords and other credentials live in environment variables or a secret manager on your server. They are never written into frontend code and never end up in a bundle someone can download from the browser.</p>
+          </div>
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="sec_m3_label">03</span>
+            <h3 class="h3" data-i18n="sec_m3_title">No open ports</h3>
+            <p class="method-item__body" data-i18n="sec_m3_body">Services I set up sit behind Cloudflare Tunnels. There is no public IP, no open ports and no direct access to the server from the internet. Every request is encrypted and checked before it gets in.</p>
+          </div>
+          <div class="method-item">
+            <span class="method-item__label" data-i18n="sec_m4_label">04</span>
+            <h3 class="h3" data-i18n="sec_m4_title">Updates and fixes</h3>
+            <p class="method-item__body" data-i18n="sec_m4_body">Dependencies are watched and security updates roll out automatically. The system runs with the fixes that exist, and you always have a backup of your own database and your own files.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section>
+      <div class="container">
+        <div class="start-grid">
+          <div>
+            <span class="micro-label section-label" data-i18n="sec_s3_label">§ 03 — Questions</span>
+            <h2 class="display-lg" data-i18n="sec_s3_title">Is there something you want in writing?</h2>
+            <p class="prose start-grid__prose" data-i18n="sec_s3_desc">If you need something handed to a supplier, a board or an accountant, I will write it as a proper document you can use. Tell me what you need.</p>
+          </div>
+          <div class="start-grid__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg" data-i18n="sec_cta1">Write to me</a>
+            <a href="privacy.html" class="btn btn--secondary btn--lg" data-i18n="sec_cta2">See the privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-block">
+          <a href="index.html" class="footer__logo" aria-label="BasedNode home">
+            <span class="footer__logo-mark" aria-hidden="true"></span>
+            <span>BasedNode</span>
+          </a>
+          <p class="footer__desc" data-i18n="footer_desc">Automation for the repetitive half of running a company. Copenhagen.</p>
+          <address class="footer__address">
+            BasedNode<br/>
+            <span data-i18n="foot_city">Copenhagen, Denmark</span><br/>
+            <span data-i18n="foot_cvr">CVR 43750194</span><br/>
+            <a href="mailto:omar@basednode.xyz">omar@basednode.xyz</a>
+          </address>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
+          <ul>
+            <li><a href="services.html" data-i18n="foot_svc1">AI agents</a></li>
+            <li><a href="services.html" data-i18n="foot_svc2">Workflow automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc3">Data pipelines</a></li>
+            <li><a href="services.html" data-i18n="foot_svc4">Cost work</a></li>
+            <li><a href="services.html" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
+            <li><a href="services.html" data-i18n="foot_svc6">Marketing automation</a></li>
+            <li><a href="services.html" data-i18n="foot_svc7">Full AI products</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col2">More</div>
+          <ul>
+            <li><a href="cases.html" data-i18n="foot_l_cases">Cases</a></li>
+            <li><a href="resources.html" data-i18n="foot_l_resources">Resources</a></li>
+            <li><a href="about.html" data-i18n="foot_l_about">About</a></li>
+            <li><a href="services.html#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
+            <li><a href="services.html#faq" data-i18n="foot_l_faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col3">Company</div>
+          <ul>
+            <li><a href="contact.html" data-i18n="foot_l_contact">Contact</a></li>
+            <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
+            <li><a href="terms.html" data-i18n="foot_l_terms">Terms</a></li>
+            <li><a href="privacy.html" data-i18n="foot_l_privacy">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
+        <span class="footer__bottom-links">
+          <button class="lang-toggle lang-toggle--dark" data-lang-toggle><span data-lang-label>DA</span></button>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
