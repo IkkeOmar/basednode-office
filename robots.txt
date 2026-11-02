@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ikkeomar.github.io/basednode-office/sitemap.xml
