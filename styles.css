@@ -294,40 +294,75 @@ section.dark .micro-label { color: var(--ink-muted); }
 }
 
 /* The BasedNode mark: a pulsing dot in front of the wordmark, the same
-   mark used on basednode.xyz. The dot breathes (scale + opacity) rather
-   than rotating, which reads as alive without pulling focus from the
-   navigation. */
+   mark used on basednode.xyz.
+
+   The pulse has to be OBVIOUS, not a subtle breathe. An earlier version
+   only scaled the core dot and faded it, which read as "dim" rather than
+   "alive" — the dot got smaller and less orange, so the motion was
+   almost invisible on a warm paper background.
+
+   This version does three things at once:
+     * the core grows from 10px to 13px and never fades below full opacity
+     * the glow swells from a tight halo to a wide one
+     * an outline ring expands outward and dissolves, which is what makes
+       the motion legible in peripheral vision
+   The ring is the part that actually sells the pulse, so it is a separate
+   ::after layer rather than a box-shadow change. */
 .topnav__logo-mark {
-  width: 10px;
-  height: 10px;
+  position: relative;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 12px var(--accent);
+  box-shadow: 0 0 8px rgba(242, 107, 31, 0.7);
   display: inline-block;
   flex: 0 0 auto;
-  animation: bn-pulse-dot 2s ease-in-out infinite;
+  animation: bn-pulse-dot 2.4s ease-in-out infinite;
+}
+.topnav__logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  animation: bn-pulse-ring 2.4s ease-out infinite;
 }
 @keyframes bn-pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.55; transform: scale(1.3); }
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 8px rgba(242, 107, 31, 0.7); }
+  50%      { transform: scale(1.22); box-shadow: 0 0 20px rgba(242, 107, 31, 0.95); }
+}
+@keyframes bn-pulse-ring {
+  0%        { transform: scale(0.9); opacity: 0.75; }
+  60%, 100% { transform: scale(2.6); opacity: 0; }
 }
 
 /* The footer sits on the dark panel, so the dot uses the paper colour
    instead of the accent to stay visible. */
 .footer__logo-mark {
-  width: 10px;
-  height: 10px;
+  position: relative;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--paper);
-  box-shadow: 0 0 12px rgba(248, 246, 242, 0.55);
+  box-shadow: 0 0 8px rgba(248, 246, 242, 0.7);
   display: inline-block;
   flex: 0 0 auto;
-  animation: bn-pulse-dot 2s ease-in-out infinite;
+  animation: bn-pulse-dot 2.4s ease-in-out infinite;
+}
+.footer__logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--paper);
+  animation: bn-pulse-ring 2.4s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .topnav__logo-mark,
   .footer__logo-mark { animation: none; }
+  .topnav__logo-mark::after,
+  .footer__logo-mark::after { animation: none; opacity: 0; }
 }
 .topnav__logo-meta {
   display: none;
@@ -1335,16 +1370,6 @@ section.dark .micro-label { color: var(--ink-muted); }
   align-items: center;
   gap: var(--space-3);
 }
-.footer__logo-mark {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--paper);
-  box-shadow: 0 0 12px rgba(248, 246, 242, 0.55);
-  display: inline-block;
-  flex: 0 0 auto;
-  animation: bn-pulse-dot 2s ease-in-out infinite;
-}
 .footer__desc {
   font-size: 0.875rem;
   line-height: 1.55;
@@ -2163,16 +2188,20 @@ section.dark .micro-label { color: var(--ink-muted); }
   transition: opacity var(--dur-fast) var(--ease-out),
               border-color var(--dur-fast) var(--ease-out);
 }
+/* Flag sizing.
+   The two flags have different aspect ratios: the Dannebrog is 37:28
+   (1.32:1) and the English hybrid is 40:28 (1.43:1). Giving each its
+   own width keeps both at the same height, so they sit on one baseline
+   and neither is stretched. preserveAspectRatio="xMidYMid meet" inside
+   the SVG does the rest. */
 .lang-flag {
   display: block;
-  width: 20px;
   height: 14px;
-  /* The Dannebrog is 37:28 and the hybrid is 2:1. A fixed box with
-     object-fit-style cropping keeps both flags the same visual size
-     without stretching either one. */
-  object-fit: cover;
+  width: auto;
   border-radius: 1px;
 }
+.lang-switch__opt[data-lang-target="da"] .lang-flag { width: 18px; }
+.lang-switch__opt[data-lang-target="en"] .lang-flag { width: 20px; }
 /* Inactive flag: drained of colour but still legible as a flag. */
 .lang-switch__opt:not(.is-active) { opacity: 0.38; }
 .lang-switch__opt:not(.is-active):hover { opacity: 0.7; }
