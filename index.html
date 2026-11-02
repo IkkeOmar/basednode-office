@@ -36,26 +36,35 @@
           <span data-lang-label>DA</span>
         </button>
         <a href="#contact" class="btn btn--secondary btn--sm topnav__cta" data-i18n="nav_cta">Talk to me</a>
-        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="40" y1="64" x2="216" y2="64"/>
             <line x1="40" y1="128" x2="216" y2="128"/>
             <line x1="40" y1="192" x2="216" y2="192"/>
           </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="72" y1="72" x2="184" y2="184"/>
+            <line x1="184" y1="72" x2="72" y2="184"/>
+          </svg>
         </button>
       </div>
     </div>
+
+    <!-- Panel lives INSIDE the sticky header so it drops out of the bar
+         instead of scrolling away with the page. -->
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
+      <ul>
+        <li><a href="#services" data-i18n="nav_services">What I build</a></li>
+        <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav class="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
-    <ul>
-      <li><a href="#services" data-i18n="nav_services">What I build</a></li>
-      <li><a href="#how" data-i18n="nav_how">How it works</a></li>
-      <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
-      <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Tap-outside scrim, sits behind the panel -->
+  <div class="nav-scrim" data-nav-scrim hidden></div>
 
   <main id="main">
 
@@ -67,7 +76,7 @@
           <div class="hero__text">
             <span class="hero__eyebrow" data-i18n="hero_eyebrow">AI &amp; automation studio · Copenhagen</span>
             <h1 class="display-xl hero__title" data-i18n="hero_title">Invoicing, bookkeeping and admin. Automated.</h1>
-            <p class="hero__sub" data-i18n="hero_sub">I build the software that runs the repetitive part of a small company: reading incoming invoices, posting them to the ledger, following up on leads, and answering the same customer question fifty times. You get a working system, documented, that you own.</p>
+            <p class="hero__sub" data-i18n="hero_sub">I go in, understand the job — however niche it is — and build a system that does it reliably on its own. Reading invoices, posting them to the ledger, following up on leads, answering the same customer question fifty times. You get a working system, documented, that you own.</p>
 
             <div class="hero__ctas">
               <a href="#services" class="btn btn--primary btn--lg" data-i18n="hero_cta1">See what I build</a>
@@ -84,7 +93,7 @@
             <div class="hero__drawing-meta">
               <span class="hero__drawing-sku">FLOW 01</span>
               <span class="hero__drawing-name" data-i18n="drawing_name">Invoice in, booked, done</span>
-              <span class="hero__drawing-spec" data-i18n="drawing_spec">Supplier PDF read, VAT split, posted to account 5700. 4.5 minutes of manual work becomes zero.</span>
+              <span class="hero__drawing-spec" data-i18n="drawing_spec">Supplier PDF read, VAT split, posted to account 5700. 4.5 minutes of manual work becomes zero — this work is easy and repetitive, which is exactly why it should be a system, not a person.</span>
               <span class="hero__drawing-link" data-i18n="drawing_link">See what it costs →</span>
             </div>
           </a>
@@ -99,21 +108,21 @@
         <div class="section-head section-head__editorial">
           <span class="micro-label" data-i18n="s1_label">§ 01 — What I build</span>
           <h2 class="display-lg" data-i18n="s1_title">Seven things I build. Most companies need two.</h2>
-          <p class="prose" data-i18n="s1_desc">Each one is a piece of software that runs on its own after I hand it over. You do not need all seven. Most people start with the first one, feel the difference in a week, and come back for the second.</p>
+          <p class="prose" data-i18n="s1_desc">I go in, learn the job — however narrow it is — and build a system that does it reliably on its own. Most of that work is easy and repetitive, which is exactly why it should not be a person doing it for the eighth hour. You do not need all seven. Most people start with the first one, feel the difference in a week, and come back for the second.</p>
         </div>
 
         <div class="cat-dir" aria-label="Services">
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 01</span>
             <span class="cat-dir__name" data-i18n="svc1_name">AI agents</span>
-            <span class="cat-dir__lead" data-i18n="svc1_lead">Answers support questions from your own documents</span>
+            <span class="cat-dir__lead" data-i18n="svc1_lead">One job, however niche — learned, then done autonomously</span>
             <span class="cat-dir__count" data-i18n="svc1_price">from 8,500 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>
           <a class="cat-dir__row" href="#contact">
             <span class="cat-dir__num">§ 02</span>
             <span class="cat-dir__name" data-i18n="svc2_name">Workflow automation</span>
-            <span class="cat-dir__lead" data-i18n="svc2_lead">Invoices, mail routing, approvals, reminders</span>
+            <span class="cat-dir__lead" data-i18n="svc2_lead">Processes you already run, standardised so nobody loses a day to Excel</span>
             <span class="cat-dir__count" data-i18n="svc2_price">from 12,000 DKK</span>
             <span class="cat-dir__arrow">→</span>
           </a>

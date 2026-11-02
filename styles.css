@@ -73,7 +73,17 @@
   --z-raised:  10;
   --z-overlay: 100;
   --z-toast:   1000;
+
+  /* Header height — the single source of truth for sticky offsets,
+     scroll-margin and the mobile panel. Change it in one place. */
+  --header-h: 64px;
+
+  /* Opt the page out of UA dark-mode repainting. Without this a phone
+     in dark mode can repaint form controls and links in its own blue,
+     which showed up as a blue hamburger icon on Android. */
+  color-scheme: light;
 }
+@media (max-width: 420px) { :root { --header-h: 56px; } }
 
 /* =========================================================================
  * 2. RESET + BASE
@@ -82,6 +92,17 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; }
+
+/* Anchor targets must clear the sticky header, otherwise a section
+   heading lands underneath the bar when you jump to it. */
+:target,
+section[id],
+main > section[id] {
+  scroll-margin-top: calc(var(--header-h) + var(--space-6));
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   overflow-x: clip;
@@ -103,6 +124,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 textarea:focus-visible, [tabindex]:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* Kill the blue tap flash on touch devices — Android Chrome paints a
+   translucent blue overlay on the element you touch. */
+a,
+button,
+summary,
+[role="button"],
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Skip link */
@@ -248,7 +281,7 @@ section.dark .micro-label { color: var(--ink-muted); }
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: var(--space-6);
-  height: 64px;
+  height: var(--header-h);
 }
 .topnav__logo {
   display: flex;
@@ -2232,22 +2265,133 @@ section.dark .micro-label { color: var(--ink-muted); }
 
 
 /* =========================================================================
- * 28. MOBILE HEADER — keep the language toggle and menu button on screen
+ * 28. MOBILE HEADER + PANEL
+ *
+ * Bugs this fixes:
+ *  1. The panel was a plain <nav> in normal flow. The JS toggled
+ *     aria-hidden but nothing ever set .is-open, so display stayed
+ *     none and the button did nothing.
+ *  2. The panel was NOT attached to the header. It was a sibling of
+ *     <header>, so it scrolled away with the page instead of dropping
+ *     out of the fixed header.
+ *  3. On mobile the grid was "auto 1fr" but the <nav> element still
+ *     occupied the 1fr column, pushing .topnav__actions onto a second
+ *     grid row. The DA button and the hamburger ended up stacked
+ *     UNDER the logo instead of inline at the right.
  * ========================================================================= */
 
 @media (max-width: 899px) {
   .topnav__inner {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     gap: var(--space-3);
+    align-items: center;
   }
   .topnav__links { display: none; }
   .topnav__cta { display: none; }
-  .topnav__actions { gap: var(--space-2); }
+  .topnav__actions { gap: var(--space-2); justify-self: end; align-self: center; }
   .topnav__logo-meta { display: none; }
+  /* The nav wrapper itself must leave the grid on mobile, otherwise it
+     holds the middle column open and pushes the actions to row 2. */
+  .topnav__inner > nav { display: none; }
 }
 @media (max-width: 420px) {
-  .topnav__inner { height: 56px; }
   .topnav__logo { font-size: 0.9375rem; }
+  .topnav__logo-mark { width: 22px; height: 22px; }
+  .topnav__logo-mark::after { inset: 5px; }
+}
+
+/* The panel: fixed to the header, full-bleed, slides down from under it. */
+.mobile-menu {
+  position: fixed;
+  /* 1px down so it covers the header's own bottom border instead of
+     sitting flush against it and leaving a hairline seam */
+  top: calc(var(--header-h) + 1px);
+  left: 0;
+  right: 0;
+  z-index: calc(var(--z-raised) - 1);
+  background: var(--paper);
+  border-bottom: var(--e-hairline);
+  /* Closed state: hidden but not display:none, so it can animate. */
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    visibility 0s linear var(--dur-base);
+  max-height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.mobile-menu[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    visibility 0s;
+}
+.mobile-menu ul {
+  list-style: none;
+  padding: var(--space-2) var(--space-5) var(--space-5);
+  margin: 0;
+}
+.mobile-menu li + li { border-top: var(--e-hairline); }
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+/* Arrow affordance on each row */
+.mobile-menu a::after {
+  content: '→';
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--paper-muted);
+}
+.mobile-menu a:hover { color: var(--accent-ink); }
+
+/* The scrim behind the panel, so tapping outside closes it */
+.nav-scrim {
+  position: fixed;
+  inset: calc(var(--header-h) + 1px) 0 0 0;
+  z-index: calc(var(--z-raised) - 2);
+  background: oklch(18% 0.012 60 / 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    visibility 0s linear var(--dur-base);
+}
+.nav-scrim.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    visibility 0s;
+}
+
+/* Lock page scroll while the panel is open */
+body.nav-open { overflow: hidden; }
+
+/* Swap the hamburger for an X when open */
+.topnav__menu-btn .icon-close { display: none; }
+body.nav-open .topnav__menu-btn .icon-close { display: block; }
+body.nav-open .topnav__menu-btn .icon-open { display: none; }
+
+/* Reduced motion: no slide, no fade */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .nav-scrim {
+    transition: none;
+    transform: none;
+  }
 }
 
 

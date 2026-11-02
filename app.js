@@ -18,7 +18,7 @@
       hero_eyebrow: "AI & automation studio · Copenhagen",
       hero_title: "Invoicing, bookkeeping and admin. Automated.",
       hero_sub:
-        "I build the software that runs the repetitive part of a small company: reading incoming invoices, posting them to the ledger, following up on leads, and answering the same customer question fifty times. You get a working system, documented, that you own.",
+        "I go in, understand the job — however niche it is — and build a system that does it reliably on its own. Reading invoices, posting them to the ledger, following up on leads, answering the same customer question fifty times. You get a working system, documented, that you own.",
       hero_cta1: "See what I build",
       hero_cta2: "Talk to me",
       hero_hint:
@@ -26,19 +26,19 @@
 
       drawing_name: "Invoice in, booked, done",
       drawing_spec:
-        "Supplier PDF read, VAT split, posted to account 5700. 4.5 minutes of manual work becomes zero.",
+        "Supplier PDF read, VAT split, posted to account 5700. 4.5 minutes of manual work becomes zero — this work is easy and repetitive, which is exactly why it should be a system, not a person.",
       drawing_link: "See what it costs →",
 
       s1_label: "§ 01 — What I build",
       s1_title: "Seven things I build. Most companies need two.",
       s1_desc:
-        "Each one is a piece of software that runs on its own after I hand it over. You do not need all seven. Most people start with the first one, feel the difference in a week, and come back for the second.",
+        "I go in, learn the job — however narrow it is — and build a system that does it reliably on its own. Most of that work is easy and repetitive, which is exactly why it should not be a person doing it for the eighth hour. You do not need all seven. Most people start with the first one, feel the difference in a week, and come back for the second.",
 
       svc1_name: "AI agents",
-      svc1_lead: "Answers support questions from your own documents",
+      svc1_lead: "One job, however niche — learned, then done autonomously",
       svc1_price: "from 8,500 DKK",
       svc2_name: "Workflow automation",
-      svc2_lead: "Invoices, mail routing, approvals, reminders",
+      svc2_lead: "Processes you already run, standardised so nobody loses a day to Excel",
       svc2_price: "from 12,000 DKK",
       svc3_name: "Data pipelines",
       svc3_lead: "Your data from five systems, cleaned and joined",
@@ -176,7 +176,7 @@
       hero_eyebrow: "AI & automatisering · København",
       hero_title: "Regning, bogholdering og administration. Automatiseret.",
       hero_sub:
-        "Jeg bygger den software, der klarer det repetitive i en mindre virksomhed: læser indgående regninger, bogfører dem, følger op på leads og svarer på det samme kundespørgsmål halvtreds gange. Du får et fungerende system, dokumenteret, som du ejer.",
+        "Jeg går ind, forstår jobbet — uanset hvor snævert det er — og bygger et system, der gør det pålideligt på egen hånd. Læse regninger, bogføre dem, følge op på leads, svare på det samme kundespørgsmål halvtreds gange. Du får et fungerende system, dokumenteret, som du ejer.",
       hero_cta1: "Se hvad jeg bygger",
       hero_cta2: "Skriv til mig",
       hero_hint:
@@ -184,19 +184,19 @@
 
       drawing_name: "Regning ind, bogført, færdig",
       drawing_spec:
-        "Leverandør-PDF læst, moms fordelt, bogført på konto 5700. 4,5 minutters manuelt arbejde bliver til nul.",
+        "Leverandør-PDF læst, moms fordelt, bogført på konto 5700. 4,5 minutters manuelt arbejde bliver til nul — arbejdet er let og repetitivt, og netop derfor skal det være et system, ikke en person.",
       drawing_link: "Se hvad det koster →",
 
       s1_label: "§ 01 — Hvad jeg bygger",
       s1_title: "Syv ting jeg bygger. De fleste virksomheder har brug for to.",
       s1_desc:
-        "Hver enkelt er et stykke software, der kører videre, efter jeg har afleveret det. Du har ikke brug for alle syv. De fleste starter med den første, mærker forskellen inden for en uge og kommer tilbage til den næste.",
+        "Jeg går ind, lærer jobbet — uanset hvor snævert det er — og bygger et system, der gør det pålideligt på egen hånd. Det meste af det arbejde er let og repetitivt, og netop derfor skal det ikke være en person, der laver det for ottende time. Du har ikke brug for alle syv. De fleste starter med den første, mærker forskellen inden for en uge og kommer tilbage til den næste.",
 
       svc1_name: "AI-agenter",
-      svc1_lead: "Svarer på supportspørgsmål ud fra dine egne dokumenter",
+      svc1_lead: "Ét job, uanset hvor snævert — lært, og så udført autonomt",
       svc1_price: "fra 8.500 DKK",
       svc2_name: "Workflow-automatisering",
-      svc2_lead: "Regninger, mailrouting, godkendelser, påmindelser",
+      svc2_lead: "Processor, du allerede kører, standardiseret så ingen mister en dag i Excel",
       svc2_price: "fra 12.000 DKK",
       svc3_name: "Datapipelines",
       svc3_lead: "Data fra fem systemer, renset og samlet",
@@ -352,13 +352,47 @@
 
   /* ---------------- Mobile menu ---------------- */
 
-  function toggleMobileMenu() {
+  /* The panel is fixed to the header (position: fixed; top: var(--header-h)),
+     so opening it must:
+       - flip aria-hidden on the panel and the button
+       - set body.nav-open so the page behind cannot scroll
+       - show the scrim and allow a tap outside to close it
+     Everything else (opacity, visibility, transform) is CSS-driven. */
+
+  function setMenuState(open) {
     var menu = document.querySelector("[data-mobile-menu]");
     var btn = document.querySelector("[data-menu-btn]");
+    var scrim = document.querySelector("[data-nav-scrim]");
     if (!menu) return;
-    var open = menu.getAttribute("aria-hidden") === "true";
+
     menu.setAttribute("aria-hidden", open ? "false" : "true");
-    if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (btn) {
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    document.body.classList.toggle("nav-open", open);
+
+    if (scrim) {
+      if (open) {
+        scrim.hidden = false;
+        // next frame, so the transition actually runs
+        requestAnimationFrame(function () {
+          scrim.classList.add("is-visible");
+        });
+      } else {
+        scrim.classList.remove("is-visible");
+        scrim.hidden = true;
+      }
+    }
+  }
+
+  function isMenuOpen() {
+    var menu = document.querySelector("[data-mobile-menu]");
+    return !!menu && menu.getAttribute("aria-hidden") === "false";
+  }
+
+  function toggleMobileMenu() {
+    setMenuState(!isMenuOpen());
   }
 
   /* ---------------- Wire up ---------------- */
@@ -377,8 +411,22 @@
       if (lang) { toggleLang(); return; }
       var menu = e.target.closest("[data-menu-btn]");
       if (menu) { toggleMobileMenu(); return; }
+      var scrim = e.target.closest("[data-nav-scrim]");
+      if (scrim) { setMenuState(false); return; }
       var link = e.target.closest(".mobile-menu a");
-      if (link) { toggleMobileMenu(); }
+      if (link) { setMenuState(false); }
     });
+
+    /* Escape closes the panel */
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isMenuOpen()) setMenuState(false);
+    });
+
+    /* Leaving the mobile breakpoint while open must not strand the
+       body scroll lock or a visible panel on desktop. */
+    var mq = window.matchMedia("(min-width: 900px)");
+    var onBreakpoint = function (e) { if (e.matches) setMenuState(false); };
+    if (mq.addEventListener) mq.addEventListener("change", onBreakpoint);
+    else if (mq.addListener) mq.addListener(onBreakpoint);
   });
 })();
