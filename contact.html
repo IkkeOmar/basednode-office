@@ -76,8 +76,8 @@
     <section class="page-head">
       <div class="container page-head__inner">
         <span class="micro-label" data-i18n="ct_label">Contact</span>
-        <h1 class="display-lg page-head__title" data-i18n="ct_title">Write to me.</h1>
-        <p class="page-head__lede" data-i18n="ct_lede">You do not have to write a long message. Say what is slow in your week, or what you would like automated, and I will reply with whether I can help and what it realistically costs. I read everything myself and answer within one working day.</p>
+        <h1 class="display-lg page-head__title" data-i18n="ct_title">Let's talk.</h1>
+        <p class="page-head__lede" data-i18n="ct_lede">You have an idea, a system that needs fixing, a piece of work that needs tech — or you just want to say hi. I am one message away.</p>
         <div class="page-head__meta">
           <span data-i18n="ct_meta1">Reply within 1 working day</span>
           <span data-i18n="ct_meta2">First call: 30 minutes, free</span>
@@ -85,74 +85,177 @@
       </div>
     </section>
 
-    <!-- ══ WAYS TO REACH ME ══ -->
+    <!-- ══ PICK YOUR TOPIC ══ -->
     <section class="tight">
       <div class="container">
         <div class="section-head section-head__editorial">
-          <span class="micro-label" data-i18n="ct_s1_label">§ 01 — How</span>
-          <h2 class="display-lg" data-i18n="ct_s1_title">Three ways in. Use whichever suits.</h2>
+          <span class="micro-label" data-i18n="ct_s1_label">§ 01 — Pick a topic</span>
+          <h2 class="display-lg" data-i18n="ct_s1_title">Choose what fits. Each topic has a template you can copy.</h2>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-card__label" data-i18n="ct_c1_label">Send an email</div>
-            <div class="contact-card__value"><a href="mailto:omar@basednode.xyz">omar@basednode.xyz</a></div>
-            <p class="contact-card__note" data-i18n="ct_c1_note">The quickest and easiest. A few lines about what is difficult is enough. If you want a quote for a specific piece of work, write what the system should do, which systems it needs to connect to, and when it needs to run.</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__label" data-i18n="ct_c2_label">Book a call</div>
-            <div class="contact-card__value"><a href="mailto:omar@basednode.xyz?subject=30-minutters%20opkald" data-i18n="ct_c2_value">Book 30 minutes</a></div>
-            <p class="contact-card__note" data-i18n="ct_c2_note">We look at your week together. I tell you what I can do, what it costs, and whether it is possible at all. It is free and you are not committing to anything.</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__label" data-i18n="ct_c3_label">Telegram</div>
-            <div class="contact-card__value"><a href="https://t.me/IkkeOmar">@IkkeOmar</a></div>
-            <p class="contact-card__note" data-i18n="ct_c3_note">If you would rather just send a message. I cannot promise to answer straight away, but I try.</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__label" data-i18n="ct_c4_label">Company</div>
-            <div class="contact-card__value" data-i18n="ct_c4_value">BasedNode</div>
-            <p class="contact-card__note" data-i18n="ct_c4_note">CVR 43750194 · Copenhagen, Denmark. For invoices and paperwork, write to omar@basednode.xyz with your CVR number in the subject line.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="topic-list">
+          <!-- 01 -->
+          <div class="topic">
+            <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-website">
+              <span class="topic__name" data-i18n="ct_t1_name">Website / Webapp</span>
+              <span class="topic__hint" data-i18n="ct_t1_hint">Website, webshop, dashboard, app</span>
+              <span class="topic__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="topic__body" id="topic-website" hidden>
+              <p class="topic__desc" data-i18n="ct_t1_desc">A website, a webshop or a dashboard to build from scratch — or an existing one that needs taking over.</p>
+              <div class="topic__actions">
+                <a class="btn btn--secondary btn--sm" href="mailto:omar@basednode.xyz" data-mail-subject="ct_t1_subject" data-i18n="ct_write">Write to me</a>
+                <button class="btn btn--primary btn--sm" type="button" data-copy-text="ct_t1_template" data-i18n="ct_copy_tpl">Copy template</button>
+              </div>
+              <pre class="topic__template" data-i18n="ct_t1_template">Subject: Website / Webapp enquiry
 
-    <!-- ══ WHAT TO WRITE ══ -->
-    <section>
-      <div class="container">
-        <div class="section-head section-head__editorial">
-          <span class="micro-label" data-i18n="ct_s2_label">§ 02 — What to write</span>
-          <h2 class="display-lg" data-i18n="ct_s2_title">Four things that make the answer better.</h2>
-          <p class="prose" data-i18n="ct_s2_desc">You do not need all four. But every time I know what the job is, I can reply with a concrete estimate instead of asking for a call first.</p>
-        </div>
+1. Must-haves (the important part):
+   - 
+   - 
+2. How will people use it?
+   (chat, website, phone, voice, etc.)
+3. Nice-to-have features:
+   - 
+   - 
+4. Budget range (optional):
+5. Deadline (optional):
+</pre>
+            </div>
+          </div>
 
-        <div class="method-grid">
-          <div class="method-item">
-            <span class="method-item__label" data-i18n="ct_m1_label">01</span>
-            <h3 class="h3" data-i18n="ct_m1_title">What is difficult?</h3>
-            <p class="method-item__body" data-i18n="ct_m1_body">Describe the part of the work that takes time and moves nothing. Reading invoices, chasing leads, answering customers, collecting numbers. This is where a system pays back most.</p>
+          <!-- 02 -->
+          <div class="topic">
+            <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-agent">
+              <span class="topic__name" data-i18n="ct_t2_name">AI agent / Automation</span>
+              <span class="topic__hint" data-i18n="ct_t2_hint">Bookkeeping, repetitive tasks, customer service</span>
+              <span class="topic__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="topic__body" id="topic-agent" hidden>
+              <p class="topic__desc" data-i18n="ct_t2_desc">This is where most of my work sits: systems that read, decide and write back without a person in the loop.</p>
+              <div class="topic__actions">
+                <a class="btn btn--secondary btn--sm" href="mailto:omar@basednode.xyz" data-mail-subject="ct_t2_subject" data-i18n="ct_write">Write to me</a>
+                <button class="btn btn--primary btn--sm" type="button" data-copy-text="ct_t2_template" data-i18n="ct_copy_tpl">Copy template</button>
+              </div>
+              <pre class="topic__template" data-i18n="ct_t2_template">Subject: AI agent / Automation enquiry
+
+1. Which repetitive tasks should be automated?
+   - 
+   - 
+2. Which systems and data should the agent reach?
+   (e.g. email, accounting software, CRM, calendar)
+3. How should people interact with it?
+   (chat, dashboard, email, voice)
+4. How much business-specific knowledge does it need?
+   (e.g. bookkeeping, logistics, legal)
+</pre>
+            </div>
           </div>
-          <div class="method-item">
-            <span class="method-item__label" data-i18n="ct_m2_label">02</span>
-            <h3 class="h3" data-i18n="ct_m2_title">Which systems are involved?</h3>
-            <p class="method-item__body" data-i18n="ct_m2_body">Your ERP, your CRM, your mail, your stock app, your own bookkeeping. I build on top of what you have. It is almost always cheaper than replacing something.</p>
+
+          <!-- 03 -->
+          <div class="topic">
+            <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-undervisning">
+              <span class="topic__name" data-i18n="ct_t3_name">Teaching / Tutoring</span>
+              <span class="topic__hint" data-i18n="ct_t3_hint">Maths, programming, AI courses</span>
+              <span class="topic__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="topic__body" id="topic-undervisning" hidden>
+              <p class="topic__desc" data-i18n="ct_t3_desc">A class, a one-off session, or just an hour where we work out what you are trying to learn.</p>
+              <div class="topic__actions">
+                <a class="btn btn--secondary btn--sm" href="mailto:omar@basednode.xyz" data-mail-subject="ct_t3_subject" data-i18n="ct_write">Write to me</a>
+                <button class="btn btn--primary btn--sm" type="button" data-copy-text="ct_t3_template" data-i18n="ct_copy_tpl">Copy template</button>
+              </div>
+              <pre class="topic__template" data-i18n="ct_t3_template">Subject: Teaching / Tutoring enquiry
+
+1. Subject and level:
+   (e.g. Maths STX A, beginner programming, intro to AI)
+2. Number of students / group size:
+3. Frequency and length:
+   (e.g. 2 hours a week for 12 weeks, or a single workshop)
+4. Location:
+   (online, on site — name the city)
+5. Start date / deadline:
+</pre>
+            </div>
           </div>
-          <div class="method-item">
-            <span class="method-item__label" data-i18n="ct_m3_label">03</span>
-            <h3 class="h3" data-i18n="ct_m3_title">When does it need to run?</h3>
-            <p class="method-item__body" data-i18n="ct_m3_body">Every morning when 400 invoices arrive, or once a month? That decides both the price and whether it should be an agent or a fixed flow.</p>
+
+          <!-- 04 -->
+          <div class="topic">
+            <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-samarbejde">
+              <span class="topic__name" data-i18n="ct_t4_name">Partnership</span>
+              <span class="topic__hint" data-i18n="ct_t4_hint">Revenue share, affiliate, equity</span>
+              <span class="topic__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="topic__body" id="topic-samarbejde" hidden>
+              <p class="topic__desc" data-i18n="ct_t4_desc">Something we build together, where you bring the product and the market, and I bring the technical side.</p>
+              <div class="topic__actions">
+                <a class="btn btn--secondary btn--sm" href="mailto:omar@basednode.xyz" data-mail-subject="ct_t4_subject" data-i18n="ct_write">Write to me</a>
+                <button class="btn btn--primary btn--sm" type="button" data-copy-text="ct_t4_template" data-i18n="ct_copy_tpl">Copy template</button>
+              </div>
+              <pre class="topic__template" data-i18n="ct_t4_template">Subject: Partnership enquiry
+
+1. What do you offer?
+   (product, service, network, capital, expertise)
+2. What kind of partnership are you thinking of?
+   (revenue share, affiliate, equity, consulting)
+3. How far along are you?
+   (idea, prototype, launched, scaling)
+4. What is the one thing you most need from me?
+</pre>
+            </div>
           </div>
-          <div class="method-item">
-            <span class="method-item__label" data-i18n="ct_m4_label">04</span>
-            <h3 class="h3" data-i18n="ct_m4_title">What is the budget?</h3>
-            <p class="method-item__body" data-i18n="ct_m4_body">A range and a deadline, if you have them. It makes it easier for me to say yes or no straight away instead of spending three calls on it.</p>
+
+          <!-- 05 -->
+          <div class="topic">
+            <button class="topic__head" type="button" aria-expanded="false" aria-controls="topic-andet">
+              <span class="topic__name" data-i18n="ct_t5_name">Something else</span>
+              <span class="topic__hint" data-i18n="ct_t5_hint">Just say hi — no template needed</span>
+              <span class="topic__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="topic__body" id="topic-andet" hidden>
+              <p class="topic__desc" data-i18n="ct_t5_desc">Write whatever is on your mind. I read it all and reply personally.</p>
+              <div class="topic__actions">
+                <a class="btn btn--primary btn--sm" href="mailto:omar@basednode.xyz" data-mail-subject="ct_t5_subject" data-i18n="ct_write">Write to me</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="callout" style="margin-top: var(--space-8);">
           <p class="callout__title" data-i18n="ct_callout_title">Not sure what to write?</p>
           <p class="callout__body" data-i18n="ct_callout_body">Then write "hi" and a couple of lines about what you do. I read it myself, and I reply with the first question I need answered. You do not have to turn it into a project before we have talked.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ OTHER WAYS ══ -->
+    <section>
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="ct_s2_label">§ 02 — Other ways</span>
+          <h2 class="display-lg" data-i18n="ct_s2_title">Or find me somewhere else.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-card__label" data-i18n="ct_c1_label">Telegram</div>
+            <div class="contact-card__value"><a href="https://t.me/IkkeOmar">@IkkeOmar</a></div>
+            <p class="contact-card__note" data-i18n="ct_c1_note">Just write. I cannot promise to answer straight away, but I try.</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__label" data-i18n="ct_c2_label">LinkedIn</div>
+            <div class="contact-card__value"><a href="https://linkedin.com/in/omar-jennane">Omar Jennane</a></div>
+            <p class="contact-card__note" data-i18n="ct_c2_note">If you would rather see what I have built before you write.</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__label" data-i18n="ct_c3_label">Book 30 minutes</div>
+            <div class="contact-card__value"><a href="mailto:omar@basednode.xyz?subject=30-minutters%20opkald" data-i18n="ct_c3_value">Book 30 minutes</a></div>
+            <p class="contact-card__note" data-i18n="ct_c3_note">We look at your week together. I tell you what I can do, what it costs, and whether it is possible at all. It is free and you are not committing to anything.</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__label" data-i18n="ct_c4_label">Company</div>
+            <div class="contact-card__value" data-i18n="ct_c4_value">BasedNode</div>
+            <p class="contact-card__note" data-i18n="ct_c4_note">CVR 43750194 · Copenhagen, Denmark. For invoices and paperwork, write to omar@basednode.xyz with your CVR number in the subject line.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -167,19 +270,19 @@
 
         <div class="timeline">
           <div class="timeline__step">
-            <span class="timeline__date" data-i18n="ct_t1_date">Step 01</span>
-            <h3 class="timeline__title" data-i18n="ct_t1_title">You write, I reply</h3>
-            <p class="timeline__desc" data-i18n="ct_t1_desc">I read the message and reply within one working day. If it is clear what you want built, I send a suggestion for scope and price straight away. Otherwise I ask one question.</p>
+            <span class="timeline__date" data-i18n="ct_step1_date">Step 01</span>
+            <h3 class="timeline__title" data-i18n="ct_step1_title">You write, I reply</h3>
+            <p class="timeline__desc" data-i18n="ct_step1_desc">I read the message and reply within one working day. If it is clear what you want built, I send a suggestion for scope and price straight away. Otherwise I ask one question.</p>
           </div>
           <div class="timeline__step">
-            <span class="timeline__date" data-i18n="ct_t2_date">Step 02</span>
-            <h3 class="timeline__title" data-i18n="ct_t2_title">A thirty-minute call</h3>
-            <p class="timeline__desc" data-i18n="ct_t2_desc">We look at your week and your systems. I tell you what can be automated, what cannot, and how long it takes. If I am not the right person for it, I say so on that call.</p>
+            <span class="timeline__date" data-i18n="ct_step2_date">Step 02</span>
+            <h3 class="timeline__title" data-i18n="ct_step2_title">A thirty-minute call</h3>
+            <p class="timeline__desc" data-i18n="ct_step2_desc">We look at your week and your systems. I tell you what can be automated, what cannot, and how long it takes. If I am not the right person for it, I say so on that call.</p>
           </div>
           <div class="timeline__step">
-            <span class="timeline__date" data-i18n="ct_t3_date">Step 03</span>
-            <h3 class="timeline__title" data-i18n="ct_t3_title">Written scope and fixed price</h3>
-            <p class="timeline__desc" data-i18n="ct_t3_desc">You get a written description of exactly what the system does, and a fixed price. Only once you have approved it do I start. If the scope changes along the way, the price changes with it, in writing.</p>
+            <span class="timeline__date" data-i18n="ct_step3_date">Step 03</span>
+            <h3 class="timeline__title" data-i18n="ct_step3_title">Written scope and fixed price</h3>
+            <p class="timeline__desc" data-i18n="ct_step3_desc">You get a written description of exactly what the system does, and a fixed price. Only once you have approved it do I start. If the scope changes along the way, the price changes with it, in writing.</p>
           </div>
         </div>
       </div>
@@ -192,10 +295,10 @@
           <div>
             <span class="micro-label section-label" data-i18n="ct_s4_label">§ 04 — Start</span>
             <h2 class="display-lg" data-i18n="ct_s4_title">Say what is slow in your week.</h2>
-            <p class="prose start-grid__prose" data-i18n="ct_s4_desc">A couple of lines is enough to start.</p>
+            <p class="prose start-grid__prose" data-i18n="ct_s4_desc">Starting costs nothing and commits you to nothing. I reply within one working day, and if I am not the right person for it, I tell you who is.</p>
           </div>
           <div class="start-grid__actions">
-            <a href="mailto:omar@basednode.xyz" class="btn btn--primary btn--lg" data-i18n="ct_cta1">Write to me</a>
+            <a href="mailto:omar@basednode.xyz" class="btn btn--primary btn--lg" data-i18n="ct_write">Write to me</a>
             <a href="mailto:omar@basednode.xyz?subject=30-minutters%20opkald" class="btn btn--secondary btn--lg" data-i18n="ct_cta2">Book 30 minutes</a>
           </div>
         </div>

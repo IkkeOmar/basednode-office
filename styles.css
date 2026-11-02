@@ -2757,3 +2757,105 @@ body.nav-open .topnav__menu-btn .icon-open { display: none; }
   .flow-card__frame { padding: var(--space-4); }
   .flow-card__meta { padding: var(--space-4); }
 }
+
+/* ══ CONTACT TOPICS ══
+   The contact page is a set of topics, each with a copyable email
+   template. The pattern came from the live basednode.xyz contact page:
+   pick a topic, copy the template, paste it into a mail client. No
+   form, no backend, no data collected by a third party. */
+
+.topic-list {
+  display: flex;
+  flex-direction: column;
+  border-top: var(--e-hairline);
+}
+
+.topic {
+  border-bottom: var(--e-hairline);
+}
+
+.topic__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "name chevron" "hint chevron";
+  align-items: center;
+  gap: 0 var(--space-4);
+  width: 100%;
+  padding: var(--space-5) 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.topic__head:hover { color: var(--ink); }
+.topic__head:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.topic__name {
+  grid-area: name;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.topic__hint {
+  grid-area: hint;
+  font-size: 0.8125rem;
+  color: var(--paper-muted);
+  margin-top: var(--space-1);
+}
+
+.topic__chevron {
+  grid-area: chevron;
+  width: 11px;
+  height: 11px;
+  border-right: 1.5px solid var(--paper-muted);
+  border-bottom: 1.5px solid var(--paper-muted);
+  transform: rotate(45deg);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.topic__head[aria-expanded="true"] .topic__chevron {
+  transform: rotate(-135deg);
+}
+
+.topic__body {
+  padding-bottom: var(--space-5);
+}
+
+.topic__desc {
+  font-size: 0.9375rem;
+  color: var(--paper-muted);
+  line-height: 1.55;
+  max-width: 62ch;
+  margin-bottom: var(--space-4);
+}
+
+.topic__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.topic__template {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--paper-muted);
+  background: var(--paper-faint);
+  border: var(--e-hairline);
+  padding: var(--space-4);
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .topic__head { padding: var(--space-4) 0; }
+  .topic__name { font-size: 1rem; }
+}

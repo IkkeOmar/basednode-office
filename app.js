@@ -50,6 +50,17 @@
       var id = el.getAttribute("data-flow");
       el.setAttribute("src", "_assets/illustrations/flow-" + id + "-" + current + ".svg");
     });
+
+    /* Contact topic buttons open a mail client with a subject line that
+       is written in the page language. The subject string lives in the
+       copy bundle, not in the DOM, so read it from the bundle. */
+    document.querySelectorAll("[data-mail-subject]").forEach(function (el) {
+      var key = el.getAttribute("data-mail-subject");
+      var subject = t[key] || "";
+      el.setAttribute("href", subject
+        ? "mailto:omar@basednode.xyz?subject=" + encodeURIComponent(subject)
+        : "mailto:omar@basednode.xyz");
+    });
     document.documentElement.setAttribute("lang", current === "en" ? "en" : "da-DK");
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) {
       b.setAttribute("aria-label", current === "en" ? "Vis på dansk" : "Show in English");
@@ -135,6 +146,80 @@
     /* Escape closes the panel */
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && isMenuOpen()) setMenuState(false);
+    });
+
+    /* ---------------- Contact topics ----------------
+       Each topic on the contact page expands to a ready-to-use email
+       template. The template text lives in the i18n bundle, so it
+       follows the page language. */
+
+    document.querySelectorAll(".topic__head").forEach(function (head) {
+      head.addEventListener("click", function () {
+        var open = head.getAttribute("aria-expanded") === "true";
+        head.setAttribute("aria-expanded", open ? "false" : "true");
+        var body = document.getElementById(head.getAttribute("aria-controls"));
+        if (body) body.hidden = open;
+      });
+    });
+
+    /* Copy to clipboard. The button text flips to "Copied" for two
+       seconds so the click is confirmed without an alert. */
+    function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+      /* Fallback for browsers without the async clipboard API. */
+      return new Promise(function (resolve, reject) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          resolve();
+        } catch (e) {
+          reject(e);
+        } finally {
+          document.body.removeChild(ta);
+        }
+      });
+    }
+
+    function flashCopied(btn) {
+      var original = btn.getAttribute("data-label-original");
+      if (original === null) {
+        original = btn.textContent;
+        btn.setAttribute("data-label-original", original);
+      }
+      var copiedLabel = btn.getAttribute("data-label-copied");
+      if (!copiedLabel) {
+        var lbl = document.querySelector('[data-i18n="ct_copied"]');
+        copiedLabel = lbl ? lbl.textContent : "Copied";
+      }
+      btn.textContent = copiedLabel;
+      btn.classList.add("is-copied");
+      setTimeout(function () {
+        btn.textContent = original;
+        btn.classList.remove("is-copied");
+      }, 2000);
+    }
+
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-copy-text]");
+      if (btn) {
+        var key = btn.getAttribute("data-copy-text");
+        var el = document.querySelector('[data-i18n="' + key + '"]');
+        if (el) {
+          copyToClipboard(el.textContent || "").then(function () {
+            flashCopied(btn);
+          }).catch(function () {});
+        }
+        return;
+      }
+
     });
 
     /* Leaving the mobile breakpoint while open must not strand the
