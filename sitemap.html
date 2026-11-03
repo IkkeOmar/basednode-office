@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F6F2" />
+  <title>Site map — BasedNode</title>
+  <meta name="description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BasedNode" />
+  <meta property="og:title" content="Site map — BasedNode" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="https://ikkeomar.github.io/basednode-office/sitemap" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Site map — BasedNode" />
+  <meta name="twitter:description" content="" />
+  <link rel="canonical" href="https://ikkeomar.github.io/basednode-office/sitemap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="_assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    /* Mark the document as script-enabled BEFORE the body renders, so
+       the reveal animation can hide its targets without a flash of
+       visible-then-hidden content. Without this class the content is
+       simply visible — a page of invisible sections is far worse than
+       a page with no animation.
+
+       The timer is the safety net: if app.js never runs, everything is
+       revealed after four seconds rather than staying at opacity 0. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      window.__bnRevealFallback = setTimeout(function () {
+        d.classList.add("reveal-all");
+      }, 4000);
+
+      /* Set the theme BEFORE the body renders. If this waits for
+         app.js, a reader on a dark desktop sees a flash of the light
+         theme on every page load — the classic theme bug. The stored
+         preference wins; without one, the operating system decides. */
+      try {
+        var stored = localStorage.getItem("bn-theme");
+        if (!stored) {
+          stored = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark" : "light";
+        }
+        d.setAttribute("data-theme", stored);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", stored === "dark" ? "#1A1917" : "#F8F6F2");
+      } catch (e) {
+        d.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+</head>
+<body data-page="sitemap">
+
+  <!-- The ambient particle field. The same idea as basednode.xyz: a
+       fixed canvas behind the content, drifting slowly. It is
+       decorative, so it is hidden from assistive technology and it
+       stops itself when the reader has asked for less motion. -->
+  <canvas id="bn-particles" aria-hidden="true"></canvas>
+
+  <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
+
+  <header class="topnav">
+    <div class="container topnav__inner">
+      <a href="./" class="topnav__logo" aria-label="BasedNode home">
+        <span class="topnav__logo-mark" aria-hidden="true"></span>
+        <span>BasedNode</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="topnav__links">          <li><a href="services" data-i18n="services">What I build</a></li>
+          <li><a href="services#how" data-i18n="how">How it works</a></li>
+          <li><a href="services#pricing" data-i18n="pricing">Pricing</a></li>
+          <li><a href="services#faq" data-i18n="faq">FAQ</a></li>
+          <li><a href="about" data-i18n="about">About me</a></li>
+          <li><a href="contact" data-i18n="contact">Contact</a></li></ul>
+      </nav>
+      <div class="topnav__actions">
+        <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/>
+            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <line x1="12" y1="2.6" x2="12" y2="5.2"/>
+              <line x1="12" y1="18.8" x2="12" y2="21.4"/>
+              <line x1="2.6" y1="12" x2="5.2" y2="12"/>
+              <line x1="18.8" y1="12" x2="21.4" y2="12"/>
+              <line x1="5.4" y1="5.4" x2="7.2" y2="7.2"/>
+              <line x1="16.8" y1="16.8" x2="18.6" y2="18.6"/>
+              <line x1="5.4" y1="18.6" x2="7.2" y2="16.8"/>
+              <line x1="16.8" y1="7.2" x2="18.6" y2="5.4"/>
+            </g>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
+          <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect width="37" height="28" fill="#D21034"/><rect x="12" width="4" height="28" fill="#FFFFFF"/><rect y="12" width="37" height="4" fill="#FFFFFF"/></svg>
+        </button>
+        <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="en" aria-pressed="false" aria-label="Show in English">
+          <svg class="lang-flag" viewBox="0 0 40 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><svg x="0" y="0" width="20.00" height="28" viewBox="0 0 20.00 28" preserveAspectRatio="xMidYMid slice"><rect width="40" height="28" fill="#FFFFFF"/><rect y="0.000" width="40" height="2.154" fill="#B31942"/><rect y="4.308" width="40" height="2.154" fill="#B31942"/><rect y="8.615" width="40" height="2.154" fill="#B31942"/><rect y="12.923" width="40" height="2.154" fill="#B31942"/><rect y="17.231" width="40" height="2.154" fill="#B31942"/><rect y="21.538" width="40" height="2.154" fill="#B31942"/><rect y="25.846" width="40" height="2.154" fill="#B31942"/><rect width="16.000" height="15.077" fill="#0A3161"/><circle cx="1.60" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="13.57" r="1.15" fill="#FFFFFF"/></svg><svg x="20.00" y="0" width="20.00" height="28" viewBox="8 0 24 28" preserveAspectRatio="xMidYMid slice"><rect width="40" height="28" fill="#012169"/><polygon points="8.40,0 40,23.80 40,32.20 0,8.40" fill="#FFFFFF"/><polygon points="31.60,0 40,4.20 0,32.20 0,23.80" fill="#FFFFFF"/><polygon points="3.40,0 40,26.30 40,29.70 0,3.40" fill="#C8102E"/><polygon points="36.60,0 40,1.70 0,29.70 0,26.30" fill="#C8102E"/><rect x="16.40" width="7.20" height="28" fill="#FFFFFF"/><rect y="10.40" width="40" height="7.20" fill="#FFFFFF"/><rect x="17.26" width="5.47" height="28" fill="#C8102E"/><rect y="11.26" width="40" height="5.47" fill="#C8102E"/></svg></svg>
+        </button>
+      </div>
+        <button class="topnav__menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="40" y1="64" x2="216" y2="64"/>
+            <line x1="40" y1="128" x2="216" y2="128"/>
+            <line x1="40" y1="192" x2="216" y2="192"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="72" y1="72" x2="184" y2="184"/>
+            <line x1="184" y1="72" x2="72" y2="184"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel lives INSIDE the sticky header so it drops out of the bar
+         instead of scrolling away with the page. -->
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" aria-label="Mobile">
+      <ul>        <li><a href="services" data-i18n="services">What I build</a></li>
+        <li><a href="services#how" data-i18n="how">How it works</a></li>
+        <li><a href="services#pricing" data-i18n="pricing">Pricing</a></li>
+        <li><a href="services#faq" data-i18n="faq">FAQ</a></li>
+        <li><a href="about" data-i18n="about">About me</a></li>
+        <li><a href="contact" data-i18n="contact">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <!-- Tap-outside scrim, sits behind the panel -->
+  <div class="nav-scrim" data-nav-scrim hidden></div>
+
+  <main id="main">    <!-- ══ PAGE HEAD ══ -->
+    <section class="page-head">
+      <div class="container page-head__inner">
+        <span class="micro-label" data-i18n="sm_label">Site map</span>
+        <h1 class="display-lg page-head__title" data-i18n="sm_title">Everything on this site.</h1>
+        <p class="page-head__lede" data-i18n="sm_lede">Nine pages, and what is on each of them. If something here is unclear, it is a fault in the writing rather than in your understanding.</p>
+        <div class="page-head__meta">
+          <span data-i18n="sm_meta1">10 pages</span>
+          <span data-i18n="sm_meta2">Danish and English</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ THE MAP ═══ -->
+    <section class="tight">
+      <div class="container">
+        <div class="sitemap">
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p1_num">01</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p1_title">Home</h2>
+                <a class="sitemap__url" href="./" data-i18n="sm_p1_url">basednode-office</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p1_i1">The hero, and the flow drawing that shows the work being automated</li>
+              <li data-i18n="sm_p1_i2">What I build — the seven things, and what each one costs</li>
+              <li data-i18n="sm_p1_i3">Five flows, drawn as real schematics</li>
+              <li data-i18n="sm_p1_i4">How it runs: self-hosted by default, or hosted by me</li>
+              <li data-i18n="sm_p1_i5">Pricing: three ways to pay, and the questions</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p2_num">02</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p2_title">What I build</h2>
+                <a class="sitemap__url" href="services" data-i18n="sm_p2_url">services</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p2_i1">The seven services, with what each one costs</li>
+              <li data-i18n="sm_p2_i2">The five flow drawings, each with a real number on it</li>
+              <li data-i18n="sm_p2_i3">How the work runs: self-hosted, or hosted by me</li>
+              <li data-i18n="sm_p2_i4">Three ways to pay: one-off, revenue share, equity</li>
+              <li data-i18n="sm_p2_i5">Twelve questions, answered without marketing speak</li>
+              <li data-i18n="sm_p2_i6">How a project actually starts</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p3_num">03</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p3_title">Cases</h2>
+                <a class="sitemap__url" href="cases" data-i18n="sm_p3_url">cases</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p3_i1">Six projects, each with the number it moved</li>
+              <li data-i18n="sm_p3_i2">What was built, and what it replaced</li>
+              <li data-i18n="sm_p3_i3">The part of the work that is usually left out</li>
+              <li data-i18n="sm_p3_i4">Links to the flow drawings the projects use</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p4_num">04</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p4_title">About me</h2>
+                <a class="sitemap__url" href="about" data-i18n="sm_p4_url">about</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p4_i1">Who I am, and why it costs less than an agency</li>
+              <li data-i18n="sm_p4_i2">The six things I am good at</li>
+              <li data-i18n="sm_p4_i3">How the work actually happens, step by step</li>
+              <li data-i18n="sm_p4_i4">What I need from you to start</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p5_num">05</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p5_title">Free resources</h2>
+                <a class="sitemap__url" href="resources" data-i18n="sm_p5_url">resources</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p5_i1">A guide to what AI and automation can actually do</li>
+              <li data-i18n="sm_p5_i2">A plain-language glossary of the words</li>
+              <li data-i18n="sm_p5_i3">A library of free tools, checked and explained</li>
+              <li data-i18n="sm_p5_i4">The free library: 75 tools, every free tier spelled out</li>
+              <li data-i18n="sm_p5_i5">Where to start if you want to try it alone first</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p6_num">06</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p6_title">Security</h2>
+                <a class="sitemap__url" href="security" data-i18n="sm_p6_url">security</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p6_i1">How your data is handled</li>
+              <li data-i18n="sm_p6_i2">What I do and do not have access to</li>
+              <li data-i18n="sm_p6_i3">How the handover works</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p7_num">07</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p7_title">Privacy policy</h2>
+                <a class="sitemap__url" href="privacy" data-i18n="sm_p7_url">privacy</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p7_i1">What data I keep, and for how long</li>
+              <li data-i18n="sm_p7_i2">Where your data lives once the system is live</li>
+              <li data-i18n="sm_p7_i3">Your rights, and how to use them</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p8_num">08</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p8_title">Contact</h2>
+                <a class="sitemap__url" href="contact" data-i18n="sm_p8_url">contact</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p8_i1">The form, and what happens after you send it</li>
+              <li data-i18n="sm_p8_i2">Ready-to-use email templates for six topics</li>
+              <li data-i18n="sm_p8_i3">What a good first message contains</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p9_num">09</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p9_title">Terms</h2>
+                <a class="sitemap__url" href="terms" data-i18n="sm_p9_url">terms</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p9_i1">What I deliver, and when</li>
+              <li data-i18n="sm_p9_i2">How payment works, in all three models</li>
+              <li data-i18n="sm_p9_i3">What happens if something goes wrong</li>
+            </ul>
+          </article>
+
+          <article class="sitemap__page">
+            <header class="sitemap__head">
+              <span class="sitemap__num" data-i18n="sm_p10_num">10</span>
+              <div>
+                <h2 class="h3 sitemap__title" data-i18n="sm_p10_title">Site map</h2>
+                <a class="sitemap__url" href="sitemap" data-i18n="sm_p10_url">sitemap</a>
+              </div>
+            </header>
+            <ul class="sitemap__list">
+              <li data-i18n="sm_p10_i1">Every page on this site, in one list</li>
+              <li data-i18n="sm_p10_i2">Where to start if you are in a hurry</li>
+              <li data-i18n="sm_p10_i3">What each page answers</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-block">
+          <a href="./" class="footer__logo" aria-label="BasedNode home">
+            <span class="footer__logo-mark" aria-hidden="true"></span>
+            <span>BasedNode</span>
+          </a>
+          <p class="footer__desc" data-i18n="footer_desc">I build the software that takes the repetitive work off your plate. Copenhagen.</p>
+          <address class="footer__address">
+            BasedNode<br/>
+            <span data-i18n="foot_city">Copenhagen, Denmark</span><br/>
+            <span data-i18n="foot_cvr">CVR 43750194</span><br/>
+            <a href="mailto:omar@basednode.xyz">omar@basednode.xyz</a>
+          </address>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col1">What I build</div>
+          <ul>
+            <li><a href="services" data-i18n="foot_svc1">AI agents</a></li>
+            <li><a href="services" data-i18n="foot_svc2">Workflow automation</a></li>
+            <li><a href="services" data-i18n="foot_svc3">Data pipelines</a></li>
+            <li><a href="services" data-i18n="foot_svc4">Cost work</a></li>
+            <li><a href="services" data-i18n="foot_svc5">Dashboards and internal tools</a></li>
+            <li><a href="services" data-i18n="foot_svc6">Marketing automation</a></li>
+            <li><a href="services" data-i18n="foot_svc7">Full AI products</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col2">More</div>
+          <ul>
+            <li><a href="cases" data-i18n="foot_l_cases">Cases</a></li>
+            <li><a href="resources" data-i18n="foot_l_resources">Resources</a></li>
+            <li><a href="about" data-i18n="foot_l_about">About</a></li>
+            <li><a href="services#pricing" data-i18n="foot_l_pricing">Pricing</a></li>
+            <li><a href="services#faq" data-i18n="foot_l_faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title" data-i18n="foot_col3">Company</div>
+          <ul>
+            <li><a href="contact" data-i18n="foot_l_contact">Contact</a></li>
+            <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
+            <li><a href="terms" data-i18n="foot_l_terms">Terms</a></li>
+            <li><a href="privacy" data-i18n="foot_l_privacy">Privacy policy</a></li>
+            <li><a href="sitemap" data-i18n="foot_l_sitemap">Site map</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="copyright">© 2026 BasedNode · Copenhagen</span>
+        <span class="footer__bottom-links">
+          <ul class="footer__socials">
+            <li><a href="mailto:omar@basednode.xyz" class="footer__social">
+              <span class="footer__social-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3 6.6 8.05 5.75a1.6 1.6 0 0 0 1.9 0L21 6.6"/></svg></span>
+              <span data-i18n="foot_social_mail">Email</span>
+            </a></li>
+            <li><a href="https://linkedin.com/in/omar-jennane-576a26265" class="footer__social" target="_blank" rel="noopener noreferrer">
+              <span class="footer__social-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></span>
+              <span data-i18n="foot_social_linkedin">LinkedIn</span>
+            </a></li>
+            <li><a href="https://t.me/IkkeOmar" class="footer__social" target="_blank" rel="noopener noreferrer">
+              <span class="footer__social-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
+              <span data-i18n="foot_social_telegram">Telegram</span>
+            </a></li>
+          </ul>
+          <div class="lang-switch lang-switch--dark" role="group" aria-label="Language">
+        <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
+          <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect width="37" height="28" fill="#D21034"/><rect x="12" width="4" height="28" fill="#FFFFFF"/><rect y="12" width="37" height="4" fill="#FFFFFF"/></svg>
+        </button>
+        <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="en" aria-pressed="false" aria-label="Show in English">
+          <svg class="lang-flag" viewBox="0 0 40 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><svg x="0" y="0" width="20.00" height="28" viewBox="0 0 20.00 28" preserveAspectRatio="xMidYMid slice"><rect width="40" height="28" fill="#FFFFFF"/><rect y="0.000" width="40" height="2.154" fill="#B31942"/><rect y="4.308" width="40" height="2.154" fill="#B31942"/><rect y="8.615" width="40" height="2.154" fill="#B31942"/><rect y="12.923" width="40" height="2.154" fill="#B31942"/><rect y="17.231" width="40" height="2.154" fill="#B31942"/><rect y="21.538" width="40" height="2.154" fill="#B31942"/><rect y="25.846" width="40" height="2.154" fill="#B31942"/><rect width="16.000" height="15.077" fill="#0A3161"/><circle cx="1.60" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="1.51" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="4.52" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="7.54" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="10.55" r="1.15" fill="#FFFFFF"/><circle cx="1.60" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="4.80" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="8.00" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="11.20" cy="13.57" r="1.15" fill="#FFFFFF"/><circle cx="14.40" cy="13.57" r="1.15" fill="#FFFFFF"/></svg><svg x="20.00" y="0" width="20.00" height="28" viewBox="8 0 24 28" preserveAspectRatio="xMidYMid slice"><rect width="40" height="28" fill="#012169"/><polygon points="8.40,0 40,23.80 40,32.20 0,8.40" fill="#FFFFFF"/><polygon points="31.60,0 40,4.20 0,32.20 0,23.80" fill="#FFFFFF"/><polygon points="3.40,0 40,26.30 40,29.70 0,3.40" fill="#C8102E"/><polygon points="36.60,0 40,1.70 0,29.70 0,26.30" fill="#C8102E"/><rect x="16.40" width="7.20" height="28" fill="#FFFFFF"/><rect y="10.40" width="40" height="7.20" fill="#FFFFFF"/><rect x="17.26" width="5.47" height="28" fill="#C8102E"/><rect y="11.26" width="40" height="5.47" fill="#C8102E"/></svg></svg>
+        </button>
+      </div>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

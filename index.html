@@ -35,10 +35,33 @@
       window.__bnRevealFallback = setTimeout(function () {
         d.classList.add("reveal-all");
       }, 4000);
+
+      /* Set the theme BEFORE the body renders. If this waits for
+         app.js, a reader on a dark desktop sees a flash of the light
+         theme on every page load — the classic theme bug. The stored
+         preference wins; without one, the operating system decides. */
+      try {
+        var stored = localStorage.getItem("bn-theme");
+        if (!stored) {
+          stored = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark" : "light";
+        }
+        d.setAttribute("data-theme", stored);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", stored === "dark" ? "#1A1917" : "#F8F6F2");
+      } catch (e) {
+        d.setAttribute("data-theme", "light");
+      }
     })();
   </script>
 </head>
 <body data-page="home">
+
+  <!-- The ambient particle field. The same idea as basednode.xyz: a
+       fixed canvas behind the content, drifting slowly. It is
+       decorative, so it is hidden from assistive technology and it
+       stops itself when the reader has asked for less motion. -->
+  <canvas id="bn-particles" aria-hidden="true"></canvas>
 
   <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
 
@@ -57,6 +80,24 @@
           <li><a href="contact" data-i18n="contact">Contact</a></li></ul>
       </nav>
       <div class="topnav__actions">
+        <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/>
+            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <line x1="12" y1="2.6" x2="12" y2="5.2"/>
+              <line x1="12" y1="18.8" x2="12" y2="21.4"/>
+              <line x1="2.6" y1="12" x2="5.2" y2="12"/>
+              <line x1="18.8" y1="12" x2="21.4" y2="12"/>
+              <line x1="5.4" y1="5.4" x2="7.2" y2="7.2"/>
+              <line x1="16.8" y1="16.8" x2="18.6" y2="18.6"/>
+              <line x1="5.4" y1="18.6" x2="7.2" y2="16.8"/>
+              <line x1="16.8" y1="7.2" x2="18.6" y2="5.4"/>
+            </g>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
         <div class="lang-switch" role="group" aria-label="Language">
         <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
           <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect width="37" height="28" fill="#D21034"/><rect x="12" width="4" height="28" fill="#FFFFFF"/><rect y="12" width="37" height="4" fill="#FFFFFF"/></svg>
@@ -116,7 +157,7 @@
           <!-- The one decisive visual: a real schematic of the work being automated -->
           <a href="#how" class="hero__drawing hero-enter" style="--d:220ms">
             <div class="hero__drawing-frame">
-              <img data-flow="invoice" src="_assets/illustrations/flow-invoice-en.svg" alt="Schematic of an invoice being received, read and posted to the ledger" />
+              <span class="flow-img" data-flow="invoice"><img class="flow-img__wide" src="_assets/illustrations/flow-invoice-en.svg" alt="Schematic of an invoice being received, read and posted to the ledger" /><img class="flow-img__narrow" src="_assets/illustrations/flow-invoice-en-m.svg" alt="" aria-hidden="true" /></span>
             </div>
             <div class="hero__drawing-meta">
               <span class="hero__drawing-sku">FLOW 01</span>
@@ -199,14 +240,14 @@
       <div class="container">
         <div class="section-head section-head__editorial">
           <span class="micro-label" data-i18n="flows_label">§ 02 — The flows</span>
-          <h2 class="display-lg" data-i18n="flows_title">Three workflows, drawn.</h2>
+          <h2 class="display-lg" data-i18n="flows_title">Five workflows, drawn.</h2>
           <p class="prose" data-i18n="flows_desc">These are not illustrations of an idea. Each one is a real flow: what comes in, what the system reads from it, what it writes back. The same drawings are what you get in the proposal.</p>
         </div>
 
         <div class="flow-grid">
           <figure class="flow-card" data-reveal="1">
             <div class="flow-card__frame">
-              <img data-flow="invoice" src="_assets/illustrations/flow-invoice-en.svg" alt="Invoice received, extracted and posted to the ledger" />
+              <span class="flow-img" data-flow="invoice"><img class="flow-img__wide" src="_assets/illustrations/flow-invoice-en.svg" alt="Invoice received, extracted and posted to the ledger" /><img class="flow-img__narrow" src="_assets/illustrations/flow-invoice-en-m.svg" alt="" aria-hidden="true" /></span>
             </div>
             <figcaption class="flow-card__meta">
               <span class="flow-card__sku" data-i18n="flow_invoice_sku">FLOW 01</span>
@@ -217,7 +258,7 @@
 
           <figure class="flow-card" data-reveal="1">
             <div class="flow-card__frame">
-              <img data-flow="support" src="_assets/illustrations/flow-support-en.svg" alt="Customer question arriving, answered by the agent and closed in the ticketing system" />
+              <span class="flow-img" data-flow="support"><img class="flow-img__wide" src="_assets/illustrations/flow-support-en.svg" alt="Customer question arriving, answered by the agent and closed in the ticketing system" /><img class="flow-img__narrow" src="_assets/illustrations/flow-support-en-m.svg" alt="" aria-hidden="true" /></span>
             </div>
             <figcaption class="flow-card__meta">
               <span class="flow-card__sku" data-i18n="flow_support_sku">FLOW 02</span>
@@ -228,12 +269,34 @@
 
           <figure class="flow-card" data-reveal="1">
             <div class="flow-card__frame">
-              <img data-flow="dashboard" src="_assets/illustrations/flow-dashboard-en.svg" alt="Numbers collected from several systems, queried in plain language and answered on one screen" />
+              <span class="flow-img" data-flow="dashboard"><img class="flow-img__wide" src="_assets/illustrations/flow-dashboard-en.svg" alt="Numbers collected from several systems, queried in plain language and answered on one screen" /><img class="flow-img__narrow" src="_assets/illustrations/flow-dashboard-en-m.svg" alt="" aria-hidden="true" /></span>
             </div>
             <figcaption class="flow-card__meta">
               <span class="flow-card__sku" data-i18n="flow_dashboard_sku">FLOW 03</span>
               <span class="flow-card__name" data-i18n="flow_dashboard_name">Five systems, one question.</span>
               <span class="flow-card__spec" data-i18n="flow_dashboard_spec">Numbers collected from every source, then asked about in plain language. The answer takes nine seconds.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="flow-card" data-reveal="1">
+            <div class="flow-card__frame">
+              <span class="flow-img" data-flow="agent"><img class="flow-img__wide" src="_assets/illustrations/flow-agent-en.svg" alt="A customer inquiry arriving, read by an agent that pulls order, policy and stock data, and answered automatically" /><img class="flow-img__narrow" src="_assets/illustrations/flow-agent-en-m.svg" alt="" aria-hidden="true" /></span>
+            </div>
+            <figcaption class="flow-card__meta">
+              <span class="flow-card__sku" data-i18n="flow_agent_sku">FLOW 04</span>
+              <span class="flow-card__name" data-i18n="flow_agent_name">Agent that answers the customer</span>
+              <span class="flow-card__spec" data-i18n="flow_agent_spec">The inquiry comes in. The agent reads it, pulls the order, the policy and the stock, and answers. A human only sees it when the agent is not sure.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="flow-card" data-reveal="1">
+            <div class="flow-card__frame">
+              <span class="flow-img" data-flow="marketing"><img class="flow-img__wide" src="_assets/illustrations/flow-marketing-en.svg" alt="A marketing agent publishing across channels, filtering the audience, and reading back who watched for how long" /><img class="flow-img__narrow" src="_assets/illustrations/flow-marketing-en-m.svg" alt="" aria-hidden="true" /></span>
+            </div>
+            <figcaption class="flow-card__meta">
+              <span class="flow-card__sku" data-i18n="flow_marketing_sku">FLOW 05</span>
+              <span class="flow-card__name" data-i18n="flow_marketing_name">Marketing agent with analytics</span>
+              <span class="flow-card__spec" data-i18n="flow_marketing_spec">Content goes out across the channels, the audience is filtered, and the agent reads back who watched for how long. Then it changes what it publishes next time.</span>
             </figcaption>
           </figure>
         </div>
@@ -677,6 +740,7 @@ Call me paranoid — fair.</p>
             <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
             <li><a href="terms" data-i18n="foot_l_terms">Terms</a></li>
             <li><a href="privacy" data-i18n="foot_l_privacy">Privacy policy</a></li>
+            <li><a href="sitemap" data-i18n="foot_l_sitemap">Site map</a></li>
           </ul>
         </div>
       </div>

@@ -35,10 +35,33 @@
       window.__bnRevealFallback = setTimeout(function () {
         d.classList.add("reveal-all");
       }, 4000);
+
+      /* Set the theme BEFORE the body renders. If this waits for
+         app.js, a reader on a dark desktop sees a flash of the light
+         theme on every page load — the classic theme bug. The stored
+         preference wins; without one, the operating system decides. */
+      try {
+        var stored = localStorage.getItem("bn-theme");
+        if (!stored) {
+          stored = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark" : "light";
+        }
+        d.setAttribute("data-theme", stored);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", stored === "dark" ? "#1A1917" : "#F8F6F2");
+      } catch (e) {
+        d.setAttribute("data-theme", "light");
+      }
     })();
   </script>
 </head>
 <body data-page="resources">
+
+  <!-- The ambient particle field. The same idea as basednode.xyz: a
+       fixed canvas behind the content, drifting slowly. It is
+       decorative, so it is hidden from assistive technology and it
+       stops itself when the reader has asked for less motion. -->
+  <canvas id="bn-particles" aria-hidden="true"></canvas>
 
   <a class="skip-to-content" href="#main" data-i18n="skip_to_content">Skip to content</a>
 
@@ -57,6 +80,24 @@
           <li><a href="contact" data-i18n="contact">Contact</a></li></ul>
       </nav>
       <div class="topnav__actions">
+        <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/>
+            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <line x1="12" y1="2.6" x2="12" y2="5.2"/>
+              <line x1="12" y1="18.8" x2="12" y2="21.4"/>
+              <line x1="2.6" y1="12" x2="5.2" y2="12"/>
+              <line x1="18.8" y1="12" x2="21.4" y2="12"/>
+              <line x1="5.4" y1="5.4" x2="7.2" y2="7.2"/>
+              <line x1="16.8" y1="16.8" x2="18.6" y2="18.6"/>
+              <line x1="5.4" y1="18.6" x2="7.2" y2="16.8"/>
+              <line x1="16.8" y1="7.2" x2="18.6" y2="5.4"/>
+            </g>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
         <div class="lang-switch" role="group" aria-label="Language">
         <button class="lang-switch__opt" type="button" data-lang-toggle data-lang-target="da" aria-pressed="false" aria-label="Vis på dansk">
           <svg class="lang-flag" viewBox="0 0 37 28" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect width="37" height="28" fill="#D21034"/><rect x="12" width="4" height="28" fill="#FFFFFF"/><rect y="12" width="37" height="4" fill="#FFFFFF"/></svg>
@@ -242,6 +283,763 @@
       </div>
     </section>
 
+
+    <!-- ══ FREE LIBRARY ══ -->
+    <section class="tight" id="library">
+      <div class="container">
+        <div class="section-head section-head__editorial">
+          <span class="micro-label" data-i18n="rl_label">Free tools</span>
+          <h2 class="display-lg" data-i18n="rl_title">Tools that are free. Every one of them checked.</h2>
+          <p class="prose" data-i18n="rl_desc">Below is what I use or recommend when a client asks whether they can do it themselves first. Every single one was checked today, and it says exactly what the free version gives you. Where a free version has a catch, it is marked — I will not put a clock in a client's head without saying so.</p>
+          <div class="rl-meta">
+            <span class="rl-meta__item" data-i18n="rl_meta1">75 tools</span>
+            <span class="rl-meta__sep" aria-hidden="true">·</span>
+            <span class="rl-meta__item" data-i18n="rl_meta2">Checked 2 November 2026</span>
+          </div>
+        </div>
+
+        <div class="rl-directory" role="list">
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g0_t">Bookkeeping and payments</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.billy.dk/pris/" target="_blank" rel="noopener noreferrer" data-i18n="rl_0_name">Billy</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_0_what">Danish accounting software with invoicing, VAT and bank reconciliation</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_0_free">Free: 0 kr. per month, 3 invoices and 10 expense receipts per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_0_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://dinero.dk/priser/" target="_blank" rel="noopener noreferrer" data-i18n="rl_1_name">Dinero</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_1_what">Danish accounting software with invoicing and a bookkeeping assistant</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_1_free">Free: 0 kr. per month, unlimited entries and invoices</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_1_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.zoho.com/books/pricing.html" target="_blank" rel="noopener noreferrer" data-i18n="rl_2_name">Zoho Books</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_2_what">Accounting with inventory, invoicing and automation</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_2_free">Free: 1 user plus 1 bookkeeper</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_2_who">Owners, bookkeepers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://quickbooks.intuit.com/online/free/" target="_blank" rel="noopener noreferrer" data-i18n="rl_3_name">QuickBooks Free</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_3_what">Accounting software for one-person businesses</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_3_free">Free forever: 1 bank account, 2 invoices per month, no expiry date</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_3_who">Sole traders</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.e-conomic.dk/priser" target="_blank" rel="noopener noreferrer" data-i18n="rl_4_name">e-conomic</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_4_what">Accounting software for small and medium businesses</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_4_free">No free plan — a 14-day trial, then 249 kr. per month from day 15</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_4_who">Owners, bookkeepers</span></p>
+              <p class="rl-trap"><span class="rl-trap__label" data-i18n="rl_trap_label">Careful</span> <span data-i18n="rl_4_trap">Trial only — not free</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.stripe.com/en-dk/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_5_name">Stripe Denmark</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_5_what">Payments with Danish cards, DKK and VAT handling</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_5_free">No monthly fee — you only pay per transaction</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_5_who">Owners, web shops</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://erhvervsstyrelsen.dk/e-fakturering" target="_blank" rel="noopener noreferrer" data-i18n="rl_6_name">Erhvervsstyrelsen — e-invoicing</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_6_what">The rules on e-invoicing and approved accounting systems</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_6_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_6_who">Bookkeepers</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g1_t">Automation without code</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://n8n.io/pricing/" target="_blank" rel="noopener noreferrer" data-i18n="rl_7_name">n8n</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_7_what">Workflow builder with hundreds of integrations</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_7_free">The Community edition is free to self-host and has no limits</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_7_who">Owners, technical</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.make.com/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_8_name">Make</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_8_what">Visual scenario builder with 3,500+ apps</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_8_free">Free: 1,000 credits per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_8_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://zapier.com/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_9_name">Zapier</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_9_what">Automation with ready-made Zaps</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_9_free">Free: 100 tasks per month, two-step Zaps</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_9_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/types" target="_blank" rel="noopener noreferrer" data-i18n="rl_10_name">Power Automate Free</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_10_what">Cloud flows inside the Microsoft environment</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_10_free">Free licence: 6,000 runs per day, standard connectors only</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_10_who">Owners on Microsoft 365</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/activepieces/activepieces" target="_blank" rel="noopener noreferrer" data-i18n="rl_11_name">Activepieces</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_11_what">Self-hosted open-source automation</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_11_free">MIT licence, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_11_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/windmill-labs/windmill" target="_blank" rel="noopener noreferrer" data-i18n="rl_12_name">Windmill</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_12_what">Code-based workflow and script platform</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_12_free">AGPLv3, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_12_who">Developers</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g2_t">AI assistants</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://chatgpt.com/pricing/" target="_blank" rel="noopener noreferrer" data-i18n="rl_13_name">ChatGPT Free</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_13_what">Assistant with web access, images, data analysis and file upload</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_13_free">Free tier with unlimited text chats</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_13_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_14_name">Claude Free</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_14_what">Assistant with web search, file handling and Artifacts</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_14_free">Free: limited use, resets every 5 hours</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_14_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://support.google.com/gemini/answer/16275805" target="_blank" rel="noopener noreferrer" data-i18n="rl_15_name">Gemini</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_15_what">Google's assistant in Search, Docs and Gmail</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_15_free">Free tier with compute-based limits</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_15_who">Owners on Google</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" data-i18n="rl_16_name">Google AI Studio</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_16_what">Workbench for Gemini models with an API key</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_16_free">Free API key, no credit card needed</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_16_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://mistral.ai/pricing/" target="_blank" rel="noopener noreferrer" data-i18n="rl_17_name">Mistral</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_17_what">European model provider with API and chat</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_17_free">Free mode: API access without a credit card</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_17_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://ollama.com/" target="_blank" rel="noopener noreferrer" data-i18n="rl_18_name">Ollama</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_18_what">Runs Llama, Qwen, Gemma and DeepSeek locally on your own machine</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_18_free">MIT licence, free, no limits</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_18_who">Owners with their own PC</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://support.google.com/gemininotebook/answer/17670842" target="_blank" rel="noopener noreferrer" data-i18n="rl_19_name">NotebookLM</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_19_what">Chat with your own uploaded sources</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_19_free">Free: 100 notebooks, 50 sources per notebook</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_19_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/" target="_blank" rel="noopener noreferrer" data-i18n="rl_20_name">Microsoft Copilot</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_20_what">Copilot in Edge, Word, Excel and PowerPoint</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_20_free">Free for personal Microsoft accounts</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_20_who">Owners on Microsoft 365</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g3_t">Documents and invoices</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://tesseract-ocr.github.io/" target="_blank" rel="noopener noreferrer" data-i18n="rl_21_name">Tesseract OCR</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_21_what">Open-source OCR engine for images and scanned PDFs</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_21_free">Apache 2.0, free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_21_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/docling-project/docling" target="_blank" rel="noopener noreferrer" data-i18n="rl_22_name">Docling</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_22_what">Converts PDF and Office files to markdown and JSON, tables included</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_22_free">MIT licence, free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_22_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/datalab-to/marker" target="_blank" rel="noopener noreferrer" data-i18n="rl_23_name">Marker</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_23_what">Converts documents to markdown with high accuracy</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_23_free">Apache 2.0</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_23_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener noreferrer" data-i18n="rl_24_name">RAGFlow</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_24_what">RAG engine with built-in document understanding</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_24_free">Apache 2.0, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_24_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://azure.microsoft.com/en-us/pricing/details/document-intelligence/" target="_blank" rel="noopener noreferrer" data-i18n="rl_25_name">Azure Document Intelligence</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_25_what">Pulls fields out of invoices and forms</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_25_free">Free: 500 pages per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_25_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://cloud.google.com/vision/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_26_name">Google Cloud Vision</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_26_what">Image recognition and text extraction</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_26_free">Free: 1,000 units per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_26_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/datalab-to/surya" target="_blank" rel="noopener noreferrer" data-i18n="rl_27_name">Surya</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_27_what">OCR and table detection in 90+ languages</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_27_free">Apache 2.0</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_27_who">Developers</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g4_t">Data and dashboards</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://baserow.io/docs" target="_blank" rel="noopener noreferrer" data-i18n="rl_28_name">Baserow</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_28_what">No-code database, a drop-in Airtable alternative</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_28_free">Open source, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_28_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/twentyhq/twenty" target="_blank" rel="noopener noreferrer" data-i18n="rl_29_name">Twenty CRM</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_29_what">Open CRM, the open alternative to Salesforce</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_29_free">AGPLv3, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_29_who">Sales, technical</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.metabase.com/docs/" target="_blank" rel="noopener noreferrer" data-i18n="rl_30_name">Metabase</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_30_what">Business intelligence and dashboards on your own data</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_30_free">AGPL, free open-source edition</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_30_who">Owners of the data</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/getredash/redash" target="_blank" rel="noopener noreferrer" data-i18n="rl_31_name">Redash</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_31_what">SQL dashboards with several data sources</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_31_free">BSD 2-Clause, free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_31_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/airbytehq/airbyte" target="_blank" rel="noopener noreferrer" data-i18n="rl_32_name">Airbyte</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_32_what">Pipeline from 600+ sources into destination databases</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_32_free">Elastic License 2.0, free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_32_who">Developers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://listmonk.app/docs/" target="_blank" rel="noopener noreferrer" data-i18n="rl_33_name">Listmonk</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_33_what">Self-hosted newsletter and mailing list</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_33_free">AGPLv3, free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_33_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://supabase.com/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_34_name">Supabase</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_34_what">Hosted Postgres with auth and API</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_34_free">Free: 2 projects, 500 MB each</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_34_who">Developers</span></p>
+              <p class="rl-trap"><span class="rl-trap__label" data-i18n="rl_trap_label">Careful</span> <span data-i18n="rl_34_trap">Projects pause after 7 days of inactivity</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://nocodb.com/docs" target="_blank" rel="noopener noreferrer" data-i18n="rl_35_name">NocoDB</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_35_what">A database API over your own data schema</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_35_free">Free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_35_who">Developers</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g5_t">Marketing and analytics</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.brevo.com/pricing/" target="_blank" rel="noopener noreferrer" data-i18n="rl_36_name">Brevo</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_36_what">Email marketing and automated flows</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_36_free">Free forever: 300 sends per day, up to 100,000 contacts</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_36_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.hubspot.com/pricing/crm" target="_blank" rel="noopener noreferrer" data-i18n="rl_37_name">HubSpot Free CRM</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_37_what">CRM with contact data, pipeline and tasks</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_37_free">Free: 1,000 contacts and companies, no expiry date</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_37_who">Sales</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://umami.is/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_38_name">Umami</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_38_what">Cookie-free web analytics, self-hosted and in the cloud</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_38_free">Hobby: 100,000 events per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_38_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://posthog.com/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_39_name">PostHog</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_39_what">Product analytics and session replay</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_39_free">Free: 1,000,000 events per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_39_who">Marketing, technical</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://lookerstudio.google.com/" target="_blank" rel="noopener noreferrer" data-i18n="rl_40_name">Looker Studio</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_40_what">Free dashboards and reporting</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_40_free">Free with built-in Google connectors</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_40_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://trends.google.com/trends/" target="_blank" rel="noopener noreferrer" data-i18n="rl_41_name">Google Trends</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_41_what">Search trends and topic comparison</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_41_free">Completely free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_41_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.facebook.com/business/tools/ads-manager" target="_blank" rel="noopener noreferrer" data-i18n="rl_42_name">Meta Ads Manager</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_42_what">Ad tool for Facebook and Instagram</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_42_free">Free to use — you only pay for the ads</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_42_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://matomo.org/matomo-on-premise/" target="_blank" rel="noopener noreferrer" data-i18n="rl_43_name">Matomo</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_43_what">Web analytics with full control of the data</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_43_free">Free to download and self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_43_who">Marketing, technical</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://plausible.io/self-hosted-web-analytics" target="_blank" rel="noopener noreferrer" data-i18n="rl_44_name">Plausible</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_44_what">Cookie-free web analytics with no consent banner</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_44_free">AGPL, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_44_who">Marketing</span></p>
+              <p class="rl-trap"><span class="rl-trap__label" data-i18n="rl_trap_label">Careful</span> <span data-i18n="rl_44_trap">Only a 30-day trial in the cloud — the free version has to be self-hosted</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://mailchimp.com/help/about-mailchimp-pricing-plans/" target="_blank" rel="noopener noreferrer" data-i18n="rl_45_name">Mailchimp</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_45_what">Email marketing and campaigns</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_45_free">Free: 250 contacts, 500 sends per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_45_who">Marketing</span></p>
+              <p class="rl-trap"><span class="rl-trap__label" data-i18n="rl_trap_label">Careful</span> <span data-i18n="rl_45_trap">Only reaches a small test list</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://business.google.com/us/ad-tools/keyword-planner/" target="_blank" rel="noopener noreferrer" data-i18n="rl_46_name">Google Ads Keyword Planner</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_46_what">Keyword research and bid guidance</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_46_free">Free, but requires an ad account with payment details</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_46_who">Marketing</span></p>
+              <p class="rl-trap"><span class="rl-trap__label" data-i18n="rl_trap_label">Careful</span> <span data-i18n="rl_46_trap">Requires payment details on the account</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g6_t">Design and content</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://tally.so/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_47_name">Tally</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_47_what">Form builder</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_47_free">Free: unlimited forms and unlimited responses</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_47_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.canva.com/pricing/" target="_blank" rel="noopener noreferrer" data-i18n="rl_48_name">Canva</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_48_what">Design tool for presentations, social media and print</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_48_free">Free: 5 GB storage, 20 AI uses per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_48_who">Marketing</span></p>
+              <p class="rl-trap"><span class="rl-trap__label" data-i18n="rl_trap_label">Careful</span> <span data-i18n="rl_48_trap">Transparent background and bulk export need Pro</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.figma.com/pricing/" target="_blank" rel="noopener noreferrer" data-i18n="rl_49_name">Figma Starter</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_49_what">Design and prototyping tool</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_49_free">Free: unlimited drafts, 150 AI credits per day</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_49_who">Designers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://coolors.co/" target="_blank" rel="noopener noreferrer" data-i18n="rl_50_name">Coolors</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_50_what">Colour palette generator</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_50_free">Completely free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_50_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://fonts.google.com/about" target="_blank" rel="noopener noreferrer" data-i18n="rl_51_name">Google Fonts</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_51_what">Free typefaces for web and print</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_51_free">Completely free, all open source</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_51_who">Designers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://app.diagrams.net/" target="_blank" rel="noopener noreferrer" data-i18n="rl_52_name">draw.io</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_52_what">Diagram and flowchart tool</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_52_free">Apache 2.0, free in the browser and as a desktop app</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_52_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://excalidraw.com/" target="_blank" rel="noopener noreferrer" data-i18n="rl_53_name">Excalidraw</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_53_what">Sketching block with a hand-drawn look</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_53_free">MIT licence, free</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_53_who">Owners, no code</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://penpot.app/" target="_blank" rel="noopener noreferrer" data-i18n="rl_54_name">Penpot</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_54_what">Open-source design platform</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_54_free">Free, open source</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_54_who">Designers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.inkscape.org/" target="_blank" rel="noopener noreferrer" data-i18n="rl_55_name">Inkscape</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_55_what">Vector graphics and SVG editor</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_55_free">Free, open source (GPL)</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_55_who">Designers</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" data-i18n="rl_56_name">Unsplash</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_56_what">Free photos for web and print</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_56_free">Free, commercial use allowed</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_56_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://proton.me/drive/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_57_name">Proton</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_57_what">Mail and file storage with encryption</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_57_free">Free: 1 GB mail, 5 GB Drive</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_57_who">Owners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://docs.ghost.org/introduction" target="_blank" rel="noopener noreferrer" data-i18n="rl_58_name">Ghost</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_58_what">Self-hosted blogging and newsletter sending</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_58_free">MIT licence, free to self-host</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_58_who">Marketing</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://airtable.com/pricing" target="_blank" rel="noopener noreferrer" data-i18n="rl_59_name">Airtable</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_59_what">Table database with forms and automations</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_59_free">Free: 1,000 records per base, 1,000 API calls per month</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_59_who">Owners, no code</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g7_t">Courses</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.elementsofai.com/" target="_blank" rel="noopener noreferrer" data-i18n="rl_60_name">Elements of AI</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_60_what">AI for everyone, no code</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_60_free">Free, about 6 weeks, self-paced</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_60_who">Beginners, non-technical</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://grow.google/ai-essentials/" target="_blank" rel="noopener noreferrer" data-i18n="rl_61_name">Google AI Essentials</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_61_what">The basics of AI and prompting</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_61_free">Free, under 5 hours, 5 modules</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_61_who">Beginners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.deeplearning.ai/courses/ai-prompting-for-everyone" target="_blank" rel="noopener noreferrer" data-i18n="rl_62_name">AI Prompting for Everyone</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_62_what">Andrew Ng on writing good prompts</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_62_free">Free, 3-7 hours</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_62_who">Beginners, non-technical</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" rel="noopener noreferrer" data-i18n="rl_63_name">AI for Everyone</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_63_what">Andrew Ng's foundation course in AI</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_63_free">Free access, about 9 hours — the certificate costs money</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_63_who">Beginners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener noreferrer" data-i18n="rl_64_name">DeepLearning.AI Short Courses</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_64_what">Many short courses in AI and machine learning</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_64_free">Free, 30 minutes to 2 hours per course</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_64_who">Beginners to intermediate</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://huggingface.co/learn/agents-course/en/unit0/introduction" target="_blank" rel="noopener noreferrer" data-i18n="rl_65_name">Hugging Face — Agents Course</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_65_what">Build your own agents</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_65_free">Free, 8+ units</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_65_who">Beginners to experts</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://github.com/anthropics/prompt-eng-interactive-tutorial" target="_blank" rel="noopener noreferrer" data-i18n="rl_66_name">Anthropic Prompt Engineering</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_66_what">Interactive prompting course</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_66_free">Free, about 2 hours</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_66_who">Beginners to intermediate</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://learn.microsoft.com/en-us/training/paths/optimize-business-processes-with-ai/" target="_blank" rel="noopener noreferrer" data-i18n="rl_67_name">Microsoft Learn — Copilot</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_67_what">Automate processes with Copilot</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_67_free">Free, 5 modules</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_67_who">Beginners, Microsoft 365 users</span></p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rl-group" role="listitem">
+            <h3 class="rl-group__title" data-i18n="rl_g8_t">Danish and EU rules</h3>
+            <ul class="rl-list">
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.datatilsynet.dk/regler-og-vejledning/kunstig-intelligens" target="_blank" rel="noopener noreferrer" data-i18n="rl_68_name">Datatilsynet — AI</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_68_what">The Danish regulator's rules on AI and GDPR</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_68_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_68_who">Owners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://digst.dk/kunstig-intelligens/" target="_blank" rel="noopener noreferrer" data-i18n="rl_69_name">Digitaliseringsstyrelsen — AI</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_69_what">Denmark's official AI site with guidance</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_69_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_69_who">Owners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://ai-act-service-desk.ec.europa.eu/en" target="_blank" rel="noopener noreferrer" data-i18n="rl_70_name">AI Act Service Desk</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_70_what">EU platform for finding out whether the AI Act applies to you</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_70_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_70_who">Owners, legal</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act" target="_blank" rel="noopener noreferrer" data-i18n="rl_71_name">AI Act — timeline</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_71_what">When each AI Act rule applies</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_71_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_71_who">Owners, legal</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://forbrugerombudsmanden.dk/" target="_blank" rel="noopener noreferrer" data-i18n="rl_72_name">Forbrugerombudsmanden</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_72_what">Danish regulator for marketing, prices and consumer rights</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_72_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_72_who">Owners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://www.edpb.europa.eu/sme_en" target="_blank" rel="noopener noreferrer" data-i18n="rl_73_name">EDPB — GDPR for small businesses</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_73_what">The European regulator's tool for small businesses</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_73_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_73_who">Owners</span></p>
+              </li>
+              <li class="rl-item">
+                <div class="rl-item__head">
+                  <a class="rl-item__name" href="https://skat.dk/erhverv/moms/moms-saadan-goer-du/saadan-registrerer-du-din-virksomhed-for-moms" target="_blank" rel="noopener noreferrer" data-i18n="rl_74_name">Skat.dk — VAT registration</a>
+                  <span class="rl-item__open" data-i18n="rl_open">Open</span>
+                </div>
+                <p class="rl-item__what" data-i18n="rl_74_what">Official Danish guide to VAT registration</p>
+                <p class="rl-item__free"><span class="rl-item__freetag" data-i18n="rl_note_title">What the free version actually gives</span> <span data-i18n="rl_74_free">Free public information</span></p>
+                <p class="rl-item__who"><span class="rl-item__wholabel" data-i18n="rl_who">For</span> <span data-i18n="rl_74_who">Owners</span></p>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <p class="rl-foot" data-i18n="rl_foot">Prices and limits change. Everything above was read off the vendor's own page on 2 November 2026. If a link no longer works, tell me and I will fix it or drop it.</p>
+      </div>
+    </section>
+
     <!-- ══ CTA ══ -->
     <section>
       <div class="container">
@@ -305,6 +1103,7 @@
             <li><a href="mailto:omar@basednode.xyz" data-i18n="foot_email">Write to me</a></li>
             <li><a href="terms" data-i18n="foot_l_terms">Terms</a></li>
             <li><a href="privacy" data-i18n="foot_l_privacy">Privacy policy</a></li>
+            <li><a href="sitemap" data-i18n="foot_l_sitemap">Site map</a></li>
           </ul>
         </div>
       </div>

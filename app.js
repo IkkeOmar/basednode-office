@@ -9,6 +9,163 @@
 (function () {
   "use strict";
 
+  /* ---------------- Theme ---------------- */
+
+  /* The theme is read from localStorage, but the FIRST paint must not
+     wait for the script to run — a flash of the light theme on a dark
+     desktop is the classic theme bug. So the shell's inline head
+     script sets data-theme from storage before the body renders, and
+     this code only handles the toggle and keeps the two in sync. */
+
+  var THEME_KEY = "bn-theme";
+
+  function applyTheme(theme) {
+    var dark = theme === "dark";
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    var btn = document.getElementById("themeToggle");
+    if (btn) {
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    }
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", dark ? "#1A1917" : "#F8F6F2");
+    try { localStorage.setItem(THEME_KEY, dark ? "dark" : "light"); } catch (e) {}
+  }
+
+  function initTheme() {
+    var stored = null;
+    try { stored = localStorage.getItem(THEME_KEY); } catch (e) {}
+    if (!stored) {
+      /* No stored preference: follow the operating system. */
+      stored = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark" : "light";
+    }
+    applyTheme(stored);
+
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var now = document.documentElement.getAttribute("data-theme");
+      applyTheme(now === "dark" ? "light" : "dark");
+    });
+  }
+
+  /* ---------------- Ambient particles ---------------- */
+
+  /* The same drifting field as basednode.xyz. It is decorative and it
+     is the only thing on the page that runs continuously, so it is
+     strictly bounded:
+       - it stops entirely when the reader prefers reduced motion
+       - it pauses when the tab is hidden, so a backgrounded tab does
+         not keep a timer alive
+       - it is capped at a fixed number of particles and adapts to the
+         viewport, so a phone does not get the same count as a monitor
+       - it draws nothing at all if the canvas is unavailable */
+
+  function initParticles() {
+    var canvas = document.getElementById("bn-particles");
+    if (!canvas || !canvas.getContext) return;
+
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
+    var ctx = canvas.getContext("2d");
+    var w = 0, h = 0, dpr = 1;
+    var particles = [];
+    var raf = null;
+    var running = false;
+
+    function palette() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      return dark
+        ? { a: "rgba(124, 92, 252, 0.55)", b: "rgba(56, 189, 248, 0.45)" }
+        : { a: "rgba(242, 107, 31, 0.38)", b: "rgba(120, 108, 92, 0.22)" };
+    }
+    var colors = palette();
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      /* Fewer particles on a small screen: the field should read as
+         texture, not as a swarm. */
+      var count = Math.max(18, Math.min(70, Math.round(w * h / 26000)));
+      particles = [];
+      for (var i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.18,
+          vy: (Math.random() - 0.5) * 0.18,
+          r: Math.random() * 1.6 + 0.7,
+          a: Math.random() * 0.4 + 0.12,
+          warm: Math.random() > 0.55,
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        /* Wrap around the edges, so the field never thins out. */
+        if (p.x < -10) p.x = w + 10;
+        if (p.x > w + 10) p.x = -10;
+        if (p.y < -10) p.y = h + 10;
+        if (p.y > h + 10) p.y = -10;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.warm ? colors.b : colors.a;
+        ctx.globalAlpha = p.a;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function loop() {
+      draw();
+      raf = requestAnimationFrame(loop);
+    }
+
+    function start() {
+      if (running || reduced) return;
+      running = true;
+      raf = requestAnimationFrame(loop);
+    }
+    function stop() {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+      raf = null;
+    }
+
+    resize();
+    start();
+
+    var resizeTimer = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 180);
+    }, { passive: true });
+
+    /* Do not burn a timer on a tab nobody is looking at. */
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    /* The palette follows the theme. */
+    var toggle = document.getElementById("themeToggle");
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        setTimeout(function () { colors = palette(); }, 240);
+      });
+    }
+  }
+
   /* ---------------- Translations ---------------- */
 
   var STORAGE_KEY = "bn-lang";
@@ -49,7 +206,11 @@
        the src is rebuilt for the active language. */
     document.querySelectorAll("[data-flow]").forEach(function (el) {
       var id = el.getAttribute("data-flow");
-      el.setAttribute("src", "_assets/illustrations/flow-" + id + "-" + current + ".svg");
+      el.querySelectorAll("img").forEach(function (img) {
+        var narrow = img.classList.contains("flow-img__narrow");
+        img.setAttribute("src", "_assets/illustrations/flow-" + id + "-" + current +
+          (narrow ? "-m" : "") + ".svg");
+      });
     });
 
     /* Contact topic buttons open a mail client with a subject line that
@@ -150,6 +311,10 @@
       stored = nav.indexOf("da") === 0 ? "da" : "en";
     }
     applyLang(stored);
+
+    /* Theme and particles are independent of the language. */
+    initTheme();
+    initParticles();
 
     document.addEventListener("click", function (e) {
       var lang = e.target.closest("[data-lang-toggle]");
