@@ -3928,6 +3928,26 @@ footer,
   display: none;
 }
 
+/* The dark sheet. The drawing is an <img>, so it cannot inherit the
+   page's colours — the dark palette is baked into a separate SVG file
+   (flow-{id}-{lang}-d.svg), generated from the same spec and the same
+   copy as the light one. The page picks between them with CSS. */
+.flow-img > .flow-img__dark {
+  display: none;
+}
+[data-theme="dark"] .flow-img > .flow-img__wide:not(.flow-img__dark) {
+  display: none;
+}
+[data-theme="dark"] .flow-img > .flow-img__narrow:not(.flow-img__dark) {
+  display: none;
+}
+[data-theme="dark"] .flow-img > .flow-img__dark.flow-img__wide {
+  display: block;
+}
+[data-theme="dark"] .flow-img > .flow-img__dark.flow-img__narrow {
+  display: none;
+}
+
 /* Which sheet to use.
 
    A wide sheet has a 640-unit viewBox with 6-unit labels. It only
@@ -3953,6 +3973,17 @@ footer,
   .flow-img > .flow-img__narrow {
     display: block;
   }
+  /* Same collision as in the grid card: the dark narrow carries the
+     same class, so it has to be switched off in light mode. */
+  .flow-img > .flow-img__dark.flow-img__narrow {
+    display: none;
+  }
+  [data-theme="dark"] .flow-img > .flow-img__dark.flow-img__wide {
+    display: none;
+  }
+  [data-theme="dark"] .flow-img > .flow-img__dark.flow-img__narrow {
+    display: block;
+  }
 }
 
 /* The grid card always shows the narrow sheet, at any viewport
@@ -3963,6 +3994,20 @@ footer,
   display: none;
 }
 .flow-grid .flow-img > .flow-img__narrow {
+  display: block;
+}
+
+/* The card rules above also match the DARK narrow sheet, because it
+   carries both classes. So in light mode the dark sheets have to be
+   switched off explicitly, and in dark mode the light ones. Without
+   this, a card shows two drawings stacked on top of each other. */
+.flow-grid .flow-img > .flow-img__dark {
+  display: none;
+}
+[data-theme="dark"] .flow-grid .flow-img > .flow-img__dark.flow-img__wide {
+  display: none;
+}
+[data-theme="dark"] .flow-grid .flow-img > .flow-img__dark.flow-img__narrow {
   display: block;
 }
 

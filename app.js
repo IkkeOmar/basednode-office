@@ -208,8 +208,21 @@
       var id = el.getAttribute("data-flow");
       el.querySelectorAll("img").forEach(function (img) {
         var narrow = img.classList.contains("flow-img__narrow");
-        img.setAttribute("src", "_assets/illustrations/flow-" + id + "-" + current +
-          (narrow ? "-m" : "") + ".svg");
+        var dark = img.classList.contains("flow-img__dark");
+        /* Four files per flow and language:
+             flow-{id}-{lang}.svg     light, wide
+             flow-{id}-{lang}-m.svg   light, narrow
+             flow-{id}-{lang}-d.svg   dark, wide
+             flow-{id}-{lang}-dm.svg  dark, narrow
+           The dark sheet exists because an SVG loaded through <img>
+           cannot inherit the page's colours, so the dark palette has
+           to be baked into its own file. */
+        /* Careful with the order: the file is flow-{id}-{lang}{-m|-dm|-d}.svg
+           and the "-m" (narrow) marker has to be INSIDE the theme marker,
+           not appended after it — otherwise "-m" + "-d" gives "-md", which
+           is not a file that exists. */
+        var suffix = dark ? (narrow ? "-dm" : "-d") : (narrow ? "-m" : "");
+        img.setAttribute("src", "_assets/illustrations/flow-" + id + "-" + current + suffix + ".svg");
       });
     });
 

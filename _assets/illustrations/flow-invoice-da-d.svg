@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Skematisk oversigt over en regning, der modtages, læses og bogføres">
+  <style>
+    .ink { stroke: #EFEAE0; }
+    .muted { stroke: #A39C90; }
+    .accent { stroke: #F26B1F; }
+    .thin { stroke-width: 0.75; }
+    .hair { stroke-width: 0.5; }
+    .ink-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #EFEAE0; stroke: none; }
+    .muted-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #A39C90; stroke: none; }
+    .accent-text { font-family: "Geist Mono", "IBM Plex Mono", monospace; fill: #F9A05C; stroke: none; font-weight: 600; }
+
+    /* --------------------------------------------------------------
+       MOTION
+
+       The flow drawing was a still blueprint: it showed what the system
+       does, but not that it DOES anything. The diagram now runs.
+
+       The drawing is loaded as an IMG tag, so it cannot be scripted from
+       the page — but CSS animations inside an SVG document run regardless,
+       because the SVG is its own document. Verified: a circle in an
+       img-referenced SVG scales as expected.
+
+       NOTE: no angle brackets may appear in this comment. The SVG is
+       parsed as XML, and a stray "&lt;" inside the style block makes the
+       whole document fail to parse — the browser then renders an empty
+       box with no error, which is very hard to spot by eye.
+
+       The sequence reads as one event:
+         1. the panels fade up in order, like a plotter drawing the sheet
+         2. the connectors draw themselves between them
+         3. a packet of data travels down the chain, connector by
+            connector, and the nodes light up as it passes
+       After the intro the packet keeps looping, so the drawing never
+       looks frozen.
+
+       --i and --c are per-element indices set inline, so the stagger
+       comes from the generator rather than from hand-written delays.
+       -------------------------------------------------------------- */
+    .flow-panel {
+      opacity: 0;
+      animation: bn-flow-panel 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i) * 0.16s);
+    }
+    @keyframes bn-flow-panel {
+      from { opacity: 0; transform: translateY(7px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .flow-wire {
+      stroke-dasharray: 90;
+      stroke-dashoffset: 90;
+      animation: bn-flow-draw 0.45s ease-out both;
+      animation-delay: calc(var(--c) * 0.16s + 0.12s);
+    }
+    @keyframes bn-flow-draw { to { stroke-dashoffset: 0; } }
+
+    /* The phone sheet stacks the panels, so the packet travels DOWN.
+       It needs its own keyframes on the Y axis — the horizontal ones
+       would send it off the side of the sheet. */
+    .flow-packet-v {
+      opacity: 0;
+      animation: bn-flow-packet-v 1.9s cubic-bezier(0.55, 0, 0.45, 1) infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-packet-v {
+      0%   { opacity: 0; transform: translateY(0) scale(0.4); }
+      12%  { opacity: 1; transform: translateY(0) scale(1); }
+      88%  { opacity: 1; transform: translateY(var(--dist)) scale(1); }
+      100% { opacity: 0; transform: translateY(var(--dist)) scale(0.4); }
+    }
+    .flow-trail-v {
+      opacity: 0;
+      animation: bn-flow-trail-v 1.9s cubic-bezier(0.55, 0, 0.45, 1) infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-trail-v {
+      0%   { opacity: 0;    transform: translateY(0); }
+      18%  { opacity: 0.45; transform: translateY(calc(var(--dist) * 0.16)); }
+      34%  { opacity: 0.22; transform: translateY(calc(var(--dist) * 0.36)); }
+      50%  { opacity: 0.10; transform: translateY(calc(var(--dist) * 0.62)); }
+      88%  { opacity: 0;    transform: translateY(var(--dist)); }
+      100% { opacity: 0;    transform: translateY(var(--dist)); }
+    }
+
+    /* --------------------------------------------------------------
+       THE PACKET.
+
+       The first version of this was correct and invisible. The packet
+       was r=2.5 in a 640-unit viewBox, and the drawing is shown at
+       about 440px, so the travelling dot was 1.7 pixels across. It
+       moved, every automated check passed, and a person looking at
+       the screen saw a completely static blueprint.
+
+       Measured: only 0.05% of the pixels of the hero drawing changed
+       between two frames a second apart. Nothing on that sheet
+       communicated that anything was running.
+
+       So the motion has to be big enough to read at the size the
+       drawing is ACTUALLY DISPLAYED, not at the size it is drawn.
+       Three changes:
+         - the packet is bigger
+         - it drags a soft trail behind it, so the EYE can follow it
+         - the wire it crosses lights up, so the connector reads as
+           carrying something
+       -------------------------------------------------------------- */
+    .flow-packet {
+      opacity: 0;
+      animation: bn-flow-packet 1.9s cubic-bezier(0.55, 0, 0.45, 1) infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-packet {
+      0%   { opacity: 0; transform: translateX(0) scale(0.4); }
+      12%  { opacity: 1; transform: translateX(0) scale(1); }
+      88%  { opacity: 1; transform: translateX(var(--dist)) scale(1); }
+      100% { opacity: 0; transform: translateX(var(--dist)) scale(0.4); }
+    }
+
+    /* The trail. Three echoes of the packet, each further behind and
+       each more transparent, fading in over the first fifth of the
+       travel and out over the last fifth. */
+    .flow-trail {
+      opacity: 0;
+      animation: bn-flow-trail 1.9s cubic-bezier(0.55, 0, 0.45, 1) infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-trail {
+      0%   { opacity: 0;    transform: translateX(0); }
+      18%  { opacity: 0.45; transform: translateX(calc(var(--dist) * 0.16)); }
+      34%  { opacity: 0.22; transform: translateX(calc(var(--dist) * 0.36)); }
+      50%  { opacity: 0.10; transform: translateX(calc(var(--dist) * 0.62)); }
+      88%  { opacity: 0;    transform: translateX(var(--dist)); }
+      100% { opacity: 0;    transform: translateX(var(--dist)); }
+    }
+
+    /* The node the packet is heading for. It scales harder than before
+       and gains a ring, because a node that only changes by 1.35x is
+       also unreadable at this size. */
+    .flow-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bn-flow-node 1.9s ease-in-out infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-node {
+      0%, 78%, 100% { transform: scale(1); opacity: 0.5; }
+      18%           { transform: scale(1.7); opacity: 1; }
+    }
+
+    /* The halo around the active node. It expands and fades, so the
+       node reads as RECEIVING something rather than just being a
+       dot. */
+    .flow-node-halo {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bn-flow-halo 1.9s ease-out infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-halo {
+      0%        { transform: scale(0.5); opacity: 0.7; }
+      40%, 100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* The wire lights up as the packet crosses it. */
+    .flow-wire-live {
+      opacity: 0;
+      animation: bn-flow-wire 1.9s ease-out infinite;
+      animation-delay: calc(var(--c) * 0.16s + 0.5s);
+    }
+    @keyframes bn-flow-wire {
+      0%, 10%  { opacity: 0; }
+      30%      { opacity: 0.85; }
+      75%      { opacity: 0.85; }
+      100%     { opacity: 0; }
+    }
+
+    /* A slow scan line down the whole sheet. It is the cheapest way to
+       say "this is live" without touching the content, and it reads at
+       any size because it crosses the entire drawing. */
+    .flow-scan {
+      animation: bn-flow-scan 7s linear infinite;
+    }
+    @keyframes bn-flow-scan {
+      0%   { transform: translateY(-40px); opacity: 0; }
+      8%   { opacity: 0.55; }
+      88%  { opacity: 0.55; }
+      100% { transform: translateY(430px); opacity: 0; }
+    }
+    /* The narrow sheet is taller, so it needs a longer sweep. */
+    .flow-scan--tall {
+      animation-name: bn-flow-scan-tall;
+    }
+    @keyframes bn-flow-scan-tall {
+      0%   { transform: translateY(-40px); opacity: 0; }
+      8%   { opacity: 0.55; }
+      88%  { opacity: 0.55; }
+      100% { transform: translateY(830px); opacity: 0; }
+    }
+
+    /* The confirmed result at the end of the ledger panel. */
+    .flow-ok {
+      animation: bn-flow-ok 1.9s ease-in-out infinite;
+      animation-delay: calc(var(--c) * 0.16s + 1.25s);
+    }
+    @keyframes bn-flow-ok {
+      0%, 70%, 100% { opacity: 0.55; }
+      82%           { opacity: 1; }
+    }
+
+    /* --------------------------------------------------------------
+       The agent hub. The core breathes and the satellites orbit it
+       slightly, so the panel reads as one agent with inputs rather
+       than a static diagram of a circle with lines.
+
+       transform-origin is given in USER UNITS, not a percentage.
+       Firefox does not support percentage transform-origin on SVG
+       elements, so a percentage would silently fall back to the SVG
+       origin and fling the shapes into the corner. */
+    .flow-agent-core {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bn-agent-pulse 2.6s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.16s);
+    }
+    @keyframes bn-agent-pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.1); }
+    }
+
+    .flow-agent-sat {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bn-agent-blink 2.6s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.16s + 0.35s);
+    }
+    @keyframes bn-agent-blink {
+      0%, 70%, 100% { opacity: 0.45; transform: scale(1); }
+      30%           { opacity: 1; transform: scale(1.22); }
+    }
+
+    /* The campaign arrows advance one column at a time, so the
+       pipeline direction is visible without reading the labels. */
+    .flow-campaign-arrow {
+      animation: bn-campaign-step 2.4s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.16s);
+    }
+    @keyframes bn-campaign-step {
+      0%, 55%, 100% { opacity: 0.28; transform: translateX(-2px); }
+      25%           { opacity: 1; transform: translateX(2px); }
+    }
+
+    /* The funnel narrows: each gate draws across, then the funnel
+       tightens. The eye follows the narrowing, which is the point. */
+    .flow-funnel-body {
+      animation: bn-funnel-in 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i) * 0.16s);
+    }
+    @keyframes bn-funnel-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .flow-funnel-gate {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bn-funnel-gate 2.2s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.16s + 0.4s);
+    }
+    @keyframes bn-funnel-gate {
+      0%, 60%, 100% { opacity: 0.35; transform: scaleX(0.9); }
+      20%           { opacity: 1; transform: scaleX(1); }
+    }
+
+    /* The watch bars fill up, one after another — the same thing the
+       flow actually does with attention over time. */
+    .flow-watch-bar {
+      transform-box: fill-box;
+      transform-origin: left center;
+      animation: bn-watch-fill 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      animation-delay: calc(var(--i) * 0.16s + 0.3s);
+    }
+    @keyframes bn-watch-fill {
+      0%       { transform: scaleX(0); }
+      45%, 80% { transform: scaleX(1); }
+      100%     { transform: scaleX(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flow-panel { opacity: 1; animation: none; transform: none; }
+      .flow-wire  { stroke-dashoffset: 0; animation: none; }
+      .flow-packet { display: none; }
+      .flow-node, .flow-ok { animation: none; opacity: 1; }
+    .flow-trail, .flow-node-halo, .flow-wire-live, .flow-scan,
+    .flow-packet-v, .flow-trail-v {
+      animation: none; opacity: 0;
+    }
+    .flow-agent-core, .flow-agent-sat, .flow-campaign-arrow,
+    .flow-funnel-body, .flow-funnel-gate, .flow-watch-bar {
+      animation: none; opacity: 1;
+    }
+    .flow-watch-bar { transform: none; }
+    }
+  </style>
+  <!-- BLUEPRINT FRAME -->
+    <rect class="ink thin" x="20" y="20" width="600" height="440" rx="0" />
+  <!-- CORNER TICK MARKS -->
+  <g class="ink thin">
+    <line class="ink thin" x1="20" y1="40" x2="30" y2="40" />
+    <line class="ink thin" x1="20" y1="60" x2="30" y2="60" />
+    <line class="ink thin" x1="20" y1="80" x2="30" y2="80" />
+    <line class="ink thin" x1="40" y1="20" x2="40" y2="30" />
+    <line class="ink thin" x1="60" y1="20" x2="60" y2="30" />
+    <line class="ink thin" x1="80" y1="20" x2="80" y2="30" />
+    <line class="ink thin" x1="610" y1="40" x2="620" y2="40" />
+    <line class="ink thin" x1="610" y1="60" x2="620" y2="60" />
+    <line class="ink thin" x1="610" y1="80" x2="620" y2="80" />
+    <line class="ink thin" x1="540" y1="20" x2="540" y2="30" />
+    <line class="ink thin" x1="560" y1="20" x2="560" y2="30" />
+    <line class="ink thin" x1="580" y1="20" x2="580" y2="30" />
+  </g>
+  <!-- SCAN LINE -->
+  <g class="flow-scan" style="--i:0">
+    <line x1="20" y1="0" x2="620" y2="0" stroke="#F26B1F" stroke-width="26" opacity="0.05" />
+    <line x1="20" y1="0" x2="620" y2="0" stroke="#F26B1F" stroke-width="1" opacity="0.45" />
+  </g>
+  <g transform="translate(420, 380)">
+    <rect class="ink thin" x="0" y="0" width="180" height="60" rx="0" />
+    <line class="ink hair" x1="0" y1="20" x2="180" y2="20" />
+    <line class="ink hair" x1="0" y1="40" x2="180" y2="40" />
+    <line class="ink hair" x1="100" y1="0" x2="100" y2="60" />
+    <text class="muted-text" x="6" y="14" font-size="9">FIG.</text>
+    <text class="ink-text" x="106" y="14" font-size="10" font-weight="500">01 / 03</text>
+    <text class="muted-text" x="6" y="34" font-size="9">DRAWN BY</text>
+    <text class="ink-text" x="106" y="34" font-size="10">BASEDNODE</text>
+    <text class="muted-text" x="6" y="54" font-size="9">STATUS</text>
+    <text class="ink-text" x="106" y="54" font-size="10">ARBEJDSUDFORLØB</text>
+  </g>
+  <!-- STEP 1 -->
+  <g transform="translate(62.0, 80.0)">
+  <g class="flow-panel" style="--i:0">
+    <rect class="ink" x="0" y="0" width="130" height="170" rx="2" />
+    <line class="ink thin" x1="0" y1="30" x2="130" y2="30" />
+    <text class="muted-text" x="10" y="20" font-size="8">FAKTURA</text>
+    <text class="ink-text" x="120" y="20" font-size="8" text-anchor="end">NR. 4471</text>
+    <line class="muted hair" x1="10" y1="48" x2="86" y2="120" />
+    <line class="muted hair" x1="10" y1="62" x2="104" y2="138" />
+    <line class="muted hair" x1="10" y1="76" x2="70" y2="104" />
+    <line class="ink thin" x1="10" y1="96" x2="120" y2="96" />
+    <line class="muted hair" x1="10" y1="112" x2="92" y2="122" />
+    <line class="muted hair" x1="10" y1="126" x2="80" y2="110" />
+    <text class="ink-text" x="120" y="150" font-size="10" text-anchor="end" font-weight="500">4.850,00</text>
+    <text class="muted-text" x="120" y="162" font-size="8" text-anchor="end">DKK</text>
+  </g>
+  </g>
+  <!-- STEP 2 -->
+  <g transform="translate(278.0, 108.0)">
+  <g class="flow-panel" style="--i:1">
+    <rect class="ink thin" x="0" y="0" width="146" height="114" rx="2" />
+    <text class="muted-text" x="10" y="18" font-size="8">UDTRUKKET</text>
+    <line class="ink hair" x1="10" y1="26" x2="136" y2="26" />
+    <text class="muted-text" x="10" y="42" font-size="8">Leverandør</text>
+    <text class="ink-text" x="136" y="42" font-size="8" text-anchor="end">NORDKRAFT A/S</text>
+    <text class="muted-text" x="10" y="60" font-size="8">Beløb</text>
+    <text class="ink-text" x="136" y="60" font-size="8" text-anchor="end">4.850,00</text>
+    <text class="muted-text" x="10" y="78" font-size="8">Moms</text>
+    <text class="ink-text" x="136" y="78" font-size="8" text-anchor="end">970,00</text>
+    <text class="muted-text" x="10" y="96" font-size="8">Konto</text>
+    <text class="ink-text" x="136" y="96" font-size="8" text-anchor="end">5700</text>
+  </g>
+  </g>
+  <!-- STEP 3 -->
+  <g transform="translate(510.0, 108.0)">
+  <g class="flow-panel" style="--i:2">
+    <rect class="ink" x="0" y="0" width="88" height="114" rx="2" />
+    <line class="ink thin" x1="0" y1="26" x2="88" y2="26" />
+    <text class="muted-text" x="8" y="18" font-size="8">BOGFØRT</text>
+    <line class="muted hair" x1="8" y1="42" x2="80" y2="42" />
+    <line class="muted hair" x1="8" y1="56" x2="80" y2="56" />
+    <line class="muted hair" x1="8" y1="70" x2="80" y2="70" />
+    <text class="flow-ok" style="--c:2" x="80" y="98" font-size="9" text-anchor="end" font-weight="500" fill="#211F1B" stroke="none">OK</text>
+  </g>
+  </g>
+  <!-- CONNECTOR 1 -->
+    <line class="ink thin flow-wire" style="--c:0" x1="198.0" y1="165" x2="270.0" y2="165" />
+    <line class="flow-wire-live" style="--c:0" x1="198.0" y1="165" x2="270.0" y2="165" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" />
+    <circle class="flow-node-halo" style="--c:0" cx="234.0" cy="165" r="4" fill="none" stroke="#F26B1F" stroke-width="1.2" />
+    <circle class="flow-node" style="--c:0" cx="234.0" cy="165" r="4" fill="#F26B1F" />
+    <circle class="flow-trail" style="--c:0;--dist:72.0px" cx="198.0" cy="165" r="3.0" fill="#F26B1F" />
+    <circle class="flow-trail" style="--c:0;--dist:72.0px" cx="198.0" cy="165" r="2.2" fill="#F26B1F" />
+    <circle class="flow-trail" style="--c:0;--dist:72.0px" cx="198.0" cy="165" r="1.5" fill="#F26B1F" />
+    <circle class="flow-packet" style="--c:0;--dist:72.0px" cx="198.0" cy="165" r="3.4" fill="#F26B1F" />
+  <!-- CONNECTOR 2 -->
+    <line class="ink thin flow-wire" style="--c:1" x1="430.0" y1="165" x2="502.0" y2="165" />
+    <line class="flow-wire-live" style="--c:1" x1="430.0" y1="165" x2="502.0" y2="165" stroke="#F26B1F" stroke-width="2" stroke-linecap="round" />
+    <circle class="flow-node-halo" style="--c:1" cx="466.0" cy="165" r="4" fill="none" stroke="#F26B1F" stroke-width="1.2" />
+    <circle class="flow-node" style="--c:1" cx="466.0" cy="165" r="4" fill="#F26B1F" />
+    <circle class="flow-trail" style="--c:1;--dist:72.0px" cx="430.0" cy="165" r="3.0" fill="#F26B1F" />
+    <circle class="flow-trail" style="--c:1;--dist:72.0px" cx="430.0" cy="165" r="2.2" fill="#F26B1F" />
+    <circle class="flow-trail" style="--c:1;--dist:72.0px" cx="430.0" cy="165" r="1.5" fill="#F26B1F" />
+    <circle class="flow-packet" style="--c:1;--dist:72.0px" cx="430.0" cy="165" r="3.4" fill="#F26B1F" />
+    <text class="ink-text" x="62.0" y="68.0" font-size="8">01 · MODTAGET</text>
+    <text class="ink-text" x="278.0" y="96.0" font-size="8">02 · UDTRUKKET</text>
+    <text class="ink-text" x="510.0" y="96.0" font-size="8">03 · BOGFØRT</text>
+  <!-- CALLOUT -->
+  <g>
+    <line class="accent thin" x1="234.0" y1="165" x2="234.0" y2="248" />
+    <circle class="accent" cx="234.0" cy="165" r="2.5" fill="#F26B1F" />
+    <g transform="translate(160, 252)">
+    <rect class="ink thin" x="0" y="0" width="150" height="46" rx="0" />
+    <line class="ink hair" x1="0" y1="16" x2="150" y2="16" />
+    <text class="muted-text" x="6" y="12" font-size="8">DETAIL · A</text>
+    <text class="accent-text" x="6" y="30" font-size="8">HANDLINGSREGEL 04</text>
+    <text class="muted-text" x="6" y="41" font-size="8">Konto 5700 · moms 25 %</text>
+    </g>
+  </g>
+  <g class="muted">
+    <line class="hair" x1="60" y1="300" x2="60" y2="330" />
+    <line class="hair" x1="600" y1="300" x2="600" y2="330" />
+    <line class="thin" x1="60" y1="325" x2="600" y2="325" />
+    <polygon points="66,322 66,328 60,325" fill="#6F6A60" />
+    <polygon points="594,322 594,328 600,325" fill="#6F6A60" />
+    <text class="muted-text" x="330.0" y="345" font-size="9" text-anchor="middle">3 HANDLINGSREGLER · 0 MINUTTER</text>
+  </g>
+  <g class="muted">
+    <line class="hair" x1="62.0" y1="80.0" x2="54" y2="80.0" />
+    <line class="hair" x1="62.0" y1="250.0" x2="54" y2="250.0" />
+    <line class="thin" x1="50" y1="80.0" x2="50" y2="250.0" />
+    <polygon points="47,86.0 53,86.0 50,80.0" fill="#6F6A60" />
+    <polygon points="47,244.0 53,244.0 50,250.0" fill="#6F6A60" />
+    <g transform="translate(42, 165) rotate(-90)">
+    <text class="muted-text" x="0" y="0" font-size="9" text-anchor="middle">4,5 MIN → 0</text>
+    </g>
+  </g>
+</svg>
